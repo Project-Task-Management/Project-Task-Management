@@ -17,11 +17,11 @@
 ## Features :
 
 1. Domain Name: 하자 (LETSDO)
-2. Search Bar
+2. Search Bar // optional
 3. Login
 4. LOGO
 5. Description
-6. Navigation Bar
+6. Navigation Bar      
 7. Foots
 8. Contact infos
 9. Footer
@@ -30,11 +30,11 @@
 
 ## Gliederung unserer Seite
 
-1. Home Page
-1. ToDo List
-1. Products Management System
-1. Notiz
-1. Calendar
+1. Home Page (Muhanad)
+1. ToDo List (Monsif)
+1. Products Management System (Yaaroub)
+1. Notiz (Mohsen)
+1. Calendar (yaman)
 
 ---
 
@@ -45,6 +45,8 @@
 3. Angemeldeter User kann seine Producte in einer ordintlichen Tabele einfügen ,löschen und bearbeiten.
 4. Angemeldeter User soll sich regiestrieren bzw anmelden können.
 5. Gast kann die nwengung testen ,aber die daten werden nicht gespeischert.
+
+
 6. live-Chat(Bonus)
 
 ---
