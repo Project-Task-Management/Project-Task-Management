@@ -12,19 +12,29 @@
 
 1. Unternehmen (Lager)
 
-
 ---
 
 ## Features :
 
 1. Domain Name: 하자 (LETSDO)
 2. Search Bar
-3. LOGO
-4. Description
-5. Navigation Bar
-6. Fotos
-7. Contact infos
-8. Footer
+3. Login
+4. LOGO
+5. Description
+6. Navigation Bar
+7. Foots
+8. Contact infos
+9. Footer
+
+---
+
+## Gliederung unserer Seite
+
+1. Home Page
+1. ToDo List
+1. Products Management System
+1. Notiz
+1. Calendar
 
 ---
 
@@ -36,3 +46,23 @@
 4. Angemeldeter User soll sich regiestrieren bzw anmelden können.
 5. Gast kann die nwengung testen ,aber die daten werden nicht gespeischert.
 6. live-Chat(Bonus)
+
+---
+
+## Colors :
+
+1. #EDE9E3
+2. #E7D7C9
+3. #D4B2A7
+4. #CDC6C3
+5. #A38F85
+
+---
+
+## JavaScript library :
+
+1. vite : ( https://vitejs.dev/guide/ )
+
+---
+
+## Aufgaben Verteilung :
