@@ -1,0 +1,14 @@
+.navi{
+    display: grid;
+    grid-template-columns: 1fr 4fr;
+    padding: 20px;
+
+}
+.start{
+    background-color: rgba(236, 182, 182, 0.346);
+}
+.navigtion{
+    display: flex;
+    flex-direction: column;
+    gap: 50px;
+}
