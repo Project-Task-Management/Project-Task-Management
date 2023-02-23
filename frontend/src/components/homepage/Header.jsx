@@ -8,19 +8,13 @@ import './home.scss'
 
 const Header = () => {
   return (
-    <div className="header">
-    <Navbar bg="dark" variant="dark">
-        <Container>
-            <Navbar.Brand href="#home">하자 LETSDO</Navbar.Brand>
-            <Navbar.Brand href="#home">
-                <Button>Logo</Button>
-            </Navbar.Brand>
-            <Navbar.Brand href="#home">
-                <Button>Registieren</Button>
-            </Navbar.Brand>
-        </Container>
-    </Navbar>
-</div>
+    
+      <div className="header">
+      <div>하자 LETSDO</div>
+        <div>Logo</div>
+        <div><Button>Registieren</Button></div>
+      </div>
+
   );
 }
 

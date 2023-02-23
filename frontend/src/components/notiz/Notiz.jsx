@@ -2,6 +2,6 @@ import React from 'react'
 
 export default function Notiz() {
   return (
-    <div>Notiz</div>
+    <div>Notiz fff</div>
   )
 }

@@ -1,1 +1,15 @@
+.App{
+}
 
+.all{
+    display: grid;
+    grid-template-columns: 1fr 5fr;
+    text-align: center;
+}
+.navo{
+    text-align: center;
+
+}
+.rout{
+    padding-top: 30px;
+}

@@ -7,8 +7,7 @@ import './home.scss'
 export default function Home() {
     return (
      <div className="hom">
-       <Header />
-      <Navigtion />
+    <div className="start">Startseite</div>
      </div>
     
     
