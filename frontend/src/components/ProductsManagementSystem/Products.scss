@@ -1,0 +1,38 @@
+body{
+    background-color: #A38F85;
+}
+input {
+  width: 100%;
+  padding: 1rem;
+  border-radius: 0.5rem;
+  background-color: #cdc6c3;
+  border: unset;
+  margin: 5px 0px;
+}
+input:focus {
+  outline: unset;
+}
+.productsManagement {
+  width: 80vw;
+  margin: auto;
+
+  .crud {
+    text-align: center;
+  }
+  .products-tabelle {
+    .product-angabe {
+      width: 100%;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 1rem;
+    .total{
+        width: 40%;
+        background-color: rgba(255, 0, 0, 0.589);
+        padding: 9px;
+        border-radius: 00.5rem;
+        color: white;
+    }
+    }
+  }
+}

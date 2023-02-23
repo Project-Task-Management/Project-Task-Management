@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 
 import "./App.css";
@@ -31,6 +32,15 @@ function App() {
             </BrowserRouter>
         </div>
     );
+=======
+import Products from "./components/ProductsManagementSystem/Products";
+function App() {
+  return (
+    <div className="App">
+      <Products />
+    </div>
+  );
+>>>>>>> ef63c640feecc18b94fcd9bb3666fb895c044f53
 }
 
 export default App;
