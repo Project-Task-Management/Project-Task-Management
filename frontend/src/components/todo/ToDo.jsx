@@ -1,8 +1,10 @@
 
-export default class ToDo extends Component {
-  render() {
-    return (
-      <div></div>
-    )
-  }
+import React from 'react'
+
+const ToDo = () => {
+  return (
+    <div>ToDo</div>
+  )
 }
+
+export default ToDo
