@@ -5,6 +5,7 @@ import React, { useState } from "react";
 import Datepicker from "react-datepicker";
 import enUS from "date-fns/locale/en-US";
 import moment from "moment";
+import "./neuApp.sass";
 
 const locales = {
   "en-US": enUS,
@@ -13,22 +14,10 @@ const localizer = momentLocalizer(moment);
 
 const events = [
   {
-    title: "Groß Meeting",
+    title: "Mieting",
     allDay: true,
-    start: new Date(2021, 6, 0),
-    end: new Date(2021, 6, 0),
-  },
-  {
-    title: "Vacation",
-    allDay: true,
-    start: new Date(2021, 6, 0),
-    end: new Date(2021, 6, 0),
-  },
-  {
-    title: "Conference",
-    allDay: true,
-    start: new Date(2021, 6, 0),
-    end: new Date(2021, 6, 0),
+    start: new Date(),
+    end: new Date(),
   },
 ];
 
@@ -43,7 +32,7 @@ export default function NeuApp() {
   return (
     <div className="neuApp">
       <h1>Calender</h1>
-      <h2>Ass New Event</h2>
+      <h2>Aus New Event</h2>
       <div>
         <input
           type="text"
@@ -66,10 +55,12 @@ export default function NeuApp() {
         <button style={{ marginTop: "10px" }} onClick={handleAddEvent}>
           Add Event
         </button>
+
+        <button onClick={() => setAllEvents("")}>Remove Event</button>
       </div>
       <Calendar
         localizer={localizer}
-        // events={allEvents}
+        events={allEvents}
         startAccessor="start"
         endAccessor="end"
         style={{ height: 500, margin: "50px" }}
