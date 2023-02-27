@@ -10,12 +10,25 @@
   },
   "dependencies": {
     "bootstrap": "^5.2.3",
+<<<<<<< HEAD
     "mdb-react-ui-kit": "^5.1.0",
     "react": "^18.2.0",
+=======
+>>>>>>> dev
     "react-bootstrap": "^2.7.2",
-    "react-dom": "^18.2.0",
     "react-router-dom": "^6.8.1",
     "sacc": "^0.0.1",
+<<<<<<< HEAD
+=======
+    "date-fns": "^2.29.3",
+    "moment": "^2.29.4",
+    "react": "^18.2.0",
+    "react-big-calendar": "^1.6.8",
+    "react-datepicker": "^4.10.0",
+    "react-dom": "^18.2.0",
+    "reactjs-localizer": "^1.1.0",
+    "recoil": "^0.7.6",
+>>>>>>> dev
     "sass": "^1.58.3"
   },
   "devDependencies": {

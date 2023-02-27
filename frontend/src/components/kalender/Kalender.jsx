@@ -1,7 +1,8 @@
-import React from 'react'
+import React from "react";
+import NeuApp from "./NeuApp";
 
 export default function Kalender() {
-  return (
-    <div>Kalender</div>
+  return(
+    <NeuApp/>
   )
 }
