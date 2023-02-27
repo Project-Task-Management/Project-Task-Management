@@ -9,6 +9,7 @@ import Kalender from "./components/kalender/Kalender";
 import Notiz from "./components/notiz/Notiz";
 import Todo from "./components/todo/ToDo";
 import Products from "./components/ProductsManagementSystem/Products";
+import Registierung from "./components/homepage/Registierung";
 
 function App() {
     return (
@@ -26,6 +27,7 @@ function App() {
                         <Route path="/notiz" element={<Notiz />}></Route>
                        <Route path="/products" element={<Products />}></Route>
             <Route path="/todo" element={<Todo />}></Route>
+            <Route path="/registierung" element={<Registierung />}></Route>
                     </Routes>
                     </div>
                 </div>

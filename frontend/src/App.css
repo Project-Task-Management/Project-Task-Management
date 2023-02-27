@@ -1,9 +1,7 @@
-.App{
-}
 
 .all{
     display: grid;
-    grid-template-columns: 1fr 5fr;
+    grid-template-columns: 1fr 4fr;
     text-align: center;
 }
 .navo{
