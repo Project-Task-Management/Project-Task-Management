@@ -18,6 +18,9 @@ export default function Notiz() {
   };
 
   const deleteFunction = (i) => {
+    const neuNotiz = [...notiz];
+    neuNotiz.splice(i, 1);
+    setNotiz(neuNotiz);
     console.log(i, "gelöcht");
   };
 
@@ -28,7 +31,7 @@ export default function Notiz() {
   const textChangehandle = (e) => {
     setText(e.target.value);
   };
-  deleteFunction(3);
+
   return (
     <>
       <h1>Schreiben sie ihr Notizen </h1>
