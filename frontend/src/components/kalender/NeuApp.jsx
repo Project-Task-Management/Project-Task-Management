@@ -6,7 +6,6 @@ import Datepicker from "react-datepicker";
 import enUS from "date-fns/locale/en-US";
 import moment from "moment";
 import "./neuApp.sass";
-
 const locales = {
   "en-US": enUS,
 };
@@ -14,7 +13,7 @@ const localizer = momentLocalizer(moment);
 
 const events = [
   {
-    title: "Mieting",
+    title: "Meeting",
     allDay: true,
     start: new Date(),
     end: new Date(),

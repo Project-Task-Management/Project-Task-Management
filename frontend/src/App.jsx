@@ -1,4 +1,3 @@
-
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 
 import "./App.css";
@@ -11,27 +10,26 @@ import Todo from "./components/todo/ToDo";
 import Products from "./components/ProductsManagementSystem/Products";
 
 function App() {
-    return (
-        <div className="App">
-            <BrowserRouter>
-                <Header />
-                <div className="all">
-                    <div className="navo">
-                    <Navigtion />
-                    </div>
-                    <div className="rout">
-                    <Routes >
-                        <Route path="/" element={<Home />}></Route>
-                        <Route path="/kalender" element={<Kalender />}></Route>
-                        <Route path="/notiz" element={<Notiz />}></Route>
-                       <Route path="/products" element={<Products />}></Route>
-            <Route path="/todo" element={<Todo />}></Route>
-                    </Routes>
-                    </div>
-                </div>
-            </BrowserRouter>
+  return (
+    <div className="App">
+      <BrowserRouter>
+        <Header />
+        <div className="all">
+          <div className="navo">
+            <Navigtion />
+          </div>
+          <div className="rout">
+            <Routes>
+              <Route path="/" element={<Home />}></Route>
+              <Route path="/kalender" element={<Kalender />}></Route>
+              <Route path="/notiz" element={<Notiz />}></Route>
+              <Route path="/products" element={<Products />}></Route>
+              <Route path="/todo" element={<Todo />}></Route>
+            </Routes>
+          </div>
         </div>
-    );
-
-    }
+      </BrowserRouter>
+    </div>
+  );
+}
 export default App;
