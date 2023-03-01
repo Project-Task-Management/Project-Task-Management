@@ -7,7 +7,7 @@ import Title from "./Title";
 import "./ToDo.scss"
 const ToDo = () => {
     return (
-        <div>
+        <div className="ToDo">
             <Appcontent />
             <AppHeader />
             <Buton />
