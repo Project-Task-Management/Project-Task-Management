@@ -1,5 +1,5 @@
 
-import { GetClasses } from "../../utils/GetClasses";
+
 
 const buttontyp = {
     primary: "primary",
