@@ -33,11 +33,12 @@ export default function Notiz() {
   };
 
   return (
-    <>
-      <h1>Schreiben sie ihr Notizen </h1>
+    <div className="countainer">
+      <h1 className="uberschrift">Schreiben sie ihr Notizen </h1>
 
       <form>
         <input
+          className="input"
           type="text"
           value={headline}
           onChange={headlineChangehandle}
@@ -45,17 +46,20 @@ export default function Notiz() {
         />
 
         <textarea
+          className="textarea"
           type="text"
           value={text}
           onChange={textChangehandle}
           placeholder="Dein Notitzen"
         />
 
-        <button onClick={clickHandler}>Speichern</button>
+        <button className="button" onClick={clickHandler}>
+          Speichern
+        </button>
       </form>
       <div className="border"></div>
 
-      <ol>
+      <ol className="text">
         {notiz.map((elem, i) => (
           <li key={i}>
             <h2>{elem.headline}</h2>
@@ -64,6 +68,6 @@ export default function Notiz() {
           </li>
         ))}
       </ol>
-    </>
+    </div>
   );
 }

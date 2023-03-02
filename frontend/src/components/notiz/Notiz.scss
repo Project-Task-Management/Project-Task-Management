@@ -1,31 +1,35 @@
-div{
-    text-align: center;
-    margin-top: 10px;
+.countainer{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
     
-    
-    h1{
-        color: aquamarine;
+
+    .uberschrift{
+        
+        color: rgb(0, 0, 0);
+    }
+    .input{
+       width: 300px;
+    }
+
+    .textarea{
        
     }
+  
     .border{
        
+        width: 100%;
+        margin: 10px;
         border: 1px solid black;
+
     }
-}
-ol{
-    display: flex;
-    gap: 10px;
-
-
-    li{
-       justify-content: center;
-
-        h1{
-            
-            flex-direction: column;
-        }
-        p{
-            flex-direction: column;
-        }
+    .text{
+       
+        display: flex;
+        gap: 30px;
+        justify-content: space-between;
     }
+
 }
+    
+  
