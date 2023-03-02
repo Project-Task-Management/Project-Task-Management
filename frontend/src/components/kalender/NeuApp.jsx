@@ -5,7 +5,7 @@ import React, { useState } from "react";
 import Datepicker from "react-datepicker";
 import enUS from "date-fns/locale/en-US";
 import moment from "moment";
-import "./neuApp.sass";
+import "./neuApp.scss";
 
 const locales = {
   "en-US": enUS,
