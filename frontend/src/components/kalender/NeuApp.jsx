@@ -5,7 +5,7 @@ import React, { useState } from "react";
 import Datepicker from "react-datepicker";
 
 import moment from "moment";
-import "./neuApp.sass";
+import "./neuApp.scss";
 
 const localizer = momentLocalizer(moment);
 

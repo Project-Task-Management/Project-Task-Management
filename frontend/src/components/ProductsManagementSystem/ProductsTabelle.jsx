@@ -1,145 +1,90 @@
 import "./Products.scss";
-import { useReducer } from "react";
-const initState = {
-  title: "",
-  price: "",
-  taxes: "",
-  ads: "",
-  discount: "",
-  count: "",
-  category: "",
-};
-function reducer(state, action) {
-  switch (action.type) {
-    case "updateTitle":
-      state = {
-        ...state,
-        title: action.payload,
-      };
-      return state;
-    case "updatePrice":
-      state = {
-        ...state,
-        price: action.payload,
-      };
-      return state;
-    case "updateTaxes":
-      state = {
-        ...state,
-        price: action.payload,
-      };
-      return state;
-    case "updateAds":
-      state = {
-        ...state,
-        price: action.payload,
-      };
-      return state;
-    case "updateDiscount":
-      state = {
-        ...state,
-        price: action.payload,
-      };
-      return state;
-  }
-}
+import Create from "./Create.jsx";
+import { useState } from "react";
+
 export default function ProductsTabelle() {
-  const [state, dispatch] = useReducer(reducer, initState);
-  console.log(state);
-  const total = state.price + state.taxes + state.taxes - state.discount;
+  const [data, setData] = useState([]);
+  const [value1, setValue] = useState({
+    title: "",
+    price: "",
+    taxes: "",
+    ads: "",
+    discount: "",
+    count: "",
+    category: "",
+  });
+
+  const handelChange = (e) => {
+    setValue(e.target.value);
+  };
+  const clickHandler = (e) => {
+    const neuData = [...data, value1];
+    setData(neuData);
+    setValue({});
+    console.log(neuData);
+  };
+  const total = +value1.price + +value1.taxes + +value1.ads - +value1.discount;
   return (
     <>
       <div className="products-tabelle">
         <input
+          onChange={handelChange}
           placeholder="Title"
           className="title"
           type="text"
           name="title"
-          value={state.title}
-          onChange={(e) =>
-            dispatch({
-              type: "updateTitle",
-              payload: e.target.value,
-            })
-          }
+          value={value1.title}
         />
         <div className="product-angabe">
           <input
+            onChange={handelChange}
             placeholder="Price"
             type="number"
             name="Price"
-            value={state.price}
-            onChange={(e) =>
-              dispatch({
-                type: "updatePrice",
-                payload: e.target.value,
-              })
-            }
+            value={value1.price}
           />
           <input
+            onChange={handelChange}
+            placeholder="Taxes"
             type="number"
             name="taxes"
-            placeholder="Taxes"
-            value={state.taxes}
-            onChange={(e) =>
-              dispatch({
-                type: "updateTaxes",
-                payload: e.target.value,
-              })
-            }
+            value={value1.taxes}
           />
           <input
+            onChange={handelChange}
             type="number"
             name="ads"
             placeholder="Ads"
-            value={state.ads}
-            onChange={(e) =>
-              dispatch({
-                type: "updateAds",
-                payload: e.target.value,
-              })
-            }
+            value={value1.ads}
           />
           <input
+            onChange={handelChange}
             type="number"
             placeholder="Discount"
             name="discount"
-            value={state.discount}
-            onChange={(e) =>
-              dispatch({
-                type: "updateDiscount",
-                payload: e.target.value,
-              })
-            }
+            value={value1.discount}
           />
           <p className="total">Total:{total}€</p>
         </div>
         <input
-          type="number"
+          onChange={handelChange}
           placeholder="Count"
-          name="count"
-          value={state.count}
-          onChange={(e) =>
-            dispatch({
-              type: "updateCount",
-              payload: e.target.value,
-            })
-          }
+          type="number"
+          name="Count"
+          value={value1.count}
         />
         <input
-          type="name"
+          onChange={handelChange}
+          type="text"
           placeholder="Category"
           name="category"
-          value={state.value}
-          onChange={(e) =>
-            dispatch({
-              type: "updateCategory",
-              payload: e.target.value,
-            })
-          }
+          value={value1.category}
         />
       </div>
-      <button className="create">Create</button>
+      <button onClick={clickHandler}>Create</button>
+      {data.map((e, i) => {
+        <p key={i}>{e.title}</p>;
+      })}
     </>
   );
 }
