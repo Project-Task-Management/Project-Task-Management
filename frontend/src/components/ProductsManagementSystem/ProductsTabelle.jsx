@@ -12,19 +12,32 @@ export default function ProductsTabelle() {
     discount: "",
     count: "",
     category: "",
+    total: 0,
   });
 
   const handelChange = (e) => {
-    setValue({...value,
-      [e.target.name]:e.target.value});
+    const __value = { ...value };
+    __value.total = 
+      +__value.price + +__value.taxes + +__value.ads - +__value.discount;
+    setValue({ ...__value, [e.target.name]: e.target.value });
   };
-  const clickHandler = (e) => {
+
+  const clickHandler = () => {
     const neuData = [...data, value];
+
     setData(neuData);
-    setValue("");
+    setValue({
+      title: "",
+      price: "",
+      taxes: "",
+      ads: "",
+      discount: "",
+      count: "",
+      category: "",
+      total: 0,
+    });
     console.log(neuData);
   };
-  const total = +value.price + +value.taxes + +value.ads - +value.discount;
   return (
     <>
       <div className="products-tabelle">
@@ -65,7 +78,7 @@ export default function ProductsTabelle() {
             name="discount"
             value={value.discount}
           />
-          <p className="total">Total:{total}€</p>
+          <p className="total">Total:{value.total}€</p>
         </div>
         <input
           onChange={handelChange}
@@ -83,9 +96,38 @@ export default function ProductsTabelle() {
         />
       </div>
       <button onClick={clickHandler}>Create</button>
-      {data.map((e, i) => {
-        <p key={i}>{e.title}</p>;
-      })}
+      <table>
+        <thead>
+          <tr>
+            <th>ID</th>
+            <th>TITLE</th>
+            <th>PRICE</th>
+            <th>TAXES</th>
+            <th>ADS</th>
+            <th>DISCOUNT</th>
+            <th>TOTAL</th>
+            <th>COUNT</th>
+            <th>CATEGORY</th>
+          </tr>
+        </thead>
+        {data.map((e, i) => {
+          return (
+            <tbody>
+              <tr>
+                <td>{i + 1}</td>
+                <td>{e.title}</td>
+                <td>{e.price}</td>
+                <td>{e.taxes}</td>
+                <td>{e.ads}</td>
+                <td>{e.discount}</td>
+                <td>{e.total}</td>
+                <td>{e.count}</td>
+                <td>{e.category}</td>
+              </tr>
+            </tbody>
+          );
+        })}
+      </table>
     </>
   );
 }
