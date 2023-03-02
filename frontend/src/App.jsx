@@ -12,6 +12,7 @@ import Registierung from "./components/homepage/Registierung";
 
 function App() {
     return (
+<<<<<<< HEAD
     <div className="App">
       <BrowserRouter>
         <Header />
@@ -29,6 +30,27 @@ function App() {
               <Route path="/registierung" element={<Registierung />}></Route>
             </Routes>
           </div>
+=======
+        <div className="App">
+            <BrowserRouter>
+                <Header />
+                <div className="all">
+                    <div className="navo">
+                    <Navigtion />
+                    </div>
+                    <div className="rout">
+                    <Routes >
+                        <Route path="/" element={<Home />}></Route>
+                        <Route path="/kalender" element={<Kalender />}></Route> 
+                        <Route path="/notiz" element={<Notiz />}></Route>
+                       <Route path="/products" element={<Products />}></Route>
+            <Route path="/todo" element={<Todo />}></Route>
+            <Route path="/registierung" element={<Registierung />}></Route>
+                    </Routes>
+                    </div>
+                </div>
+            </BrowserRouter>
+>>>>>>> muhannad
         </div>
       </BrowserRouter>
     </div>
