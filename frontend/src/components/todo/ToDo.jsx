@@ -1,18 +1,13 @@
 import React from "react";
-import Appcontent from "./Appcontent";
-import AppHeader from "./AppHeader";
-import Buton from "./Buton";
-import TodoModal from "./TodoModal";
-import Title from "./Title";
+import Tasks from "./Tasks";
 import "./ToDo.scss";
+import TodoForm from "./TodoForm";
+
 const ToDo = () => {
     return (
-
         <div className="ToDo">
-            <Title />
-            <AppHeader />
-            <Appcontent />
-            <TodoModal />
+            <TodoForm />
+            <Tasks />
         </div>
     );
 };
