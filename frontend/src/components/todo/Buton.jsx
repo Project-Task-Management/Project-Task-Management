@@ -1,5 +1,5 @@
 
-import { GetClasses } from "../../utils/GetClasses";
+import { GetClasses } from "./utio";
 
 const buttontyp = {
     primary: "primary",
@@ -8,7 +8,7 @@ const buttontyp = {
 
 function Buton({ children, type, variant, ...rest }) {
     return (
-        <button className={GetClasses} type={type === "submit" ? "submit" : "button"} {...rest}>
+        <button className={"GetClasses"} type={type === "submit" ? "submit" : "button"} {...rest}>
             {children}
         </button>
     );

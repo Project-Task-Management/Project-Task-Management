@@ -1,9 +1,10 @@
 import React from "react";
 import { useState } from "react";
-import { CgEyeAlt } from "react-icons/cg";
+import { DiAndroid } from "react-icons/di";
 import Buton from "./Buton";
+import Appcontent from "./Appcontent";
 
-function TodoModal({ modalOpen, setModalOpen }) {
+function TodoModal({ modalOpen, setModalOpen}) {
     const [title, setTitle] = useState("");
     const [Status, setStatus] = useState("Incomplete");
     const [text, setText] = useState([]);
@@ -19,12 +20,15 @@ function TodoModal({ modalOpen, setModalOpen }) {
         e.preventDfault();
         console.log({ title, Status });
     };
+    console.log(text);
     return (
+        <> 
+        { 
         modalOpen && (
             <div className="wrapper">
                 <div className="containerr">
                     <div className="closeButton" onClick={() => setModalOpen(false)} onKeyDown={() => setModalOpen(false)} tabIndex={0} role="Button">
-                        <CgEyeAlt />
+                        <DiAndroid/>
                     </div>
                     <form className="form" onSubmit={(e) => handleSubmit(e)}>
                         <h1 className="formtitle">Add Task</h1>
@@ -47,14 +51,19 @@ function TodoModal({ modalOpen, setModalOpen }) {
                                 Cancel
                             </Buton>
                         </div>
+                        <p>{title}</p>
                     </form>
+                    <Appcontent test={text}/>
                 </div>
-                {text.map((element, index) => {
-                    <p key={index}>{element}</p>;
-                })}
+                
+                
             </div>
-        )
+        )}
+        <Appcontent test={text}/>
+
+        </>
     );
 }
+
 
 export default TodoModal;
