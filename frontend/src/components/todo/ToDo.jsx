@@ -5,7 +5,7 @@ import TodoForm from "./TodoForm";
 
 const ToDo = () => {
     return (
-        <div className="ToDo">
+        <div className="todo-home">
             <TodoForm />
             <Tasks />
         </div>

@@ -33,9 +33,11 @@ function TodoForm() {
     };
 
     return (
-        <div>
+        <div className="todo-home">
+            <h1 className="todo-h1">Todo Liste</h1>
             <form className="form" onSubmit={onSubmitHandler}>
-                <input
+                <input 
+                    className="input-title"
                     type="text"
                     id="title"
                     value={task.title}
@@ -46,7 +48,7 @@ function TodoForm() {
                     // })}
                 />
                 <textarea
-                    className="task"
+                    className="input-title"
                     type="text"
                     id="tasks"
                     value={task.tasks}
