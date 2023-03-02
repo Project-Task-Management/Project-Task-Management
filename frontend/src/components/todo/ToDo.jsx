@@ -4,14 +4,13 @@ import AppHeader from "./AppHeader";
 import Buton from "./Buton";
 import TodoModal from "./TodoModal";
 import Title from "./Title";
-import "./ToDo.scss"
+import "./ToDo.scss";
 const ToDo = () => {
     return (
         <div>
-            <Appcontent />
-            <AppHeader />
-            <Buton />
             <Title />
+            <AppHeader />
+            <Appcontent />
             <TodoModal />
         </div>
     );
