@@ -6,11 +6,19 @@ import Buton from "./Buton";
 function TodoModal({ modalOpen, setModalOpen }) {
     const [title, setTitle] = useState("");
     const [Status, setStatus] = useState("Incomplete");
+    const [text, setText] = useState([]);
+    const clickHandler = (e) => {
+        e.preventDefault();
+        const newText = [...text, title];
+        setText(newText);
+        setTitle("");
+        console.log(newText);
+    };
 
     const handleSubmit = (e) => {
-e.preventDfault()
-console.log({title, Status});
-    }
+        e.preventDfault();
+        console.log({ title, Status });
+    };
     return (
         modalOpen && (
             <div className="wrapper">
@@ -18,7 +26,7 @@ console.log({title, Status});
                     <div className="closeButton" onClick={() => setModalOpen(false)} onKeyDown={() => setModalOpen(false)} tabIndex={0} role="Button">
                         <CgEyeAlt />
                     </div>
-                    <form className="form" onSubmit={(e)=> handleSubmit(e)}>
+                    <form className="form" onSubmit={(e) => handleSubmit(e)}>
                         <h1 className="formtitle">Add Task</h1>
                         <label htmlFor="title">
                             Tiltle
@@ -32,13 +40,18 @@ console.log({title, Status});
                             </select>
                         </label>
                         <div className="buttonContainer">
-                            <Buton type="submit">Add Task</Buton>
+                            <Buton type="submit" onClick={clickHandler}>
+                                Add Task
+                            </Buton>
                             <Buton type="submit" onClick={() => setModalOpen(false)} onkeydown={() => setModalOpen(false)}>
                                 Cancel
                             </Buton>
                         </div>
                     </form>
                 </div>
+                {text.map((element, index) => {
+                    <p key={index}>{element}</p>;
+                })}
             </div>
         )
     );
