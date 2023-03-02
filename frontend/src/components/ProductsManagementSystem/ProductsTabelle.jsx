@@ -4,7 +4,7 @@ import { useState } from "react";
 
 export default function ProductsTabelle() {
   const [data, setData] = useState([]);
-  const [value1, setValue] = useState({
+  const [value, setValue] = useState({
     title: "",
     price: "",
     taxes: "",
@@ -15,15 +15,16 @@ export default function ProductsTabelle() {
   });
 
   const handelChange = (e) => {
-    setValue(e.target.value);
+    setValue({...value,
+      [e.target.name]:e.target.value});
   };
   const clickHandler = (e) => {
-    const neuData = [...data, value1];
+    const neuData = [...data, value];
     setData(neuData);
-    setValue({});
+    setValue("");
     console.log(neuData);
   };
-  const total = +value1.price + +value1.taxes + +value1.ads - +value1.discount;
+  const total = +value.price + +value.taxes + +value.ads - +value.discount;
   return (
     <>
       <div className="products-tabelle">
@@ -33,36 +34,36 @@ export default function ProductsTabelle() {
           className="title"
           type="text"
           name="title"
-          value={value1.title}
+          value={value.title}
         />
         <div className="product-angabe">
           <input
             onChange={handelChange}
             placeholder="Price"
             type="number"
-            name="Price"
-            value={value1.price}
+            name="price"
+            value={value.price}
           />
           <input
             onChange={handelChange}
             placeholder="Taxes"
             type="number"
             name="taxes"
-            value={value1.taxes}
+            value={value.taxes}
           />
           <input
             onChange={handelChange}
             type="number"
             name="ads"
             placeholder="Ads"
-            value={value1.ads}
+            value={value.ads}
           />
           <input
             onChange={handelChange}
             type="number"
             placeholder="Discount"
             name="discount"
-            value={value1.discount}
+            value={value.discount}
           />
           <p className="total">Total:{total}€</p>
         </div>
@@ -70,15 +71,15 @@ export default function ProductsTabelle() {
           onChange={handelChange}
           placeholder="Count"
           type="number"
-          name="Count"
-          value={value1.count}
+          name="count"
+          value={value.count}
         />
         <input
           onChange={handelChange}
           type="text"
           placeholder="Category"
           name="category"
-          value={value1.category}
+          value={value.category}
         />
       </div>
       <button onClick={clickHandler}>Create</button>
