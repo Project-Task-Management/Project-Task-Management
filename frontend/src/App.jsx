@@ -12,10 +12,7 @@ import Registierung from "./components/homepage/Registierung";
 
 function App() {
     return (
-<<<<<<< HEAD
 
-=======
->>>>>>> muhannad
         <div className="App">
             <BrowserRouter>
                 <Header />
@@ -37,11 +34,9 @@ function App() {
             </BrowserRouter>
 
         </div>
-<<<<<<< HEAD
-     
-=======
+
   
->>>>>>> muhannad
+
   );
 
 }
