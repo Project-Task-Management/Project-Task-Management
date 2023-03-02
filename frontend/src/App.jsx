@@ -11,7 +11,7 @@ import Products from "./components/ProductsManagementSystem/Products";
 import Registierung from "./components/homepage/Registierung";
 
 function App() {
-  return (
+    return (
     <div className="App">
       <BrowserRouter>
         <Header />
@@ -33,5 +33,6 @@ function App() {
       </BrowserRouter>
     </div>
   );
+
 }
 export default App;

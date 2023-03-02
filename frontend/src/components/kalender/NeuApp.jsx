@@ -3,13 +3,9 @@ import "react-big-calendar/lib/css/react-big-calendar.css";
 import "react-datepicker/dist/react-datepicker.css";
 import React, { useState } from "react";
 import Datepicker from "react-datepicker";
-import enUS from "date-fns/locale/en-US";
 import moment from "moment";
 import "./neuApp.scss";
 
-const locales = {
-  "en-US": enUS,
-};
 const localizer = momentLocalizer(moment);
 
 const events = [

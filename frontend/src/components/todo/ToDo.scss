@@ -1,4 +1,4 @@
-.title{
+.ToDo .title{
 	display: inline-block;
 	width: 100%;
 	font-family: 'Poppins';
@@ -13,7 +13,7 @@
 	
 }
 
-button {
+.ToDo button {
 	display: inline-block;
 	height: auto;
 	padding: 0.8rem 2rem;
@@ -49,17 +49,17 @@ button {
 
 
 
-html {
+ html {
 	font-size: 10px;
 }
 
-body {
+.ToDo body {
 	font-family: 'Poppins', sans-serif;
 	width: 100%;
 	min-height: 100vh;
 	background-color: var(--bg-1);
 }
-.container {
+.ToDo .container {
 	width: 90%;
 	max-width: 1200px;
 	margin: 0 auto;
@@ -88,13 +88,13 @@ body {
 }
 
 
-.appHeader {
+.ToDo .appHeader {
 	display: flex;
 	align-items: center;
 	justify-content: space-between;
 	height: 60px;
 }
-.wrapper {
+.ToDo .wrapper {
 	position: fixed;
 	
 	top: 0;
@@ -107,7 +107,7 @@ body {
 	justify-content: center;
 	align-items: center;
 }
-.containerr {
+.ToDo .containerr {
 	background-color: var(--bg-2);
 	max-width: 500px;
 	width: 90%;
@@ -119,7 +119,7 @@ body {
 	border-radius: 8px;
 	position: relative;
 }
-.closeButton {
+.ToDo .closeButton {
 	position: absolute;
 	top: -10px;
 	right: 0;
@@ -140,14 +140,14 @@ body {
 		color: white;
 	}
 }
-.formtitle {
+.ToDo .formtitle {
 	color: #25e3c0;
 	font-size: 2rem;
 	font-weight: 600;
 	margin-bottom: 2rem;
 	text-transform: capitalize;
 }
-.form {
+.ToDo .form {
 	width: 100%;
 	label {
 		font-size: 1.6rem;
@@ -165,7 +165,7 @@ body {
 	}
 }
 
-.buttonContainer {
+.ToDo .buttonContainer {
 	display: flex;
 	justify-content: flex-start;
 	align-items: center;
