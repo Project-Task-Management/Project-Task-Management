@@ -1,7 +1,7 @@
 import "./Products.scss";
 import Create from "./Create.jsx";
-import { useState } from "react";
-
+import { useState, useEffect } from "react";
+import Edit from "./Edit.jsx";
 export default function ProductsTabelle() {
   const [data, setData] = useState([]);
   const [value, setValue] = useState({
@@ -12,19 +12,21 @@ export default function ProductsTabelle() {
     discount: "",
     count: "",
     category: "",
-    total: 0,
   });
 
+  let total = +value.price + +value.taxes + +value.ads - +value.discount;
+
   const handelChange = (e) => {
-    const __value = { ...value };
-    __value.total = 
-      +__value.price + +__value.taxes + +__value.ads - +__value.discount;
-    setValue({ ...__value, [e.target.name]: e.target.value });
+    setValue({ ...value, [e.target.name]: e.target.value, total });
   };
 
   const clickHandler = () => {
-    const neuData = [...data, value];
-
+    const newEntry = { ...value, total };
+    const neuData = [...data, newEntry];
+    console.log(neuData);
+    if(value.price===""){
+      return alert("Price bitte eingeben")
+    }else
     setData(neuData);
     setValue({
       title: "",
@@ -34,10 +36,17 @@ export default function ProductsTabelle() {
       discount: "",
       count: "",
       category: "",
-      total: 0,
-    });
+    })
     console.log(neuData);
   };
+
+  const removeHandler = (i) => {
+    const copy = [...data];
+    copy.splice(i, 1);
+    setData(copy);
+    console.log(copy);
+  };
+
   return (
     <>
       <div className="products-tabelle">
@@ -78,7 +87,7 @@ export default function ProductsTabelle() {
             name="discount"
             value={value.discount}
           />
-          <p className="total">Total:{value.total}€</p>
+          <p className="total">Total:{total}€</p>
         </div>
         <input
           onChange={handelChange}
@@ -108,11 +117,13 @@ export default function ProductsTabelle() {
             <th>TOTAL</th>
             <th>COUNT</th>
             <th>CATEGORY</th>
+            <th>UPDATE</th>
+            <th>DELETE</th>
           </tr>
         </thead>
         {data.map((e, i) => {
           return (
-            <tbody>
+            <tbody key={i}>
               <tr>
                 <td>{i + 1}</td>
                 <td>{e.title}</td>
@@ -123,6 +134,12 @@ export default function ProductsTabelle() {
                 <td>{e.total}</td>
                 <td>{e.count}</td>
                 <td>{e.category}</td>
+                <td>
+                  <button>update</button>
+                </td>
+                <td>
+                  <button onClick={removeHandler}>delete</button>
+                </td>
               </tr>
             </tbody>
           );
