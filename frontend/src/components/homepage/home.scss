@@ -1,39 +1,65 @@
-
-
 // Header
-.header{
+.header {
     display: flex;
     flex-direction: row;
     justify-content: space-around;
     padding: 10px;
-    background-color:rgba(0, 0, 0, 0.734);
+    background-color: rgba(0, 0, 0, 0.734);
     align-items: center;
     color: white;
 }
 
-.navigtion{
+.navigtion {
     display: flex;
     flex-direction: column;
     gap: 60px;
-    background-color: #EDE9E3;
+    background-color: #ede9e3;
     text-align: center;
     padding-bottom: 30px;
     padding-top: 30px;
     height: 100vh;
-
 }
 
-.link{
-    
+.link {
     text-decoration: none;
 }
-@media only screen and (max-width: 350px) {
-    .header{
-      color: red;
-      display: flex;
-      flex-direction: column;
-      justify-content: space-around;
-      text-align: center;
-      gap: 20px;
+
+// Home.jsx
+
+.start {
+    color: coral;
+    margin-bottom: 100px;
+}
+.beschreib{
+    display: flex;
+    justify-content: space-around;
+    margin-bottom: 30px;
+
+    .beschreib_h2 {
+        color: rgba(238, 142, 47, 0.791);
+        margin-top: 60px;
     }
-  }
+
+    .beschreib_span{
+           font-family: 'Times New Roman', Times, serif;
+           font-size: 20px;
+    }
+
+    .beschreib_img{
+     width: 300px;
+    // height: 300px;
+    aspect-ratio: 1;
+    border-radius: 50% 50%;
+}
+}
+
+@media only screen and (max-width: 350px) {
+    .header {
+        color: red;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+        text-align: center;
+        gap: 20px;
+    }
+}
