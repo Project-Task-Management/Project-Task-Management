@@ -12,29 +12,29 @@ import Registierung from "./components/homepage/Registierung";
 import { TodoProvider } from "./context/TodoContext";
 
 function App() {
-    return (
-        <TodoProvider>
-            <div className="App">
-                <BrowserRouter>
-                    <Header />
-                    <div className="all">
-                        <div className="navo">
-                            <Navigtion />
-                        </div>
-                        <div className="rout">
-                            <Routes>
-                                <Route path="/" element={<Home />}></Route>
-                                <Route path="/kalender" element={<Kalender />}></Route>
-                                <Route path="/notiz" element={<Notiz />}></Route>
-                                <Route path="/products" element={<Products />}></Route>
-                                <Route path="/todo" element={<Todo />}></Route>
-                                <Route path="/registierung" element={<Registierung />}></Route>
-                            </Routes>
-                        </div>
-                    </div>
-                </BrowserRouter>
+  return (
+    <TodoProvider>
+      <div className="App">
+        <BrowserRouter>
+          <Header />
+          <div className="all">
+            <div className="navo">
+              <Navigtion />
             </div>
-        </TodoProvider>
-    );
+            <div className="rout">
+              <Routes>
+                <Route path="/" element={<Home />}></Route>
+                <Route path="/kalender" element={<Kalender />}></Route>
+                <Route path="/notiz" element={<Notiz />}></Route>
+                <Route path="/products" element={<Products />}></Route>
+                <Route path="/todo" element={<Todo />}></Route>
+                <Route path="/registierung" element={<Registierung />}></Route>
+              </Routes>
+            </div>
+          </div>
+        </BrowserRouter>
+      </div>
+    </TodoProvider>
+  );
 }
 export default App;
