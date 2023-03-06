@@ -1,0 +1,67 @@
+// ToDo.jsx
+.todo-home{
+	background-image:url(https://mdbcdn.b-cdn.net/img/Photos/new-templates/search-box/img4.webp) ;
+	
+}
+
+
+// TodoForm.jsx
+.task{
+	width: 100%;
+	background-color:rgba(78, 79, 80, 0.664) ;
+	border: none;
+	border-radius: 12px;
+
+}
+.form{
+	padding: 20px;
+	
+}
+.todo-home{
+	// background-color: rgba(0, 0, 0, 0.911);
+}
+.input-title {
+	width: 100%;
+	padding: 1rem;
+	border-radius: 0.5rem;
+	color: rgb(105, 71, 71);
+	
+	border: unset;
+	margin: 5px 0px;
+  }
+
+// Task.jsx
+.zeig-task{
+	padding: 20px;
+}
+
+.todo-info{
+	margin-bottom: 10px;
+	display: flex;
+	justify-content: space-between;
+	gap: 20px;
+	border: 1px solid rgb(100, 99, 99);
+	background: white;
+	font-size: 14px;
+	border-radius: 12px;
+	padding: 20px;
+	span{
+	 color: red;
+	 padding-right: 20px;
+	}
+
+}
+
+
+
+.delet-Icon{
+	cursor: pointer;
+	color: red;
+	
+}
+.true-icon{
+	padding-top: 40px;
+}
+.todo-h1{
+color: chocolate;
+}

@@ -1,0 +1,39 @@
+
+
+// Header
+.header{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    padding: 10px;
+    background-color:rgba(0, 0, 0, 0.734);
+    align-items: center;
+    color: white;
+}
+
+.navigtion{
+    display: flex;
+    flex-direction: column;
+    gap: 60px;
+    background-color: #EDE9E3;
+    text-align: center;
+    padding-bottom: 30px;
+    padding-top: 30px;
+    height: 100vh;
+
+}
+
+.link{
+    
+    text-decoration: none;
+}
+@media only screen and (max-width: 350px) {
+    .header{
+      color: red;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-around;
+      text-align: center;
+      gap: 20px;
+    }
+  }
