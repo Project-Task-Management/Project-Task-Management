@@ -1,7 +1,5 @@
 body {
   background-color: #a38f85;
-<<<<<<< HEAD
-=======
 }
 input::-webkit-outer-spin-button,
 input::-webkit-inner-spin-button {
@@ -10,7 +8,6 @@ input::-webkit-inner-spin-button {
 }
 input[type="number"] {
   -moz-appearance: textfield;
->>>>>>> 52efcd1b8495e9b71caacf78e0b78e60752e7e7d
 }
 .input {
   width: 100%;
@@ -45,8 +42,6 @@ input:focus {
         color: white;
       }
     }
-<<<<<<< HEAD
-=======
   }
 }
 button {
@@ -72,20 +67,20 @@ table {
   width: 100%;
   padding: 0 1rem;
 }
-thead , tbody{
+thead,
+tbody {
   width: 100%;
 }
 tr {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  td{
+  td {
     align-items: center;
     width: 100%;
   }
-  th{
+  th {
     width: 100%;
     align-items: center;
->>>>>>> 52efcd1b8495e9b71caacf78e0b78e60752e7e7d
   }
 }
