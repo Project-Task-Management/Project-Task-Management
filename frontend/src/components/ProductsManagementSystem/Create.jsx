@@ -1,12 +1,10 @@
-export default function ({value,
-  total,
-  setValue,
-  setData,
-  data}) {
+import Delete from "./Delete.jsx";
+
+import DeleteAll from "./DeleteAll.jsx";
+export default function ({ value, total, setValue, setData, data }) {
   const clickHandler = () => {
     const newEntry = { ...value, total };
     const neuData = [...data, newEntry];
-    console.log(neuData);
     if (value.price === "") {
       return alert("Price bitte eingeben");
     } else setData(neuData);
@@ -19,20 +17,12 @@ export default function ({value,
       count: "",
       category: "",
     });
-    console.log(neuData);
   };
 
-  const removeHandler = (i) => {
-    const copy = [...data];
-    copy.splice(i, 1);
-    setData(copy);
-    console.log(copy);
-  };
-  const editHandler = (i) => {};
   return (
     <>
       <button onClick={clickHandler}>Create</button>
-
+      {data.length > 0 ? <DeleteAll data={data} setData={setData} /> : ""}
       <table>
         <thead>
           <tr>
@@ -45,7 +35,6 @@ export default function ({value,
             <th>TOTAL</th>
             <th>COUNT</th>
             <th>CATEGORY</th>
-            <th>UPDATE</th>
             <th>DELETE</th>
           </tr>
         </thead>
@@ -54,6 +43,7 @@ export default function ({value,
             <tbody key={i}>
               <tr>
                 <td>{i + 1}</td>
+
                 <td>{e.title}</td>
                 <td>{e.price}</td>
                 <td>{e.taxes}</td>
@@ -62,11 +52,9 @@ export default function ({value,
                 <td>{e.total}</td>
                 <td>{e.count}</td>
                 <td>{e.category}</td>
+
                 <td>
-                  <button onClick={editHandler}>update</button>
-                </td>
-                <td>
-                  <button onClick={removeHandler}>delete</button>
+                  <Delete data={data} setData={setData} />
                 </td>
               </tr>
             </tbody>
