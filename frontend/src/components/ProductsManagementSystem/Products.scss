@@ -67,18 +67,19 @@ table {
   width: 100%;
   padding: 0 1rem;
 }
-thead , tbody{
+thead,
+tbody {
   width: 100%;
 }
 tr {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  td{
+  td {
     align-items: center;
     width: 100%;
   }
-  th{
+  th {
     width: 100%;
     align-items: center;
   }

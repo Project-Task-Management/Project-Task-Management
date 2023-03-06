@@ -10,7 +10,7 @@ const localizer = momentLocalizer(moment);
 
 const events = [
   {
-    title: "Mieting",
+    title: "Meeting",
     allDay: true,
     start: new Date(),
     end: new Date(),

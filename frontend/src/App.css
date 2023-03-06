@@ -1,13 +1,11 @@
-
-.all{
-    display: grid;
-    grid-template-columns: 1fr 4fr;
-    text-align: center;
+.all {
+  display: grid;
+  grid-template-columns: 1fr 5fr;
+  text-align: center;
 }
-.navo{
-    text-align: center;
-
+.navo {
+  text-align: center;
 }
-/* .rout{
+.rout{
     padding-top: 30px;
-} */
+}

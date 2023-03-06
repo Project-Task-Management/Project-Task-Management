@@ -4,12 +4,12 @@ import "./ToDo.scss";
 import TodoForm from "./TodoForm";
 
 const ToDo = () => {
-    return (
-        <div className="todo-home">
-            <TodoForm />
-            <Tasks />
-        </div>
-    );
+  return (
+    <div className="todo-home">
+      <TodoForm />
+      <Tasks />
+    </div>
+  );
 };
 
 export default ToDo;
