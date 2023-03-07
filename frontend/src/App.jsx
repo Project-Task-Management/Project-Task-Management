@@ -10,14 +10,16 @@ import Todo from "./components/todo/ToDo";
 import Products from "./components/ProductsManagementSystem/Products";
 import Registierung from "./components/homepage/Registierung";
 import { TodoProvider } from "./context/TodoContext";
+import Anmeldung from "./components/homepage/Anmeldung";
 
 function App() {
   return (
     <TodoProvider>
-      <div className="App">
+      <div className="app_grid">
         <BrowserRouter>
+          <div className="app_header">
           <Header />
-          <div className="all">
+          </div>
             <div className="navo">
               <Navigtion />
             </div>
@@ -29,8 +31,8 @@ function App() {
                 <Route path="/products" element={<Products />}></Route>
                 <Route path="/todo" element={<Todo />}></Route>
                 <Route path="/registierung" element={<Registierung />}></Route>
+                <Route path="/anmeldung" element={<Anmeldung />}></Route>
               </Routes>
-            </div>
           </div>
         </BrowserRouter>
       </div>

@@ -1,11 +1,35 @@
-.all {
-  display: grid;
-  grid-template-columns: 1fr 5fr;
-  text-align: center;
+.app_grid {
+    display: grid;
+    text-align: center;
+    grid-template-areas:
+        "header header"
+        "navo rout ";
+    grid-template-columns: 1fr 8fr;
+    grid-template-rows: 80px 1fr;
+    max-height: 100vh;
 }
+
 .navo {
-  text-align: center;
+    position: fixed;
+    grid-area: navo;
+    top: 58px;
+    z-index: 2;
 }
-.rout{
-    padding-top: 30px;
+.rout {
+    grid-area: rout;
+    overflow-y: auto;
+
+    width: 100%;
+}
+@media only screen and (max-width: 365px) {
+    .app_grid {
+        grid-template-rows: 190px 2fr;
+    }
+    .navo {
+        position: relative;
+        top: -15px;
+        z-index: 0;
+    }
+}
+@media only screen and (min-width: 351px) and (max-width: 750px) {
 }

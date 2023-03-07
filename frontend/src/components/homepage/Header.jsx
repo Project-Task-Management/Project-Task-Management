@@ -10,10 +10,15 @@ const Header = () => {
             <div>하자 LETSDO</div>
             <div>Logo</div>
             <div>
-            <Link to="/registierung" >
-
-                <Button>Registieren</Button>
-            </Link>
+                <Link to="/registierung">
+                    <Button>Registieren</Button>
+                </Link>
+            </div>
+            <div>
+                {" "}
+                <Link to="/anmeldung">
+                    <Button>Anmeldung</Button>
+                </Link>
             </div>
         </div>
     );

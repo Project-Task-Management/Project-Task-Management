@@ -17,8 +17,8 @@ const Navigtion = () => {
           to="/products"
           title="Products Management System"
         >
-          {" "}
-          PMS{" "}
+       
+          PMS
         </Link>
         <Link className="link" to="/notiz">
           Notiz
