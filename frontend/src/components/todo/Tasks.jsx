@@ -6,7 +6,6 @@ import { MdOutlineDoneOutline } from "react-icons/md";
 function Tasks() {
     const { todos, setTodos } = useContext(TodoContext);
     const [istrue, setIstrue] = useState(false);
-    const done = true;
     const handelDone1 = () => {
         setIstrue(true);
 

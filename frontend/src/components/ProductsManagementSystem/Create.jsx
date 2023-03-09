@@ -66,7 +66,7 @@ export default function ({ value, total, setValue, setData, data }) {
           </tr>
         </thead>
         <tbody>
-          {filteredData.map((e, i) => {
+          {data.map((e, i) => {
             const rows = [];
             for (let index = i; index < e.count; index++) {
               rows.push(
