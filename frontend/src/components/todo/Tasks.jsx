@@ -4,14 +4,20 @@ import { ImBin } from "react-icons/im";
 import { MdOutlineDoneOutline } from "react-icons/md";
 
 function Tasks() {
+    // let donBt = document.querySelector('.Done-bt');
+    // let progBt = document.querySelector('.progressing-bt');
+    // donBt.addEventListener('click', () => donBt.style.backgroundColor = '#337ab7')
+    // progBt.addEventListener('click', () => progBt.style.backgroundColor = '#c9302c')
+
     const { todos, setTodos } = useContext(TodoContext);
     const [istrue, setIstrue] = useState(false);
-    const handelDone1 = () => {
+
+    const handelDone1 = (i) => {
         setIstrue(true);
 
         console.log("hallo");
     };
-    const handelDone2 = () => {
+    const handelDone2 = (i) => {
         setIstrue(false);
 
         console.log("hallo");
@@ -24,27 +30,48 @@ function Tasks() {
     return (
         <div className="zeig-task">
             {todos.map((item, i) => {
+                console.log(todos);
                 return (
                     <div className="todo-info" key={i}>
-                        <div>
-                            <p>
+                        <div className="title-delet">
+                            <div>
+                                <p>
+                                    {" "}
+                                    <span>Title:</span>
+                                    {item.title}
+                                </p>
+                                <p>
+                                    {" "}
+                                    <span>Tasks:</span>
+                                    {item.tasks}
+                                </p>
+                            </div>
+                            <div>
                                 {" "}
-                                <span>Title:</span>
-                                {item.title}
-                            </p>
-                            <p>
-                                {" "}
-                                <span>Tasks:</span>
-                                {item.tasks}
-                            </p>
+                                <ImBin className="delet-Icon" onClick={() => deletTask(item.id)} />
+                            </div>
                         </div>
-                        <div>
-                            <ImBin className="delet-Icon" onClick={() => deletTask(item.id)} />
+                        <div className="icon-button">
                             <div className="true-icon">
                                 {istrue ? (
-                                    <MdOutlineDoneOutline onClick={() => handelDone2(item.id)} style={{ color: "green" }} />
+                                    <button style={{ backgroundColor: "black" }} className="bt-prog" onClick={(e, i) => handelDone1(e, i)}>
+                                        Done
+                                    </button>
                                 ) : (
-                                    <MdOutlineDoneOutline onClick={handelDone1} style={{ color: "black" }} />
+                                    <button style={{ backgroundColor: "red" }} className="bt-prog" onClick={(e, i) => handelDone1(e, i)}>
+                                        Done
+                                    </button>
+                                )}
+                            </div>
+                            <div className="true-icon">
+                                {istrue ? (
+                                    <button className="bt-prog" onClick={() => console.log(istrue)}>
+                                        Progressing
+                                    </button>
+                                ) : (
+                                    <button className="bt-prog" onClick={() => console.log(istrue)}>
+                                        Progressing
+                                    </button>
                                 )}
                             </div>
                         </div>

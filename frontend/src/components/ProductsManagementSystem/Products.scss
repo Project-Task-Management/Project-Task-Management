@@ -6,10 +6,18 @@ input::-webkit-inner-spin-button {
   -webkit-appearance: none;
   margin: 0;
 }
+<<<<<<< HEAD
 input[type="number"] {
   -moz-appearance: textfield;
 }
 input {
+=======
+// input[type="number"] {
+//   -moz-appearance: textfield;
+// }
+.input {
+  width: 100%;
+>>>>>>> Monsif-Todo
   padding: 1rem;
   border-radius: 0.5rem;
   background-color: #cdc6c3;

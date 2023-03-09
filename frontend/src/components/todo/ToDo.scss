@@ -21,7 +21,7 @@
   width: 100%;
   padding: 1rem;
   border-radius: 0.5rem;
-  color: rgb(105, 71, 71);
+  color: black;
 
   border: unset;
   margin: 5px 0px;
@@ -30,22 +30,37 @@
 // Task.jsx
 .zeig-task {
   padding: 20px;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 20px;
+  background-color: rgb(122, 165, 42);
+  border-radius: 10px;
+  
+  
+}
+.title-delet{
+  display: flex;
+  
+  justify-content: space-between;
 }
 
 .todo-info {
   margin-bottom: 10px;
   display: flex;
-  justify-content: space-between;
-  gap: 20px;
-  border: 1px solid rgb(100, 99, 99);
+  flex-direction: column;
+  // justify-content: space-between;
+  text-align: left;
+
+  border: 1px solid rgb(106, 214, 33);
   background: white;
   font-size: 14px;
   border-radius: 12px;
-  padding: 20px;
+  padding: 5px;
 
   span {
     color: red;
     padding-right: 20px;
+    
   }
 }
 
@@ -53,9 +68,45 @@
   cursor: pointer;
   color: red;
 }
-.true-icon {
-  padding-top: 40px;
+
+
+.bt-prog{
+  color: white;
+  width: 100px;
+  padding: 10px;
+  border-radius: 10px;
+  text-align: center;
 }
+.add-bt{
+  background-color: #4CAF50; /* Green */
+  
+  color: white;
+  text-align: center;
+  font-size: 19px;
+
+}
+
 .todo-h1 {
-  color: chocolate;
+  color: rgb(117, 245, 100);
 }
+
+.icon-button{
+  display: flex;
+  justify-content: space-between;
+}
+
+@media only screen and (max-width: 365px) {
+  .zeig-task {
+    grid-template-columns: 1fr; 
+
+  }
+  .bt-prog{
+    
+    font-size: 10px;
+    max-width: 80px;
+    
+    
+    
+  }
+}
+
