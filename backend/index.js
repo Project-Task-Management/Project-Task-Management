@@ -1,14 +1,21 @@
 import dotenv from "dotenv";
 dotenv.config();
-
+import pmsRouter from "./routers/pmsRouter.js"
 import "./lib/mongoose.js";
+
 
 import express from "express";
 const app = express();
 
 const port = process.env.PORT || 4000;
-app.listen(port, () => console.log(`listening on port ${port}`));
+
 
 
 app.use(express.json());
-app.use("/reports",()=>console.log(port));
+app.use("/product",pmsRouter)
+
+
+
+app.listen(port,()=>{
+    console.log(port,"i am on running");
+})
