@@ -56,7 +56,7 @@ export const deleteAllProducts = async (req, res) => {
     console.log(deleteAll);
     res.sendStatus(204);
   } catch (error) {
-    console.error("Error deleting all tasks", error);
+    console.error("Error deleting all product", error);
     res.sendStatus(500);
   }
 };
