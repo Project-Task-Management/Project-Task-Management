@@ -10,8 +10,6 @@ const localizer = momentLocalizer(moment);
 
 const events = [
   {
-    title: "Meeting",
-    allDay: true,
     start: new Date(),
     end: new Date(),
   },
@@ -23,43 +21,51 @@ export default function NeuApp() {
 
   function handleAddEvent() {
     setAllEvents([...allEvents, newEvent]);
+    setNewEvent({ title: "", start: "", end: "" });
+  }
+  function removeHandle(i) {
+    const copy = [...allEvents];
+    copy.splice(i, 1);
+    setAllEvents(copy);
   }
 
   return (
     <div className="neuApp">
-      <h1>Calender</h1>
-      <h2>Aus New Event</h2>
-      <div>
+      <h1 className="kalanderH1">Calender</h1>
+      <h2 className="kalanderH2">Aus New Event</h2>
+      <div className="kalanderAllInput">
         <input
+          className="kalanderInput"
           type="text"
           placeholder="Add Title"
-          style={{ width: "20%", marginRight: "10px" }}
           value={newEvent.title}
           onChange={(e) => setNewEvent({ ...newEvent, title: e.target.value })}
         />
         <Datepicker
+          className="kalanderDate"
           placeholderText="Start Date"
-          style={{ marginRight: "10px" }}
           selected={newEvent.start}
           onChange={(start) => setNewEvent({ ...newEvent, start })}
         />
         <Datepicker
+          className="kalanderDate"
           placeholderText="End Date"
           selected={newEvent.end}
           onChange={(end) => setNewEvent({ ...newEvent, end })}
         />
-        <button style={{ marginTop: "10px" }} onClick={handleAddEvent}>
-          Add Event
-        </button>
 
-        <button onClick={() => setAllEvents("")}>Remove Event</button>
+        <div className="kalanderButton">
+          <button onClick={handleAddEvent}>Add Event</button>
+
+          <button onClick={removeHandle}>Remove Event</button>
+        </div>
       </div>
       <Calendar
         localizer={localizer}
         events={allEvents}
         startAccessor="start"
         endAccessor="end"
-        style={{ height: 500, margin: "50px" }}
+        style={{ height: 550 }}
       />
     </div>
   );
