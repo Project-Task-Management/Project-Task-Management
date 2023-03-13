@@ -1,5 +1,6 @@
 import React from "react";
 import { Button } from "react-bootstrap";
+import { Link } from "react-router-dom";
 
 import "./home.scss";
 
@@ -9,7 +10,15 @@ const Header = () => {
             <div>하자 LETSDO</div>
             <div>Logo</div>
             <div>
-                <Button>Registieren</Button>
+                <Link to="/registierung">
+                    <Button>Registieren</Button>
+                </Link>
+            </div>
+            <div>
+                {" "}
+                <Link to="/anmeldung">
+                    <Button>Anmeldung</Button>
+                </Link>
             </div>
         </div>
     );
