@@ -1,15 +1,11 @@
 import Notiz from "./components/notiz/Notiz.jsx";
+
 function App() {
   return (
-    
     <div className="App">
-      <Notiz/>
-    
+      <Notiz />
     </div>
-
-  )
-  
-
+  );
 }
 
 export default App;

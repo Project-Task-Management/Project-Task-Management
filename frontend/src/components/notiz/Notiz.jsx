@@ -1,7 +1,7 @@
 import { useState } from "react";
 import "./Notiz.scss";
 
-import Button from "./bearbeiten/Button";
+import NozitItem from "./bearbeiten/NozitItem";
 
 export default function Notiz() {
   const [headline, setHeadline] = useState("");
@@ -15,6 +15,13 @@ export default function Notiz() {
     setText("");
     setHeadline("");
     console.log("gespeichert");
+  };
+
+  const onEdit = (update, i) => {
+    const newnotiz = [...notiz];
+    newnotiz[i] = update;
+
+    setNotiz(newnotiz);
   };
 
   const deleteFunction = (i) => {
@@ -35,7 +42,6 @@ export default function Notiz() {
   return (
     <div className="countainer">
       <h1 className="uberschrift">Schreiben sie ihr Notizen </h1>
-
       <form>
         <input
           className="input"
@@ -58,15 +64,18 @@ export default function Notiz() {
         </button>
       </form>
       <div className="border"></div>
-
       <ol className="text">
-        {notiz.map((elem, i) => (
-          <li key={i}>
-            <h2>{elem.headline}</h2>
-            <p>{elem.text}</p>
-            <Button handleDellete={() => deleteFunction(i)} />
-          </li>
-        ))}
+        {notiz.map((elem, i) => {
+          return (
+            <NozitItem
+              elem={elem}
+              i={i}
+              onEdit={onEdit}
+              deleteFunction={deleteFunction}
+              key={i}
+            />
+          );
+        })}
       </ol>
     </div>
   );
