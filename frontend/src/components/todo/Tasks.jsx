@@ -1,18 +1,23 @@
 import React, { useContext, useState } from "react";
 import TodoContext from "../../context/TodoContext";
-import { ImBin } from "react-icons/im";
-import { MdOutlineDoneOutline } from "react-icons/md";
+
+import TaskItem from "./TaskItem";
 
 function Tasks() {
+    // let donBt = document.querySelector('.Done-bt');
+    // let progBt = document.querySelector('.progressing-bt');
+    // donBt.addEventListener('click', () => donBt.style.backgroundColor = '#337ab7')
+    // progBt.addEventListener('click', () => progBt.style.backgroundColor = '#c9302c')
+
     const { todos, setTodos } = useContext(TodoContext);
     const [istrue, setIstrue] = useState(false);
-    const done = true;
-    const handelDone1 = () => {
+
+    const handelDone1 = (i) => {
         setIstrue(true);
 
         console.log("hallo");
     };
-    const handelDone2 = () => {
+    const handelDone2 = (i) => {
         setIstrue(false);
 
         console.log("hallo");
@@ -25,32 +30,10 @@ function Tasks() {
     return (
         <div className="zeig-task">
             {todos.map((item, i) => {
+                console.log(todos);
                 return (
-                    <div className="todo-info" key={i}>
-                        <div>
-                            <p>
-                                {" "}
-                                <span>Title:</span>
-                                {item.title}
-                            </p>
-                            <p>
-                                {" "}
-                                <span>Tasks:</span>
-                                {item.tasks}
-                            </p>
-                        </div>
-                        <div>
-                            <ImBin className="delet-Icon" onClick={() => deletTask(item.id)} />
-                            <div className="true-icon">
-                                {istrue ? (
-                                    <MdOutlineDoneOutline onClick={() => handelDone2(item.id)} style={{ color: "green" }} />
-                                ) : (
-                                    <MdOutlineDoneOutline onClick={handelDone1} style={{ color: "black" }} />
-                                )}
-                            </div>
-                        </div>
-                    </div>
-                );
+                    <TaskItem key={i} item={item} deletTask = {deletTask} i ={i} handelDone1={handelDone1} istrue={istrue} />
+                )
             })}
         </div>
     );

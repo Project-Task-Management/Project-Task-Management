@@ -1,0 +1,26 @@
+.regst{
+    // background-image: url(https://img.freepik.com/vector-premium/ilustracion-vector-plano-concepto-registro-registro-linea-personaje-dibujos-animados-masculino-joven-sentado-junto-gran-telefono-inteligente-e-inicie-sesion-cuenta-aplicacion-redes-sociales-interfaz-usuario-inicio-sesion-seguro_241107-1247.jpg);
+    background-position: top;
+    background-size: contain;
+    height: 100%;
+    background-color: #ffffff;
+    box-shadow: 1px 4px 4px 1px rgba(85, 85, 85, 0.25);
+    border-radius: 15px;
+}
+.input-feld
+{
+    width: 100%;
+    font-size: 1.1em; 
+    padding: 4px;
+    font-family: inherit;
+    font-weight: lighter;
+    border-radius: 0.3em;
+}
+.bt{
+    margin-top: 50px;
+    margin-bottom: 50px;
+}
+.agree{
+    display: flex;
+    justify-content: center;
+}

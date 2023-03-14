@@ -1,0 +1,48 @@
+.neuApp {
+  background-color: #cdc6c3;
+
+  .kalanderH1 {
+    color: black;
+    font-family: "Overpass", sans-serif;
+    letter-spacing: 70px;
+  }
+  .kalanderH2 {
+    color: black;
+    font-family: "Space Mono", monospace;
+    word-spacing: 20px;
+  }
+
+  .kalanderInput {
+    width: 40%;
+    height: 40px;
+    border-radius: 20px;
+    text-align: center;
+    font-size: 20px;
+    font-family: "Space Mono", monospace;
+  }
+  .kalanderDate {
+    width: 40%;
+    height: 40px;
+    border-radius: 20px;
+    text-align: center;
+    font-size: 20px;
+    font-family: "Space Mono", monospace;
+  }
+
+  .kalanderButton {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    button {
+      width: 20%;
+      border-radius: 20px;
+      font-size: 20px;
+      font-family: "Space Mono", monospace;
+    }
+
+    button:hover {
+      background-color: #a38f85;
+      color: #ede9e3;
+    }
+  }
+}

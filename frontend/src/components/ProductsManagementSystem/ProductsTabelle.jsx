@@ -1,5 +1,7 @@
 import "./Products.scss";
+import axios from "axios";
 import Create from "./Create.jsx";
+import { getProducts } from "../../api.js";
 import { useState, useEffect } from "react";
 export default function ProductsTabelle() {
   const [data, setData] = useState([]);
@@ -19,9 +21,12 @@ export default function ProductsTabelle() {
     setValue({ ...value, [e.target.name]: e.target.value, total });
   };
 
-
-
-
+  useEffect(() => {
+    axios
+      .get("http://localhost:7897/product/")
+      .then((res) => setData(res.data));
+      console.log(data);
+  }, []);
 
   return (
     <>
