@@ -1,5 +1,5 @@
 import React, { useContext, useState } from "react";
-import { Button } from "react-bootstrap";
+// import { Button } from "react-bootstrap";
 // import { useForm } from "react-hook-form";
 import TodoContext from "../../context/TodoContext";
 
@@ -42,7 +42,7 @@ function TodoForm() {
                     id="title"
                     value={task.title}
                     onChange={handelChange1}
-                    placeholder="title"
+                    placeholder="Pleas name your task here !"
                     // {...register("title", {
                     //     required: true,
                     // })}
@@ -53,14 +53,15 @@ function TodoForm() {
                     id="tasks"
                     value={task.tasks}
                     onChange={handelChange1}
-                    placeholder="task"
+                    placeholder="Please write your task here !"
                     // {...register("task", {
                     //     required: true,
                     // })}
                 />
-                <Button className="btn" variant="primary" type="submit" value="add">
-                    Addtask
-                </Button>
+                {/* <Button className="add-bt" type="submit" value="add">
+                    Add task
+                </Button> */}
+                <button className="add-bt" type="submit" value="add">Add Task</button>
             </form>
         </div>
     );
