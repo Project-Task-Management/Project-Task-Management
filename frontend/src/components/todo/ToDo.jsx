@@ -1,9 +1,15 @@
-import React, { Component } from 'react'
+import React from "react";
+import Tasks from "./Tasks";
+import "./ToDo.scss";
+import TodoForm from "./TodoForm";
 
-export default class ToDo extends Component {
-  render() {
-    return (
-      <div>ToDo</div>
-    )
-  }
-}
+const ToDo = () => {
+  return (
+    <div className="todo-home">
+      <TodoForm />
+      <Tasks />
+    </div>
+  );
+};
+
+export default ToDo;

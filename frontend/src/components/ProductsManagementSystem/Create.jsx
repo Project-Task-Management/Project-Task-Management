@@ -1,0 +1,108 @@
+import Delete from "./Delete.jsx";
+import { useState, useEffect } from "react";
+import axios from "axios";
+import { getProducts } from "../../api.js";
+import DeleteAll from "./DeleteAll.jsx";
+export default function ({ value, total, setValue, setData, data }) {
+  const [searchInput, setSearchInput] = useState("");
+  const clickHandler = () => {
+    const newEntry = { ...value, total };
+    const neuData = [...data, newEntry];
+    if (value.price < 0 || value.count < 0) {
+      return alert("Price oder Count bitte eingeben");
+    } else {
+      setData(neuData);
+      axios.post("http://localhost:7897/product/", {
+        title: value.title,
+        price: value.price,
+        taxes: value.taxes,
+        ads: value.ads,
+        discount: value.discount,
+        total: value.total,
+        count: value.count,
+        category: value.category,
+      });
+    }
+    setValue({
+      title: "",
+      price: "",
+      taxes: "",
+      ads: "",
+      discount: "",
+      count: "",
+      category: "",
+    });
+  };
+
+  const handleChange = (e) => {
+    e.preventDefault();
+    setSearchInput(e.target.value.toLowerCase());
+  };
+
+  const filteredData = data.filter((el) => {
+    if (searchInput === "") {
+      return el;
+    } else {
+      return el.title.toLowerCase().includes(searchInput);
+    }
+  });
+
+  return (
+    <>
+      <button onClick={clickHandler}>Create</button>
+
+      <input
+        type="text"
+        onChange={handleChange}
+        placeholder="Search"
+        value={searchInput}
+      />
+
+      {data.length > 0 ? <DeleteAll data={data} setData={setData} /> : ""}
+      <table>
+        <thead>
+          <tr>
+            <th>ID</th>
+            <th>TITLE</th>
+            <th>PRICE</th>
+            <th>TAXES</th>
+            <th>ADS</th>
+            <th>DISCOUNT</th>
+            <th>TOTAL</th>
+
+            <th>CATEGORY</th>
+            <th>DELETE</th>
+          </tr>
+        </thead>
+        <tbody>
+          {filteredData.map((e, i) => {
+            console.log(filteredData);
+
+            const rows = [];
+            for (let index = 0; index < e.count; index++) {
+              rows.push(
+                <tr key={i}>
+                  <td>
+                    {i + 1}-{index + 1}
+                  </td>
+                  <td>{e.title}</td>
+                  <td>{e.price}</td>
+                  <td>{e.taxes}</td>
+                  <td>{e.ads}</td>
+                  <td>{e.discount}</td>
+                  <td>{e.total}</td>
+                  <td>{e.category}</td>
+
+                  <td>
+                    <Delete rows={rows} data={data} setData={setData} />
+                  </td>
+                </tr>
+              );
+            }
+            return rows;
+          })}
+        </tbody>
+      </table>
+    </>
+  );
+}

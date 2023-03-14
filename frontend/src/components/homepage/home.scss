@@ -1,0 +1,116 @@
+// Header.jsx
+.header {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    padding: 10px;
+    background-color: rgba(0, 0, 0, 0.924);
+    align-items: center;
+    color: white;
+    position: fixed;
+    width: 100%;
+    z-index: 2;
+}
+
+// Navigition.jsx
+.navigtion {
+    display: flex;
+    flex-direction: column;
+    gap: 60px;
+    background-color: #ede9e3;
+    height: 100vh;
+    padding-top: 20px;
+}
+
+.link {
+    text-decoration: none;
+}
+
+// Home.jsx
+
+.start {
+    color: coral;
+    margin-bottom: 100px;
+}
+.beschreib {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 30px;
+
+    .beschreib_text {
+        padding: 25px;
+    }
+    .beschreib_h2 {
+        color: rgba(238, 142, 47, 0.791);
+        margin-top: 60px;
+    }
+
+    .beschreib_span {
+        font-family: "Times New Roman", Times, serif;
+        font-size: 20px;
+    }
+
+    .beschreib_img {
+        width: 300px;
+        aspect-ratio: 1;
+        border-radius: 50% 50%;
+    }
+}
+
+@media only screen and (max-width: 365px) {
+    .header {
+        color: red;
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+    }
+    .navigtion {
+        font-size: 10px;
+    }
+    .hom {
+        .start {
+            font-size: 10px;
+        }
+        .beschreib {
+            flex-direction: column;
+        }
+        .beschreib_text {
+            padding: 0;
+        }
+        .beschreib_h2 {
+            font-size: 14px;
+        }
+
+        .beschreib_span {
+            font-size: 10px;
+        }
+        .beschreib_img {
+            width: 90px;
+            aspect-ratio: 1;
+            border-radius: 50% 50%;
+        }
+       
+    }
+}
+@media only screen and (min-width: 350px) and (max-width: 750px) {
+    .hom {
+        .start {
+            margin-bottom: 10px;
+            font-size: 18px;
+        }
+
+        .beschreib {
+            flex-direction: column;
+        }
+        .beschreib_h2 {
+            font-size: 18px;
+        }
+
+        .beschreib_span {
+            font-size: 12px;
+        }
+    }
+    .navigtion {
+        font-size: 12px;
+    }
+}

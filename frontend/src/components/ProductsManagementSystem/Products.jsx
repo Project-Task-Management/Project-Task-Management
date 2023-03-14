@@ -1,7 +1,13 @@
-import React from 'react'
+import "./Products.scss";
+import ProductsTabelle from "./ProductsTabelle";
 
 export default function Products() {
+
+
   return (
-    <div>Products</div>
-  )
+    <div className="productsManagement">
+      <h1 className="crud">CRUD</h1>
+     <ProductsTabelle/>
+    </div>
+  );
 }
