@@ -6,7 +6,7 @@ import TodoContext from '../../context/TodoContext';
 function TaskItem( {i,  item, deletTask, handelDone1, istrue }) {
     const {markTodoUsDone} = useContext(TodoContext)
   return (
-    <div className="todo-info"style={{ backgroundColor: item.isDone?"green":"yellow" }}  >
+    <div className="todo-info"style={{ backgroundColor: item.isDone?"green":"white" }}  >
     <div className="title-delet">
         <div>
             <p>
@@ -28,21 +28,19 @@ function TaskItem( {i,  item, deletTask, handelDone1, istrue }) {
     <div className="icon-button">
         <div className="true-icon">
             
-                <button style={{ backgroundColor: item.isDone?"green":"yellow" }} className="bt-prog" onClick={()=> markTodoUsDone(i) }>
+                <button style={{ backgroundColor: item.isDone?"grey":"red" }} className="bt-prog" onClick={()=> markTodoUsDone(i) }>
                     Done
                 </button>
             
         </div>
         <div className="true-icon">
-            {istrue ? (
-                <button className="bt-prog" onClick={() => console.log(istrue)}>
+            
+                <button className="bt-prog" style={{ backgroundColor: item.isDone?"#ff9a3c":"#c50d66" }} >
                     Progressing
                 </button>
-            ) : (
-                <button className="bt-prog" onClick={() => console.log(istrue)}>
-                    Progressing
-                </button>
-            )}
+           
+               
+            
         </div>
     </div>
 </div>
