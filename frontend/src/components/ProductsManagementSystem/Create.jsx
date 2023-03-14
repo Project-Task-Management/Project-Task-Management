@@ -1,19 +1,37 @@
 import Delete from "./Delete.jsx";
-import { useState } from "react";
+import { useState, useEffect } from "react";
+import axios from "axios";
+import { getProducts } from "../../api.js";
 import DeleteAll from "./DeleteAll.jsx";
 export default function ({ value, total, setValue, setData, data }) {
+  const fetchProduct = async () => {
+    const response = await axios.get("http://localhost:7897/product");
+    setData(response.data);
+  };
   const [searchInput, setSearchInput] = useState("");
   const clickHandler = () => {
     const newEntry = { ...value, total };
     const neuData = [...data, newEntry];
-    if (
-      value.price === "" ||
-      value.count === "" ||
-      value.price === 0 ||
-      value.count === 0
-    ) {
+
+    if (value.price < 0 || value.count < 0) {
       return alert("Price oder Count bitte eingeben");
-    } else setData(neuData);
+    } else {
+      setData(neuData);
+      for (let i = 1; i <= value.count; i++) {
+        axios
+          .post("http://localhost:7897/product/", {
+            title: value.title,
+            price: value.price,
+            taxes: value.taxes,
+            ads: value.ads,
+            discount: value.discount,
+            total: value.total,
+            count: value.count,
+            category: value.category,
+          })
+          .then(fetchProduct());
+      }
+    }
     setValue({
       title: "",
       price: "",
@@ -37,7 +55,7 @@ export default function ({ value, total, setValue, setData, data }) {
       return el.title.toLowerCase().includes(searchInput);
     }
   });
-  const calc = () => {};
+
   return (
     <>
       <button onClick={clickHandler}>Create</button>
@@ -53,43 +71,36 @@ export default function ({ value, total, setValue, setData, data }) {
       <table>
         <thead>
           <tr>
-            <th>ID</th>
+            <th>POSITION</th>
             <th>TITLE</th>
             <th>PRICE</th>
             <th>TAXES</th>
             <th>ADS</th>
             <th>DISCOUNT</th>
             <th>TOTAL</th>
-
             <th>CATEGORY</th>
             <th>DELETE</th>
           </tr>
         </thead>
         <tbody>
-          {data.map((e, i) => {
-            const rows = [];
-            for (let index = i; index < e.count; index++) {
-              rows.push(
-                <tr key={i}>
-                  
+          {filteredData.map((e, i) => {
+            console.log(filteredData);
 
-                  <td>{e.title}</td>
-                  <td>{e.price}</td>
-                  <td>{e.taxes}</td>
-                  <td>{e.ads}</td>
-                  <td>{e.discount}</td>
-                  <td>{e.total}</td>
-
-                  <td>{e.category}</td>
-
-                  <td>
-                    <Delete data={data} setData={setData} />
-                  </td>
-
-                </tr>
-              );
-            }
-            return rows;
+            return (
+              <tr key={i}>
+                <td>{i + 1}</td>
+                <td>{e.title}</td>
+                <td>{e.price}</td>
+                <td>{e.taxes}</td>
+                <td>{e.ads}</td>
+                <td>{e.discount}</td>
+                <td>{e.total}</td>
+                <td>{e.category}</td>
+                <td>
+                  <Delete data={e} setData={setData} />
+                </td>
+              </tr>
+            );
           })}
         </tbody>
       </table>
