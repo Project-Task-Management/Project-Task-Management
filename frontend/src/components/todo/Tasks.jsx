@@ -32,7 +32,7 @@ function Tasks() {
             {todos.map((item, i) => {
                 console.log(todos);
                 return (
-                    <TaskItem key={i} item={item} deletTask = {deletTask} handelDone1={handelDone1} istrue={istrue} />
+                    <TaskItem key={i} item={item} deletTask = {deletTask} i ={i} handelDone1={handelDone1} istrue={istrue} />
                 )
             })}
         </div>

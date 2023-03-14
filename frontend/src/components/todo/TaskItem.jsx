@@ -1,10 +1,12 @@
-import React from 'react'
+import React, { useContext } from 'react'
 import { ImBin } from "react-icons/im";
 import { MdOutlineDoneOutline } from "react-icons/md";
+import TodoContext from '../../context/TodoContext';
 
-function TaskItem( {  item, deletTask, handelDone1, istrue }) {
+function TaskItem( {i,  item, deletTask, handelDone1, istrue }) {
+    const {markTodoUsDone} = useContext(TodoContext)
   return (
-    <div className="todo-info" >
+    <div className="todo-info"style={{ backgroundColor: item.isDone?"green":"yellow" }}  >
     <div className="title-delet">
         <div>
             <p>
@@ -25,15 +27,11 @@ function TaskItem( {  item, deletTask, handelDone1, istrue }) {
     </div>
     <div className="icon-button">
         <div className="true-icon">
-            {istrue ? (
-                <button style={{ backgroundColor: "black" }} className="bt-prog" onClick={(e, i) => handelDone1(e, i)}>
+            
+                <button style={{ backgroundColor: item.isDone?"green":"yellow" }} className="bt-prog" onClick={()=> markTodoUsDone(i) }>
                     Done
                 </button>
-            ) : (
-                <button style={{ backgroundColor: "red" }} className="bt-prog" onClick={(e, i) => handelDone1(e, i)}>
-                    Done
-                </button>
-            )}
+            
         </div>
         <div className="true-icon">
             {istrue ? (
