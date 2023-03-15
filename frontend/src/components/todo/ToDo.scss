@@ -33,7 +33,7 @@
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
   gap: 20px;
-  background-color: rgb(122, 165, 42);
+  
   border-radius: 10px;
   
   
@@ -50,8 +50,8 @@
   flex-direction: column;
   // justify-content: space-between;
   text-align: left;
-
-  border: 1px solid rgb(106, 214, 33);
+  box-shadow: rgb(38, 57, 77) 0px 20px 30px -10px;
+  
   background: white;
   font-size: 14px;
   border-radius: 12px;
@@ -64,9 +64,20 @@
   }
 }
 
+.todo-info:hover{
+  border: 3px solid ;
+  
+  & .project-name p {
+    transform: translateY(-10px);
+  }
+  & .icon-wrapper i {
+    transform: translateY(5px);
+  }
+}
+
 .delet-Icon {
   cursor: pointer;
-  color: red;
+  color:#EB5353;
 }
 
 
