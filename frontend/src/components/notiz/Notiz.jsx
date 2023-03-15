@@ -1,5 +1,6 @@
 import { useState } from "react";
 import "./Notiz.scss";
+import axios from "axios";
 
 import NozitItem from "./bearbeiten/NozitItem";
 
@@ -12,10 +13,14 @@ export default function Notiz() {
     e.preventDefault();
     const newNotiz = [...notiz, { headline, text }];
     setNotiz(newNotiz);
+    axios.post("http://localhost:7897/notiz", {
+      headline: headline,
+      text: text,
+    });
     setText("");
     setHeadline("");
-    console.log("gespeichert");
   };
+  console.log(notiz, "hallo");
 
   const onEdit = (update, i) => {
     const newnotiz = [...notiz];
