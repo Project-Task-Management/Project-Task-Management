@@ -1,6 +1,8 @@
 // ToDo.jsx
-.todo-home {
-  background-image: url(https://mdbcdn.b-cdn.net/img/Photos/new-templates/search-box/img4.webp);
+ .todo-home {
+   background-image: url(https://mdbcdn.b-cdn.net/img/Photos/new-templates/search-box/img4.webp);
+
+  background-attachment: fixed;
 }
 
 // TodoForm.jsx
@@ -65,13 +67,13 @@
 }
 
 .todo-info:hover{
-  border: 3px solid ;
+  border: 2px solid #E7B10A;
   
   & .project-name p {
-    transform: translateY(-10px);
+    transform: scale(1);
   }
   & .icon-wrapper i {
-    transform: translateY(5px);
+    transform: scale(1);
   }
 }
 
@@ -120,4 +122,9 @@
     
   }
 }
+
+// .rout{
+//   max-width: 95vw;
+//   max-height: 100vh;
+// }
 
