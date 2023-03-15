@@ -1,12 +1,12 @@
 import { Router } from "express";
-import * as user from "../controller/user.js";
+import * as controller from "../controllers/notizController.js";
 
 const router = Router()
 
-router.get("/", user.getAll);
-router.put("/:id", user.replace);
-router.patch("/:id", user.update);
-router.delete("/:id", user.remove);
-router.post("/", user.create);
+router.get("/", controller.getAll);
+router.put("/:id", controller.replace);
+router.patch("/:id", controller.update);
+router.delete("/:id", controller.remove);
+router.post("/", controller.create);
 
 export default router

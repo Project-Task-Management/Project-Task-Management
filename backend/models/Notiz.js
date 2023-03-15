@@ -1,4 +1,3 @@
-import { text } from "express";
 import mongoose from "mongoose";
 
 const schema = new mongoose.Schema({
@@ -12,13 +11,13 @@ const schema = new mongoose.Schema({
 })
 
 
-const user = mongoose.model("user", schema)
+const Notiz = mongoose.model("Notiz", schema)
 
 
 export const getAll = async () => {
     try{
-        const users = await user.find()
-        return users
+        const notiz = await Notiz.find()
+        return notiz
     }catch(error){
         console.error(error)
     }
@@ -26,8 +25,9 @@ export const getAll = async () => {
 
 
 export const create = async (headline, text) => {
-    const newUsers = new user({headline, text});
+    const newUsers = new Notiz({headline, text});
 
     const result = await newUsers.save();
     return result;
 }
+export default Notiz
