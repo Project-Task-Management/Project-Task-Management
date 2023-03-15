@@ -1,7 +1,7 @@
 import React, { useContext, useState } from "react";
 import TodoContext from "../../context/TodoContext";
-import { ImBin } from "react-icons/im";
-import { MdOutlineDoneOutline } from "react-icons/md";
+
+import TaskItem from "./TaskItem";
 
 function Tasks() {
     // let donBt = document.querySelector('.Done-bt');
@@ -32,51 +32,8 @@ function Tasks() {
             {todos.map((item, i) => {
                 console.log(todos);
                 return (
-                    <div className="todo-info" key={i}>
-                        <div className="title-delet">
-                            <div>
-                                <p>
-                                    {" "}
-                                    <span>Title:</span>
-                                    {item.title}
-                                </p>
-                                <p>
-                                    {" "}
-                                    <span>Tasks:</span>
-                                    {item.tasks}
-                                </p>
-                            </div>
-                            <div>
-                                {" "}
-                                <ImBin className="delet-Icon" onClick={() => deletTask(item.id)} />
-                            </div>
-                        </div>
-                        <div className="icon-button">
-                            <div className="true-icon">
-                                {istrue ? (
-                                    <button style={{ backgroundColor: "black" }} className="bt-prog" onClick={(e, i) => handelDone1(e, i)}>
-                                        Done
-                                    </button>
-                                ) : (
-                                    <button style={{ backgroundColor: "red" }} className="bt-prog" onClick={(e, i) => handelDone1(e, i)}>
-                                        Done
-                                    </button>
-                                )}
-                            </div>
-                            <div className="true-icon">
-                                {istrue ? (
-                                    <button className="bt-prog" onClick={() => console.log(istrue)}>
-                                        Progressing
-                                    </button>
-                                ) : (
-                                    <button className="bt-prog" onClick={() => console.log(istrue)}>
-                                        Progressing
-                                    </button>
-                                )}
-                            </div>
-                        </div>
-                    </div>
-                );
+                    <TaskItem key={i} item={item} deletTask = {deletTask} i ={i} handelDone1={handelDone1} istrue={istrue} />
+                )
             })}
         </div>
     );

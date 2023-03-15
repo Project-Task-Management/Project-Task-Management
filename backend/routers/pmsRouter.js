@@ -6,7 +6,7 @@ router
         .get("/:productId",controller.getProduct)
         .post("/",controller.createProduct)
         .patch("/:productId",controller.updateProduct)
-        
         .delete("/:productId",controller.deleteProduct)
+        .delete("/",controller.deleteAllProducts)
 
 export default router
