@@ -1,7 +1,8 @@
 import { Router } from "express";
-import * as controller from "../controllers/pmsController.js"
-const router = Router()
+import * as controller from "../controllers/pmsController.js";
+const router = Router();
 router
+
         .get("/",controller.getAllProducts)
         .get("/:productId",controller.getProduct)
         .post("/",controller.createProduct)
@@ -9,4 +10,5 @@ router
         .delete("/:productId",controller.deleteProduct)
         .delete("/",controller.deleteAllProducts)
 
-export default router
+
+export default router;

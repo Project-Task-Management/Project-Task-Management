@@ -1,32 +1,29 @@
-// ToDo.jsx
-.todo-home {
-  background-image: url(https://mdbcdn.b-cdn.net/img/Photos/new-templates/search-box/img4.webp);
-}
+// // ToDo.jsx
+// .todo-home {
+//   background-image: url(https://mdbcdn.b-cdn.net/img/Photos/new-templates/search-box/img4.webp);
+// }
 
-// TodoForm.jsx
-.task {
-  width: 100%;
-  background-color: rgba(78, 79, 80, 0.664);
-  border: none;
-  border-radius: 12px;
-}
-.form {
-  padding: 20px;
-}
-.todo-home {
-	
-  // background-color: rgba(0, 0, 0, 0.911);
-}
-.input-title {
-  width: 100%;
-  padding: 1rem;
-  border-radius: 0.5rem;
-  color: black;
+// // TodoForm.jsx
+// .task {
+//   width: 100%;
+//   background-color: rgba(78, 79, 80, 0.664);
+//   border: none;
+//   border-radius: 12px;
+// }
+// .form {
+//   padding: 20px;
+// }
+// .todo-home {
 
-  border: unset;
-  margin: 5px 0px;
-}
+//   // background-color: rgba(0, 0, 0, 0.911);
+// }
+// .input-title {
+//   width: 100%;
+//   padding: 1rem;
+//   border-radius: 0.5rem;
+//   color: black;
 
+<<<<<<< HEAD
 // Task.jsx
 .zeig-task {
   padding: 20px;
@@ -56,68 +53,87 @@
   font-size: 14px;
   border-radius: 12px;
   padding: 5px;
+=======
+//   border: unset;
+//   margin: 5px 0px;
+// }
 
-  span {
-    color: red;
-    padding-right: 20px;
-    
-  }
-}
+// // Task.jsx
+// .zeig-task {
+//   padding: 20px;
+//   display: grid;
+//   grid-template-columns: 1fr 1fr 1fr;
+//   gap: 20px;
+//   background-color: rgb(122, 165, 42);
+//   border-radius: 10px;
 
-.todo-info:hover{
-  border: 3px solid ;
-  
-  & .project-name p {
-    transform: translateY(-10px);
-  }
-  & .icon-wrapper i {
-    transform: translateY(5px);
-  }
-}
+// }
+// .title-delet{
+//   display: flex;
+>>>>>>> c4bbe20c16296ca360e9560415fef4ca6a7f8ee3
 
-.delet-Icon {
-  cursor: pointer;
-  color:#EB5353;
-}
+//   justify-content: space-between;
+// }
 
+// .todo-info {
+//   margin-bottom: 10px;
+//   display: flex;
+//   flex-direction: column;
+//   // justify-content: space-between;
+//   text-align: left;
 
-.bt-prog{
-  color: white;
-  width: 100px;
-  padding: 10px;
-  border-radius: 10px;
-  text-align: center;
-}
-.add-bt{
-  background-color: #4CAF50; /* Green */
-  
-  color: white;
-  text-align: center;
-  font-size: 19px;
+//   border: 1px solid rgb(106, 214, 33);
+//   background: white;
+//   font-size: 14px;
+//   border-radius: 12px;
+//   padding: 5px;
 
-}
+//   span {
+//     color: red;
+//     padding-right: 20px;
 
-.todo-h1 {
-  color: rgb(117, 245, 100);
-}
+//   }
+// }
 
-.icon-button{
-  display: flex;
-  justify-content: space-between;
-}
+// .delet-Icon {
+//   cursor: pointer;
+//   color: red;
+// }
 
-@media only screen and (max-width: 365px) {
-  .zeig-task {
-    grid-template-columns: 1fr; 
+// .bt-prog{
+//   color: white;
+//   width: 100px;
+//   padding: 10px;
+//   border-radius: 10px;
+//   text-align: center;
+// }
+// .add-bt{
+//   background-color: #4CAF50; /* Green */
 
-  }
-  .bt-prog{
-    
-    font-size: 10px;
-    max-width: 80px;
-    
-    
-    
-  }
-}
+//   color: white;
+//   text-align: center;
+//   font-size: 19px;
 
+// }
+
+// .todo-h1 {
+//   color: rgb(117, 245, 100);
+// }
+
+// .icon-button{
+//   display: flex;
+//   justify-content: space-between;
+// }
+
+// @media only screen and (max-width: 365px) {
+//   .zeig-task {
+//     grid-template-columns: 1fr;
+
+//   }
+//   .bt-prog{
+
+//     font-size: 10px;
+//     max-width: 80px;
+
+//   }
+// }
