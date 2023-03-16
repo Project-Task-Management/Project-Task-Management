@@ -34,11 +34,11 @@ export default function ({ value, total, setValue, setData, data }) {
     }
     setValue({
       title: "",
-      price: "",
-      taxes: "",
-      ads: "",
-      discount: "",
-      count: "",
+      price: 0,
+      taxes: 0,
+      ads: 0,
+      discount: 0,
+      count: 0,
       category: "",
     });
   };
