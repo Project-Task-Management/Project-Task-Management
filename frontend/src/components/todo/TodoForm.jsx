@@ -34,7 +34,7 @@ function TodoForm() {
 
     return (
         <div className="todo-home">
-            <h1 className="todo-h1">Todo Liste</h1>
+            <h1 className="todo-h1"> 😀 Todo Liste 😀</h1>
             <form className="form" onSubmit={onSubmitHandler}>
                 <input 
                     className="input-title"
@@ -61,7 +61,7 @@ function TodoForm() {
                 {/* <Button className="add-bt" type="submit" value="add">
                     Add task
                 </Button> */}
-                <button className="add-bt" type="submit" value="add">Add Task</button>
+                <button className="add-btt" type="submit" value="add">Add Task</button>
             </form>
         </div>
     );
