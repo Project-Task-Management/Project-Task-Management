@@ -3,8 +3,12 @@ import { ImBin } from "react-icons/im";
 import { MdOutlineDoneOutline } from "react-icons/md";
 import TodoContext from '../../context/TodoContext';
 
+
+
 function TaskItem( {i,  item, deletTask, handelDone1, istrue }) {
     const {markTodoUsDone} = useContext(TodoContext)
+    const {markTodoIsProg} = useContext(TodoContext)
+
   return (
     <div className="todo-info"style={{ backgroundColor: item.isDone?"#FFFBC1":"white" }}  >
     <div className="title-delet">
@@ -35,7 +39,7 @@ function TaskItem( {i,  item, deletTask, handelDone1, istrue }) {
         </div>
         <div className="true-icon">
             
-                <button className="bt-prog" style={{ backgroundColor: item.isDone?"grey":"rgb(52, 151, 232)" }} >
+                <button className="bt-prog"  onClick={()=> markTodoIsProg (i) } style={{ backgroundColor: item.isProgressing?"#F76E11":"rgb(52, 151, 232)" }}   >
                     Progressing
                 </button>
            

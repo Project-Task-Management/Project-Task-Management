@@ -14,6 +14,14 @@ export const TodoProvider = ({ children }) => {
     };
     console.log(todos);
 
+    const markTodoIsProg = (i) => {
+        const newTodos = [...todos]
+        newTodos[i].isProgressing = !newTodos[i].isProgressing;  //changing color function 
+        setTodos(newTodos);
+    };
+
+
+
     return (
         <TodoContext.Provider
             value={{
@@ -21,6 +29,7 @@ export const TodoProvider = ({ children }) => {
                 setTodos,
                 addTodos,
                 markTodoUsDone, // function hinzufugst
+                markTodoIsProg,
             }}
         >
             {children}

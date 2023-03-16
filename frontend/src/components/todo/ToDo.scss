@@ -1,3 +1,8 @@
+
+  @import url('https://fonts.googleapis.com/css2?family=Inter&family=Kdam+Thmor+Pro&family=Lato&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Work+Sans&display=swap');
+
+
+
 // ToDo.jsx
  .todo-home {
    background-image: url(https://mdbcdn.b-cdn.net/img/Photos/new-templates/search-box/img4.webp);
@@ -62,6 +67,8 @@
   span {
     color: red;
     padding-right: 20px;
+    font-family: 'Kdam Thmor Pro', sans-serif;
+    font-size: medium;
     
   }
 }
@@ -89,6 +96,7 @@
   padding: 10px;
   border-radius: 10px;
   text-align: center;
+  font-size: 15px;
 }
 .add-bt{
   background-color: #4CAF50; /* Green */
