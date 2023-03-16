@@ -1,11 +1,14 @@
 import Delete from "./Delete.jsx";
 import { useState, useEffect } from "react";
 import axios from "axios";
-import { getProducts } from "../../api.js";
 import DeleteAll from "./DeleteAll.jsx";
 export default function ({ value, total, setValue, setData, data }) {
+  useEffect(() => {
+    console.log("fromUseEffect",data);
+  }, [data]);
   const fetchProduct = async () => {
     const response = await axios.get("http://localhost:7897/product");
+    console.log("raponse.data", response.data);
     setData(response.data);
   };
   const [searchInput, setSearchInput] = useState("");
@@ -16,29 +19,34 @@ export default function ({ value, total, setValue, setData, data }) {
     if (value.price < 0 || value.count < 0) {
       return alert("Price oder Count bitte eingeben");
     } else {
-      setData(neuData);
+      const rwos = [];
+      setData(rwos);
       for (let i = 1; i <= value.count; i++) {
-        axios
-          .post("http://localhost:7897/product/", {
-            title: value.title,
-            price: value.price,
-            taxes: value.taxes,
-            ads: value.ads,
-            discount: value.discount,
-            total: value.total,
-            count: value.count,
-            category: value.category,
-          })
-          .then(fetchProduct());
+        const objData = {
+          title: value.title,
+          price: value.price,
+          taxes: value.taxes,
+          ads: value.ads,
+          discount: value.discount,
+          total: value.total,
+          count: value.count,
+          category: value.category,
+        };
+        rwos.push(objData);
       }
+      axios
+        .post("http://localhost:7897/product/", {
+          rwos,
+        })
+        .then(fetchProduct());
     }
     setValue({
       title: "",
-      price: 0,
-      taxes: 0,
-      ads: 0,
-      discount: 0,
-      count: 0,
+      price: "",
+      taxes: "",
+      ads: "",
+      discount: "",
+      count: "",
       category: "",
     });
   };

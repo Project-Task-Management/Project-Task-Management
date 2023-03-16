@@ -1,17 +1,16 @@
 import "./Products.scss";
 import axios from "axios";
 import Create from "./Create.jsx";
-import { getProducts } from "../../api.js";
 import { useState, useEffect } from "react";
 export default function ProductsTabelle() {
   const [data, setData] = useState([]);
   const [value, setValue] = useState({
     title:"",
-    price:0,
-    taxes:0,
-    ads:0,
-    discount:0,
-    count:0,
+    price:"",
+    taxes:"",
+    ads:"",
+    discount:"",
+    count:"",
     category:"",
   });
 

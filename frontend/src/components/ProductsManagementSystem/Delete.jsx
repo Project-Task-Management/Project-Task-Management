@@ -4,6 +4,7 @@ import axios from "axios";
 export default function Delete({ data, setData }) {
   const fetchProduct = async () => {
     const response = await axios.get("http://localhost:7897/product");
+    console.log("delete response",response.data);
     setData(response.data);
   };
   const removeHandler = () => {

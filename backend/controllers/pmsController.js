@@ -17,9 +17,11 @@ export const getProduct = async (req, res, next) => {
   }
 };
 export const createProduct = async (req, res, next) => {
-  const product = new Product(req.body);
+  console.log(req.body);
+  // const product = new Product(req.body);
   try {
-    const created = await product.save();
+    
+    const created = await Product.insertMany(req.body.rwos);
     res.status(201).json(created);
   } catch (error) {
     res.status(500).json({ message: error.message });
