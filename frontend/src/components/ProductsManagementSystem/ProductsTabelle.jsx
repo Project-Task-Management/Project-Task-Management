@@ -6,13 +6,13 @@ import { useState, useEffect } from "react";
 export default function ProductsTabelle() {
   const [data, setData] = useState([]);
   const [value, setValue] = useState({
-    title: "",
-    price: "",
-    taxes: "",
-    ads: "",
-    discount: "",
-    count: "",
-    category: "",
+    title:"",
+    price:0,
+    taxes:0,
+    ads:0,
+    discount:0,
+    count:0,
+    category:"",
   });
 
   let total = +value.price + +value.taxes + +value.ads - +value.discount;
