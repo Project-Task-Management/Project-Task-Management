@@ -10,7 +10,7 @@ function TaskItem( {i,  item, deletTask, handelDone1, istrue }) {
     const {markTodoIsProg} = useContext(TodoContext)
 
   return (
-    <div className="todo-info"style={{ backgroundColor: item.isDone?"#FFFBC1":"white" }}  >
+    <div className="todo-info" style={{ backgroundColor: item.isProgressing?"#E7B10A":"white" }}   >
     <div className="title-delet">
         <div>
             <p>
