@@ -1,6 +1,6 @@
 import React, { useContext } from 'react'
 import { ImBin } from "react-icons/im";
-import { MdOutlineDoneOutline } from "react-icons/md";
+import { GrEdit } from "react-icons/gr";
 import TodoContext from '../../context/TodoContext';
 
 
@@ -26,9 +26,11 @@ function TaskItem( {i,  item, deletTask, handelDone1, istrue }) {
             </p>
             </div>
         </div>
-        <div>
-            {" "}
+        <div className='del-Edi'>
+            {""}
             <ImBin className="delet-Icon" onClick={() => deletTask(item.id)} />
+            <GrEdit className="edi-Icon"/>
+
         </div>
     </div>
     <div className="icon-button">

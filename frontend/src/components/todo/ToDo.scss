@@ -6,14 +6,15 @@
 // ToDo.jsx
  .todo-home {
    background-image: url(https://mdbcdn.b-cdn.net/img/Photos/new-templates/search-box/img4.webp);
-
   background-attachment: fixed;
+  border-radius: 15px;
 }
 
 .text-text{
   font-size: 20px;
   font-weight: bold;
 }
+
 
 // TodoForm.jsx
 .task {
@@ -30,7 +31,10 @@
   width: 100%;
   padding: 1rem;
   border-radius: 0.5rem;
-  color: black;
+  color: rgb(106, 81, 81);
+  background-color: rgba(255, 255, 255, 0.4);
+  box-shadow: rgb(38, 57, 77) 0px 20px 30px -10px;
+  background: rgba(255, 255, 255, 0.406);
 
   border: unset;
   margin: 5px 0px;
@@ -60,14 +64,13 @@
   // justify-content: space-between;
   text-align: left;
   box-shadow: rgb(38, 57, 77) 0px 20px 30px -10px;
-  
   background: rgba(255, 255, 255, 0.406);
   font-size: 14px;
   border-radius: 20px;
   padding: 5px;
 
   span {
-    color: red;
+    color: rgb(103, 60, 60);
     padding-right: 20px;
     font-family: 'Kdam Thmor Pro', sans-serif;
     font-size: medium;
@@ -87,8 +90,21 @@
 }
 
 .delet-Icon {
+  margin-right: 0.5em;
   cursor: pointer;
-  color:#EB5353;
+  color:#309b30;
+  font-size: 35px;
+
+
+}
+.edi-Icon{
+  cursor: pointer;
+  color:#79a679;
+  font-size: 35px;
+
+}
+.del-Edi{
+  margin-right: 0.5em
 }
 
 
@@ -101,12 +117,16 @@
   font-size: 15px;
 }
 .add-btt{
-   width: 10%;
+   width: 20%;
   padding: 20px;
   border-radius: 20px;
-  color: white;
+  color: rgb(80, 23, 23);
   text-align: center;
   font-size: 19px;
+  font-weight: bold;
+  box-shadow: rgb(38, 57, 77) 0px 20px 30px -10px;
+  background: rgba(255, 255, 255, 0.406);
+  background-color: rgba(73, 168, 246, 0.596);
   
 
 }
