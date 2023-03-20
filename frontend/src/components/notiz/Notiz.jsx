@@ -1,7 +1,8 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import "./Notiz.scss";
+import axios from "axios";
 
-import Button from "./bearbeiten/Button";
+import NozitItem from "./bearbeiten/NozitItem";
 
 export default function Notiz() {
   const [headline, setHeadline] = useState("");
@@ -9,19 +10,32 @@ export default function Notiz() {
   const [text, setText] = useState("");
 
   const clickHandler = (e) => {
-    e.preventDefault();
     const newNotiz = [...notiz, { headline, text }];
     setNotiz(newNotiz);
+    axios
+      .post("http://localhost:7897/notiz", {
+        notiz,
+      })
+      .then(fetchNotiz());
     setText("");
     setHeadline("");
-    console.log("gespeichert");
+  };
+  useEffect(() => {
+    axios.get("http://localhost:7897/notiz").then((res) => {
+      setNotiz(res.data);
+    });
+  }, []);
+
+  const fetchNotiz = async () => {
+    const response = await axios.get("http://localhost:7897/notiz");
+    setNotiz(response.data);
   };
 
-  const deleteFunction = (i) => {
-    const neuNotiz = [...notiz];
-    neuNotiz.splice(i, 1);
-    setNotiz(neuNotiz);
-    console.log(i, "gelöcht");
+  const onEdit = (update, i) => {
+    const newnotiz = [...notiz];
+    newnotiz[i] = update;
+
+    setNotiz(newnotiz);
   };
 
   const headlineChangehandle = (e) => {
@@ -34,36 +48,49 @@ export default function Notiz() {
 
   return (
     <>
-      <h1>Schreiben sie ihr Notizen </h1>
-
-      <form>
-        <input
-          type="text"
-          value={headline}
-          onChange={headlineChangehandle}
-          placeholder=" Dein Überschrift "
-        />
-
-        <textarea
-          type="text"
-          value={text}
-          onChange={textChangehandle}
-          placeholder="Dein Notitzen"
-        />
-
-        <button onClick={clickHandler}>Speichern</button>
-      </form>
-      <div className="border"></div>
-
-      <ol>
-        {notiz.map((elem, i) => (
-          <li key={i}>
-            <h2>{elem.headline}</h2>
-            <p>{elem.text}</p>
-            <Button handleDellete={() => deleteFunction(i)} />
-          </li>
-        ))}
-      </ol>
+      <h1 className="uberschrift">Schreiben sie ihr Notizen </h1>
+      <div className="notiz">
+        <div className="form_notiz">
+          <form>
+            <input
+              className="notiz_input"
+              type="text"
+              value={headline}
+              onChange={headlineChangehandle}
+              placeholder=" Dein Überschrift "
+            />
+            <br />
+            <textarea
+              className="notiz_textarea"
+              type="text"
+              value={text}
+              onChange={textChangehandle}
+              placeholder="Dein Notitzen"
+            />
+            <br />
+            <button className="notiz_button" onClick={clickHandler}>
+              Speichern
+            </button>
+          </form>
+        </div>
+        <div className="notiz_item">
+          <ol className="text">
+            {notiz.map((elem, i) => {
+              return (
+                <NozitItem
+                  event={event}
+                  elem={elem}
+                  i={i}
+                  onEdit={onEdit}
+                  key={i}
+                  notiz={notiz}
+                  setNotiz={setNotiz}
+                />
+              );
+            })}
+          </ol>
+        </div>
+      </div>
     </>
   );
 }
