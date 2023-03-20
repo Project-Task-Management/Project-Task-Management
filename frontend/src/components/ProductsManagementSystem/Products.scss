@@ -9,7 +9,7 @@ input::-webkit-inner-spin-button {
 input[type="number"] {
   -moz-appearance: textfield;
 }
-input {
+.inputs {
   width: 100%;
   padding: 1rem;
   border-radius: 0.5rem;
@@ -17,7 +17,7 @@ input {
   border: unset;
   margin: 5px 0px;
 }
-input:focus {
+.inputs:focus {
   outline: unset;
 }
 .productsManagement {
@@ -36,10 +36,10 @@ input:focus {
       gap: 1rem;
       .total {
         width: 40%;
-        background-color: rgba(255, 0, 0, 0.589);
-        padding: 9px;
+       color: red;
+        
         border-radius: 00.5rem;
-        color: white;
+      
       }
     }
   }
@@ -78,9 +78,12 @@ tr {
   td {
     align-items: center;
     width: 100%;
+    background-color: #a7806c;
+    
   }
   th {
     width: 100%;
     align-items: center;
+    background-color: #a38f85;
   }
 }

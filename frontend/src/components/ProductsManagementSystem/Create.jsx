@@ -3,24 +3,26 @@ import { useState, useEffect } from "react";
 import axios from "axios";
 import DeleteAll from "./DeleteAll.jsx";
 export default function ({ value, total, setValue, setData, data }) {
-  useEffect(() => {
-    console.log("fromUseEffect",data);
-  }, [data]);
+  const [searchInput, setSearchInput] = useState("");
+  const filteredData = data.filter((el) => {
+    if (searchInput === "") {
+      return el;
+    } else {
+      return el.title.toLowerCase().includes(searchInput);
+    }
+  });
+
   const fetchProduct = async () => {
     const response = await axios.get("http://localhost:7897/product");
-    console.log("raponse.data", response.data);
+    console.log("1", response.data);
     setData(response.data);
   };
-  const [searchInput, setSearchInput] = useState("");
   const clickHandler = () => {
-    const newEntry = { ...value, total };
-    const neuData = [...data, newEntry];
-
     if (value.price < 0 || value.count < 0) {
       return alert("Price oder Count bitte eingeben");
     } else {
       const rwos = [];
-      setData(rwos);
+
       for (let i = 1; i <= value.count; i++) {
         const objData = {
           title: value.title,
@@ -38,7 +40,7 @@ export default function ({ value, total, setValue, setData, data }) {
         .post("http://localhost:7897/product/", {
           rwos,
         })
-        .then(fetchProduct());
+        .then(fetchProduct);
     }
     setValue({
       title: "",
@@ -49,6 +51,7 @@ export default function ({ value, total, setValue, setData, data }) {
       count: "",
       category: "",
     });
+    console.log("click", filteredData);
   };
 
   const handleChange = (e) => {
@@ -56,19 +59,14 @@ export default function ({ value, total, setValue, setData, data }) {
     setSearchInput(e.target.value.toLowerCase());
   };
 
-  const filteredData = data.filter((el) => {
-    if (searchInput === "") {
-      return el;
-    } else {
-      return el.title.toLowerCase().includes(searchInput);
-    }
-  });
+  console.log({ filteredData, data });
 
   return (
     <>
       <button onClick={clickHandler}>Create</button>
 
       <input
+        className="inputs"
         type="text"
         onChange={handleChange}
         placeholder="Search"
@@ -92,8 +90,6 @@ export default function ({ value, total, setValue, setData, data }) {
         </thead>
         <tbody>
           {filteredData.map((e, i) => {
-            console.log(filteredData);
-
             return (
               <tr key={i}>
                 <td>{i + 1}</td>
