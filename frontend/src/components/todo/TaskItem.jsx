@@ -5,9 +5,12 @@ import TodoContext from '../../context/TodoContext';
 
 
 
+
+
 function TaskItem( {i,  item, deletTask, handelDone1, istrue }) {
     const {markTodoUsDone} = useContext(TodoContext)
     const {markTodoIsProg} = useContext(TodoContext)
+
 
   return (
     <div className="todo-info" style={{ backgroundColor: item.isProgressing?"#E7B10A":"rgba(255, 255, 255, 0.406)" }}   >
