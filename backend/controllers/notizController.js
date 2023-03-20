@@ -1,10 +1,9 @@
-import Notiz from "../models/Notiz.js"
+import * as Notiz from "../models/Notiz.js"
 
-
-export const getAll = async (req, res, next) => {
+export const getAllNotiz = async (req, res, next) => {
     try{
-        const Notizs = await Notiz.getAll();
-        res.status(200).json(Notizs)
+       const result = await Notiz.getAll()
+      res.status(200).json(result)
 
     }catch(error){
         next(error)
@@ -12,10 +11,9 @@ export const getAll = async (req, res, next) => {
 };
 
 export const create = async ( req, res, next) => {
-    const notiz = new Notiz(req.body)
     try{
-        const erstellt = await notiz.save();
-        res.status(201).json(erstellt)
+        const result = await Notiz.create()
+        res.status(201).json(result)
 
     }catch(error){
         next(error)
@@ -23,21 +21,22 @@ export const create = async ( req, res, next) => {
 }
 
 
-export const replace = async (req, res, next) => {
-    try{
-        const Notiz = await Notiz.replace(req.params.NotizId, req.body);
-        res.status(201).json(Notiz)
+// export const replace = async (req, res, next) => {
+//     try{
+//         const notiz = await Notiz.replace(req.params.NotizId, req.body);
+//         res.status(201).json(notiz)
         
-    }catch(error){
-        next(error)
-    }
-};
+//     }catch(error){
+//         next(error)
+//     }
+// };
 
 
 export const remove = async (req, res, next) => {
     try{
-        const Notiz = await Notiz.delete(req.params.NotizId);
-        res.status(204).send(Notiz)
+        const result= await Notiz.deleteOneNotiz(req.params.id)
+        res.status(201).json(result)
+        
 
     }catch(error){
         next(error)
@@ -45,12 +44,12 @@ export const remove = async (req, res, next) => {
 };
 
 
-export const update = (req, res, next) => {
-    try{
-        Notiz.update(req.params.NotizId, req.body);
-        res.status(201).json(Notiz)
+// export const update = (req, res, next) => {
+//     try{
+//         Notiz.update(req.params.NotizId, req.body);
+//         res.status(201).json(Notiz)
 
-    }catch(error){
-        next(error)
-    }
-}
+//     }catch(error){
+//         next(error)
+//     }
+// }

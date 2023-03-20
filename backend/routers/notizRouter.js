@@ -3,9 +3,9 @@ import * as controller from "../controllers/notizController.js";
 
 const router = Router()
 
-router.get("/", controller.getAll);
-router.put("/:id", controller.replace);
-router.patch("/:id", controller.update);
+router.get("/", controller.getAllNotiz);
+// router.put("/:id", controller.replace);
+// router.patch("/:id", controller.update);
 router.delete("/:id", controller.remove);
 router.post("/", controller.create);
 
