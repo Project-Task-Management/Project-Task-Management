@@ -1,28 +1,44 @@
 import dotenv from "dotenv";
 dotenv.config();
+
+import loginRouter from "./routers/loginRouter.js"
 import pmsRouter from "./routers/pmsRouter.js"
 import notizRouter from "./routers/notizRouter.js"
+
+
 import "./lib/mongoose.js";
-import cors from "cors"
-import userRouter from "./routers/userRouter.js"
+
+
+
+import cors from "cors";
+import userRouter from "./routers/userRouter.js";
+import todoRouter from "./routers/todoRouter.js";
+
 
 import express from "express";
 const app = express();
 
 const port = process.env.PORT || 4000;
-app.use(cors())
-
+app.use(cors());
 
 app.use(express.json());
+
 app.use("/product",pmsRouter)
 
 app.use("/notiz",notizRouter)
 
 app.use("/user",userRouter)
+app.use("/login",loginRouter)
 
 
 
 
-app.listen(port,()=>{
-    console.log(port,"i am on running");
-})
+
+app.use("/todo",todoRouter);
+
+
+
+
+app.listen(port, () => {
+    console.log(port, "i am on running");
+});

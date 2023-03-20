@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import "./Notiz.scss";
 import axios from "axios";
 
@@ -10,30 +10,32 @@ export default function Notiz() {
   const [text, setText] = useState("");
 
   const clickHandler = (e) => {
-    e.preventDefault();
     const newNotiz = [...notiz, { headline, text }];
     setNotiz(newNotiz);
-    axios.post("http://localhost:7897/notiz", {
-      headline: headline,
-      text: text,
-    });
+    axios
+      .post("http://localhost:7897/notiz", {
+        notiz,
+      })
+      .then(fetchNotiz());
     setText("");
     setHeadline("");
   };
-  console.log(notiz, "hallo");
+  useEffect(() => {
+    axios.get("http://localhost:7897/notiz").then((res) => {
+      setNotiz(res.data);
+    });
+  }, []);
+
+  const fetchNotiz = async () => {
+    const response = await axios.get("http://localhost:7897/notiz");
+    setNotiz(response.data);
+  };
 
   const onEdit = (update, i) => {
     const newnotiz = [...notiz];
     newnotiz[i] = update;
 
     setNotiz(newnotiz);
-  };
-
-  const deleteFunction = (i) => {
-    const neuNotiz = [...notiz];
-    neuNotiz.splice(i, 1);
-    setNotiz(neuNotiz);
-    console.log(i, "gelöcht");
   };
 
   const headlineChangehandle = (e) => {
@@ -45,43 +47,50 @@ export default function Notiz() {
   };
 
   return (
-    <div className="countainer">
+    <>
       <h1 className="uberschrift">Schreiben sie ihr Notizen </h1>
-      <form>
-        <input
-          className="input"
-          type="text"
-          value={headline}
-          onChange={headlineChangehandle}
-          placeholder=" Dein Überschrift "
-        />
-
-        <textarea
-          className="textarea"
-          type="text"
-          value={text}
-          onChange={textChangehandle}
-          placeholder="Dein Notitzen"
-        />
-
-        <button className="button" onClick={clickHandler}>
-          Speichern
-        </button>
-      </form>
-      <div className="border"></div>
-      <ol className="text">
-        {notiz.map((elem, i) => {
-          return (
-            <NozitItem
-              elem={elem}
-              i={i}
-              onEdit={onEdit}
-              deleteFunction={deleteFunction}
-              key={i}
+      <div className="notiz">
+        <div className="form_notiz">
+          <form>
+            <input
+              className="notiz_input"
+              type="text"
+              value={headline}
+              onChange={headlineChangehandle}
+              placeholder=" Dein Überschrift "
             />
-          );
-        })}
-      </ol>
-    </div>
+            <br />
+            <textarea
+              className="notiz_textarea"
+              type="text"
+              value={text}
+              onChange={textChangehandle}
+              placeholder="Dein Notitzen"
+            />
+            <br />
+            <button className="notiz_button" onClick={clickHandler}>
+              Speichern
+            </button>
+          </form>
+        </div>
+        <div className="notiz_item">
+          <ol className="text">
+            {notiz.map((elem, i) => {
+              return (
+                <NozitItem
+                  event={event}
+                  elem={elem}
+                  i={i}
+                  onEdit={onEdit}
+                  key={i}
+                  notiz={notiz}
+                  setNotiz={setNotiz}
+                />
+              );
+            })}
+          </ol>
+        </div>
+      </div>
+    </>
   );
 }
