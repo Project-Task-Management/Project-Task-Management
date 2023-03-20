@@ -1,53 +1,9 @@
 import Delete from "./Delete.jsx";
 import { useState, useEffect } from "react";
 import axios from "axios";
-import { getProducts } from "../../api.js";
 import DeleteAll from "./DeleteAll.jsx";
 export default function ({ value, total, setValue, setData, data }) {
-  const fetchProduct = async () => {
-    const response = await axios.get("http://localhost:7897/product");
-    setData(response.data);
-  };
   const [searchInput, setSearchInput] = useState("");
-  const clickHandler = () => {
-    const newEntry = { ...value, total };
-    const neuData = [...data, newEntry];
-
-    if (value.price < 0 || value.count < 0) {
-      return alert("Price oder Count bitte eingeben");
-    } else {
-      setData(neuData);
-      for (let i = 1; i <= value.count; i++) {
-        axios
-          .post("http://localhost:7897/product/", {
-            title: value.title,
-            price: value.price,
-            taxes: value.taxes,
-            ads: value.ads,
-            discount: value.discount,
-            total: value.total,
-            count: value.count,
-            category: value.category,
-          })
-          .then(fetchProduct());
-      }
-    }
-    setValue({
-      title: "",
-      price: 0,
-      taxes: 0,
-      ads: 0,
-      discount: 0,
-      count: 0,
-      category: "",
-    });
-  };
-
-  const handleChange = (e) => {
-    e.preventDefault();
-    setSearchInput(e.target.value.toLowerCase());
-  };
-
   const filteredData = data.filter((el) => {
     if (searchInput === "") {
       return el;
@@ -56,11 +12,61 @@ export default function ({ value, total, setValue, setData, data }) {
     }
   });
 
+  const fetchProduct = async () => {
+    const response = await axios.get("http://localhost:7897/product");
+    console.log("1", response.data);
+    setData(response.data);
+  };
+  const clickHandler = () => {
+    if (value.price < 0 || value.count < 0) {
+      return alert("Price oder Count bitte eingeben");
+    } else {
+      const rwos = [];
+
+      for (let i = 1; i <= value.count; i++) {
+        const objData = {
+          title: value.title,
+          price: value.price,
+          taxes: value.taxes,
+          ads: value.ads,
+          discount: value.discount,
+          total: value.total,
+          count: value.count,
+          category: value.category,
+        };
+        rwos.push(objData);
+      }
+      axios
+        .post("http://localhost:7897/product/", {
+          rwos,
+        })
+        .then(fetchProduct);
+    }
+    setValue({
+      title: "",
+      price: "",
+      taxes: "",
+      ads: "",
+      discount: "",
+      count: "",
+      category: "",
+    });
+    console.log("click", filteredData);
+  };
+
+  const handleChange = (e) => {
+    e.preventDefault();
+    setSearchInput(e.target.value.toLowerCase());
+  };
+
+  console.log({ filteredData, data });
+
   return (
     <>
       <button onClick={clickHandler}>Create</button>
 
       <input
+        className="inputs"
         type="text"
         onChange={handleChange}
         placeholder="Search"
@@ -84,8 +90,6 @@ export default function ({ value, total, setValue, setData, data }) {
         </thead>
         <tbody>
           {filteredData.map((e, i) => {
-            console.log(filteredData);
-
             return (
               <tr key={i}>
                 <td>{i + 1}</td>

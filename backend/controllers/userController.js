@@ -18,7 +18,7 @@ export const register = async (req, res) => {
     await user.save();
 
     const token = jwt.sign({ email }, "secret_key");
-
+   
     res.status(201).json({ success: true, token });
   } catch (error) {
     console.error(error);

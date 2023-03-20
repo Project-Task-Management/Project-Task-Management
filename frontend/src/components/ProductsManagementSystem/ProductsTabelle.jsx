@@ -1,18 +1,17 @@
 import "./Products.scss";
 import axios from "axios";
 import Create from "./Create.jsx";
-import { getProducts } from "../../api.js";
 import { useState, useEffect } from "react";
 export default function ProductsTabelle() {
   const [data, setData] = useState([]);
   const [value, setValue] = useState({
-    title:"",
-    price:0,
-    taxes:0,
-    ads:0,
-    discount:0,
-    count:0,
-    category:"",
+    title: "",
+    price: "",
+    taxes: "",
+    ads: "",
+    discount: "",
+    count: "",
+    category: "",
   });
 
   let total = +value.price + +value.taxes + +value.ads - +value.discount;
@@ -25,22 +24,23 @@ export default function ProductsTabelle() {
     axios
       .get("http://localhost:7897/product/")
       .then((res) => setData(res.data));
-      console.log(data);
+    console.log(data);
   }, []);
 
   return (
     <>
       <div className="products-tabelle">
         <input
+          className="inputs"
           onChange={handelChange}
           placeholder="Title"
-          className="title"
           type="text"
           name="title"
           value={value.title}
         />
         <div className="product-angabe">
           <input
+            className="inputs"
             onChange={handelChange}
             placeholder="Price"
             type="number"
@@ -48,6 +48,7 @@ export default function ProductsTabelle() {
             value={value.price}
           />
           <input
+            className="inputs"
             onChange={handelChange}
             placeholder="Taxes"
             type="number"
@@ -55,6 +56,7 @@ export default function ProductsTabelle() {
             value={value.taxes}
           />
           <input
+            className="inputs"
             onChange={handelChange}
             type="number"
             name="ads"
@@ -62,6 +64,7 @@ export default function ProductsTabelle() {
             value={value.ads}
           />
           <input
+            className="inputs"
             onChange={handelChange}
             type="number"
             placeholder="Discount"
@@ -71,6 +74,7 @@ export default function ProductsTabelle() {
           <p className="total">Total:{total}€</p>
         </div>
         <input
+          className="inputs"
           onChange={handelChange}
           placeholder="Count"
           type="number"
@@ -78,6 +82,7 @@ export default function ProductsTabelle() {
           value={value.count}
         />
         <input
+          className="inputs"
           onChange={handelChange}
           type="text"
           placeholder="Category"
