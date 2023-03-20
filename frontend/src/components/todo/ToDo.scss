@@ -66,6 +66,7 @@
   text-align: left;
   box-shadow: rgb(38, 57, 77) 0px 20px 30px -10px;
   background: rgba(255, 255, 255, 0.406);
+  transition: 0.5s;
   font-size: 14px;
   border-radius: 20px;
   padding: 5px;
@@ -80,7 +81,10 @@
 }
 
 .todo-info:hover{
-  border: 2px solid #E7B10A;
+ cursor: pointer;
+ box-shadow: rgb(38, 57, 77) 0px 5px 10px 0px;
+ background: rgba(255, 255, 255, 0.406);
+ 
   
   & .project-name p {
     transform: scale(1);
