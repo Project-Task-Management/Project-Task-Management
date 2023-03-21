@@ -18,13 +18,16 @@ export const getOneTodo=async (req,res)=>{
     }
 }
 export const createTodo=async (req,res)=>{
+    
     const createdTodo=new Todo(req.body)
+    console.log(createdTodo);
     try{
         const todo = await createdTodo.save()
         res.status(201).json(todo)
         console.log("hallo maroco createTodo");
-    }catch{
-
+    }catch(error){
+        console.error(error);
+        res.status(400).send()
     }
 }
 export const updateTodo=async (req,res)=>{
