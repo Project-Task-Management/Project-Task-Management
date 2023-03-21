@@ -15,15 +15,16 @@ import Anmeldung from "./components/homepage/Anmeldung";
 function App() {
   return (
     <TodoProvider>
-      <div className="app_grid">
         <BrowserRouter>
           <div className="app_header">
             <Header />
           </div>
-          <div className="navo">
+      <div className="app_navo-rout">
+
+          <div className="app_navo">
             <Navigtion />
           </div>
-          <div className="rout">
+          <div className="app_rout">
             <Routes>
               <Route path="/" element={<Home />}></Route>
               <Route path="/kalender" element={<Kalender />}></Route>
@@ -34,8 +35,8 @@ function App() {
               <Route path="/anmeldung" element={<Anmeldung />}></Route>
             </Routes>
           </div>
-        </BrowserRouter>
       </div>
+        </BrowserRouter>
     </TodoProvider>
   );
 }
