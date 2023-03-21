@@ -1,1 +1,40 @@
+.notiz{
+    display: grid;
+    grid-template-columns: 1fr ;
+   
+    gap: 30px;
+}
+.form_notiz{
+  
 
+   
+    background-color: #ffffff; 
+    box-shadow: rgba(14, 30, 37, 0.12) 0px 2px 4px 0px, rgba(14, 30, 37, 0.32) 0px 2px 16px 0px;
+    margin-bottom: 30px;
+   
+}
+
+
+.notiz_input{
+    margin-bottom: 10px;
+    width: 300px;
+}
+.notiz_textarea{
+    width: 300px;
+}
+.notiz_item{
+  
+}
+.item{
+    background-color: #ffffff; 
+    box-shadow: rgba(14, 30, 37, 0.12) 0px 2px 4px 0px, rgba(14, 30, 37, 0.32) 0px 2px 16px 0px;
+    margin-bottom: 30px;
+}
+.notizitem{
+    position: relative;
+}
+.notizitem span{
+    position: absolute;
+    left: 10px;
+    top: 5px;
+}

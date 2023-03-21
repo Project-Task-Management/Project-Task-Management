@@ -11,7 +11,7 @@ export default function Edit({ elem, onEdit, i }) {
   };
 
   return (
-    <>
+    <div className="edit_input">
       <input
         type="text"
         name="headline"
@@ -20,6 +20,6 @@ export default function Edit({ elem, onEdit, i }) {
       />
       <textarea value={update.text} name="text" onChange={updateHandler} />
       <button onClick={() => onEdit(update, i)}>update</button>
-    </>
+    </div>
   );
 }

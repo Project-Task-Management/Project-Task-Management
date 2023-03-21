@@ -12,8 +12,9 @@ export const getAllNotiz = async (req, res, next) => {
 
 export const create = async ( req, res, next) => {
     try{
-        const result = await Notiz.create()
+        const result = await Notiz.create(req.body.headline, req.body.text)
         res.status(201).json(result)
+        
 
     }catch(error){
         next(error)

@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import "./Notiz.scss";
 import axios from "axios";
+import { Button } from "react-bootstrap";
 
 import NozitItem from "./bearbeiten/NozitItem";
 
@@ -14,12 +15,14 @@ export default function Notiz() {
     setNotiz(newNotiz);
     axios
       .post("http://localhost:7897/notiz", {
-        notiz,
+        headline: headline,
+        text: text,
       })
-      .then(fetchNotiz());
+      .then(fetchNotiz);
     setText("");
     setHeadline("");
   };
+
   useEffect(() => {
     axios.get("http://localhost:7897/notiz").then((res) => {
       setNotiz(res.data);
@@ -68,27 +71,28 @@ export default function Notiz() {
               placeholder="Dein Notitzen"
             />
             <br />
-            <button className="notiz_button" onClick={clickHandler}>
+            <Button className="notiz_button" onClick={clickHandler}>
               Speichern
-            </button>
+            </Button>
           </form>
         </div>
+
         <div className="notiz_item">
-          <ol className="text">
-            {notiz.map((elem, i) => {
-              return (
+          {notiz.map((elem, i) => {
+            return (
+              <div className="item">
                 <NozitItem
+                  className="nnn"
                   event={event}
                   elem={elem}
                   i={i}
                   onEdit={onEdit}
-                  key={i}
                   notiz={notiz}
                   setNotiz={setNotiz}
                 />
-              );
-            })}
-          </ol>
+              </div>
+            );
+          })}
         </div>
       </div>
     </>
