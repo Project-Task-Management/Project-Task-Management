@@ -1,7 +1,7 @@
 import dotenv from "dotenv";
 dotenv.config();
 
-import loginRouter from "./routers/loginRouter.js"
+
 import pmsRouter from "./routers/pmsRouter.js"
 import notizRouter from "./routers/notizRouter.js"
 

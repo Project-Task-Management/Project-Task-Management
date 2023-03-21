@@ -3,7 +3,7 @@ import TodoContext from "../../context/TodoContext";
 import axios from "axios";
 
 function TodoForm() {
-    const { todos, addTodos } = useContext(TodoContext);
+    const { todos, addTodos, setTodos } = useContext(TodoContext);
     const [task, setTask] = useState({
         title: "",
         tasks: "",
@@ -11,24 +11,35 @@ function TodoForm() {
     console.log("hello", task);
 
     useEffect(() => {
-        axios.get("http://localhost:7897/todo").then((res) => setTask(res.data));
-        console.log(task);
+        axios.get("http://localhost:7897/todo").then((res) => setTodos(res.data));
+        console.log(todos);
     }, []);
 
     const handelChange1 = (e) => {
         setTask({ ...task, [e.target.id]: e.target.value });
     };
 
+    const fetchProduct = async () => {
+        const response = await axios.get("http://localhost:7897/todo");
+        console.log("1", response.data);
+        setTodos(response.data);
+    };
+
     const onSubmitHandler = (e) => {
-        axios.post("http://localhost:7897/todo/", {
-            task,
-        });
+        
         e.preventDefault();
         addTodos(task);
         setTask({
             title: "",
             tasks: "",
         });
+        axios
+            .post("http://localhost:7897/todo", {
+                title:task.title,
+                tasks:task.tasks,
+            })
+
+            .then(fetchProduct);
         console.log("hello", task);
     };
 
