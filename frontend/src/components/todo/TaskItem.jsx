@@ -4,16 +4,33 @@ import { GrEdit } from "react-icons/gr";
 import TodoContext from '../../context/TodoContext';
 
 
+import axios from 'axios';
 
-
-
-function TaskItem( {i,  item, deletTask, handelDone1, istrue }) {
+function TaskItem( {i,  item,  handelDone1, istrue,todos,setTodos }) {
     const {markTodoUsDone} = useContext(TodoContext)
     const {markTodoIsProg} = useContext(TodoContext)
+    const fetchTasks = async () => {
+        const response = await axios.get("http://localhost:7897/todo");
+        console.log("delete response", response.data);
+        setTodos(response.data)
+    };
+    
 
+
+    const deletTask = async() => {
+        console.log(item.title); 
+        const result = await axios.delete(`http:localhost:7897/todo/${item.title}`).then(fetchTasks);
+        
+    }
+     
+    
+    
+        
+    
+    
 
   return (
-    <div className="todo-info" style={{ backgroundColor: item.isProgressing?"#E7B10A":"rgba(255, 255, 255, 0.406)" }}   >
+    <div className="todo-info" style={{ backgroundColor: item.isProgressing?"#E7B10A":"rgba(255, 255, 255, 0.406)", backgroundColor: item.isDone?"#CDE990":"rgba(255, 255, 255, 0.406)"}}   >
     <div className="title-delet">
         <div className='text-text'>
             <div className='text-spans'>  
@@ -31,7 +48,7 @@ function TaskItem( {i,  item, deletTask, handelDone1, istrue }) {
         </div>
         <div className='del-Edi'>
             {""}
-            <ImBin className="delet-Icon" onClick={() => deletTask(item.id)} />
+            <ImBin className="delet-Icon" onClick={deletTask} />
             <GrEdit className="edi-Icon"/>
 
         </div>

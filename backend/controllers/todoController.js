@@ -34,10 +34,12 @@ export const updateTodo=async (req,res)=>{
     console.log("hallo maroco updateTodo");
 }
 export const deleteOneTodo=async (req,res)=>{
+    console.log("hi");
     try{
-        const deletTodo = await Todo.findByIdAndDelete(req.params.id)
+        console.log(req.params.id);
+        const deletTodo = await Todo.findOneAndDelete(req.params.title)
+        console.log(deleteTodo);
         res.send(deletTodo)
-        console.log("hallo maroco deleteOneTodo");
     }catch{
 
     }
