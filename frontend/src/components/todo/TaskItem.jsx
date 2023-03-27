@@ -30,7 +30,8 @@ function TaskItem( {i,  item,  handelDone1, istrue,todos,setTodos }) {
     
 
   return (
-    <div className="todo-info" style={{ backgroundColor: item.isProgressing?"#E7B10A":"rgba(255, 255, 255, 0.406)", backgroundColor: item.isDone?"#CDE990":"rgba(255, 255, 255, 0.406)"}}   >
+    <div className="todo-info" style={{ backgroundColor: item.isProgressing?"#E7B10A":item.isDone?"red" : "rgba(255, 255, 255, 0.406)"}}  >
+          <div className="to"  >
     <div className="title-delet">
         <div className='text-text'>
             <div className='text-spans'>  
@@ -56,20 +57,21 @@ function TaskItem( {i,  item,  handelDone1, istrue,todos,setTodos }) {
     <div className="icon-button">
         <div className="true-icon">
             
-                <button style={{ backgroundColor: item.isDone?"green":"rgb(52, 151, 232)" }} className="bt-prog" onClick={()=> markTodoUsDone(i) }>
+                <button style={{ backgroundColor: item.isDone?"green":"rgb(52, 151, 235)" }} className="bt-prog" onClick={()=> markTodoUsDone(i) }>
                     Done
                 </button>
             
         </div>
         <div className="true-icon">
             
-                <button className="bt-prog"  onClick={()=> markTodoIsProg (i) } style={{ backgroundColor: item.isProgressing?"#F76E11":"rgb(52, 151, 232)" }}   >
+                <button className="bt-prog"  onClick={()=> markTodoIsProg (i) } style={{ backgroundColor: item.isProgressing?"#F76E11":"rgb(56, 151, 232)" }}   >
                     Progressing
                 </button>
            
                
             
         </div>
+    </div>
     </div>
 </div>
   )
