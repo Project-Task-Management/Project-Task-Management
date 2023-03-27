@@ -19,7 +19,7 @@ function TodoForm() {
         setTask({ ...task, [e.target.id]: e.target.value });
     };
 
-    const fetchProduct = async () => {
+    const fetchTasks = async () => {
         const response = await axios.get("http://localhost:7897/todo");
         console.log("1", response.data);
         setTodos(response.data);
@@ -39,13 +39,16 @@ function TodoForm() {
                 tasks:task.tasks,
             })
 
-            .then(fetchProduct);
+            .then(fetchTasks);
         console.log("hello", task);
     };
 
     return (
         <div className="todo-home">
             <h1 className="todo-h1"> 😀 Todo Liste 😀</h1>
+            <h2 className="todo-h2" img > text left</h2>
+            {/* <img className="todo-img" src="https://imageio.forbes.com/specials-images/dam/imageserve/1092571024/0x0.jpg?format=jpg&width=1200" alt="" /> */}
+
             <form className="form" onSubmit={onSubmitHandler}>
                 <input className="input-title" type="text" id="title" value={task.title} onChange={handelChange1} placeholder="Pleas name your task here !" />
                 <textarea

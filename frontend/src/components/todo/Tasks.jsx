@@ -1,6 +1,6 @@
 import React, { useContext, useState } from "react";
 import TodoContext from "../../context/TodoContext";
-
+import axios from "axios";
 import TaskItem from "./TaskItem";
 
 function Tasks() {
@@ -17,16 +17,12 @@ function Tasks() {
 
         console.log("hallo");
     };
-    const deletTask = (i) => {
-        const newTodos = [...todos];
-        newTodos.splice(i, 1);
-        setTodos(newTodos);
-    };
+
     return (
         <div className="zeig-task">
             {todos.map((item, i) => {
                 console.log(todos);
-                return <TaskItem key={i} item={item} deletTask={deletTask} i={i} handelDone1={handelDone1} istrue={istrue} />;
+                return <TaskItem key={i} item={item} todos={todos} setTodos={setTodos} i={i} handelDone1={handelDone1} istrue={istrue} />;
             })}
         </div>
     );
