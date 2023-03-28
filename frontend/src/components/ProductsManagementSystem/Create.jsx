@@ -30,6 +30,7 @@ export default function ({ value, total, setValue, setData, data }) {
           title: value.title,
           price: value.price,
           taxes: value.taxes,
+          
           ads: value.ads,
           discount: value.discount,
           total: value.total,
