@@ -26,7 +26,9 @@
     "reactjs-localizer": "^1.1.0",
     "recoil": "^0.7.6",
     "sacc": "^0.0.1",
-    "sass": "^1.58.3"
+    "sass": "^1.58.3",
+    "shortid": "^2.2.16",
+    "uuid": "^9.0.0"
   },
   "devDependencies": {
     "@types/react": "^18.0.27",
