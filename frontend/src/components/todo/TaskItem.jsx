@@ -17,9 +17,9 @@ function TaskItem( {i,  item,  handelDone1, istrue,todos,setTodos }) {
     
 
 
-    const deletTask = async() => {
-        console.log(item.title); 
-        const result = await axios.delete(`http:localhost:7897/todo/${item.title}`).then(fetchTasks);
+    const deletTask = () => {
+    
+        axios.delete(`http://localhost:7897/todo/${item._id}`).then(fetchTasks);
         
     }
      
