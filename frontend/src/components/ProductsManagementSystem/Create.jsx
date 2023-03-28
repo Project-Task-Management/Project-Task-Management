@@ -65,7 +65,7 @@ export default function ({ value, total, setValue, setData, data }) {
 
   return (
     <>
-      <button onClick={clickHandler}>Create</button>
+      <button className="create_btn" onClick={clickHandler}>Create</button>
 
       <input
         className="inputs"

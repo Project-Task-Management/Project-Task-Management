@@ -14,5 +14,5 @@ export default function DeleteAll({ data, setData }) {
     .delete(`http://localhost:7897/product/`)
     .then(() => fetchProduct());
   };
-  return <button onClick={deleteAll}>Delete All</button>;
+  return <button className="deleteAll_btn" onClick={deleteAll}>Delete All</button>;
 }
