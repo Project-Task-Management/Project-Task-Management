@@ -20,16 +20,30 @@ const port = process.env.PORT || 4000;
 app.use(cors());
 app.use(express.json());
 
-app.use("/login", loginRouter);
 
-app.use("/product", pmsRouter);
 
 app.use("/kalander", kalanderRouter);
-app.use("/user", userRouter);
 
-app.use("/login", loginRouter);
 
 app.use("/todo", todoRouter);
+
+
+app.use("/product",pmsRouter)
+
+app.use("/notiz",notizRouter)
+
+app.use("/user",userRouter)
+app.use("/login",loginRouter)
+
+
+
+
+
+
+
+
+
+
 
 app.listen(port, () => {
   console.log(port, "i am on running");

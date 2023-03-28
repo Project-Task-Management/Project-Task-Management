@@ -6,12 +6,12 @@ export default function Edit({ elem, onEdit, i }) {
 
   const updateHandler = (e) => {
     const newupdate = { ...update, [e.target.name]: e.target.value };
-
+    axios.patch(`http://localhost:7897/notiz/ ${elem._id}`);
     setUpdate(newupdate);
   };
 
   return (
-    <>
+    <div className="edit_input">
       <input
         type="text"
         name="headline"
@@ -20,6 +20,6 @@ export default function Edit({ elem, onEdit, i }) {
       />
       <textarea value={update.text} name="text" onChange={updateHandler} />
       <button onClick={() => onEdit(update, i)}>update</button>
-    </>
+    </div>
   );
 }
