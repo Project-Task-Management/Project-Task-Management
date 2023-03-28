@@ -4,6 +4,7 @@ import axios from "axios";
 import DeleteAll from "./DeleteAll.jsx";
 export default function ({ value, total, setValue, setData, data }) {
   const [searchInput, setSearchInput] = useState("");
+
   const filteredData = data.filter((el) => {
     if (searchInput === "") {
       return el;
@@ -54,6 +55,7 @@ export default function ({ value, total, setValue, setData, data }) {
     console.log("click", filteredData);
   };
 
+
   const handleChange = (e) => {
     e.preventDefault();
     setSearchInput(e.target.value.toLowerCase());
@@ -86,25 +88,30 @@ export default function ({ value, total, setValue, setData, data }) {
             <th>TOTAL</th>
             <th>CATEGORY</th>
             <th>DELETE</th>
+        
           </tr>
         </thead>
         <tbody>
           {filteredData.map((e, i) => {
-            return (
-              <tr key={i}>
+            console.log(+e.total);
+   return         <tr key={i}>
+           
+              <>
                 <td>{i + 1}</td>
                 <td>{e.title}</td>
                 <td>{e.price}</td>
                 <td>{e.taxes}</td>
                 <td>{e.ads}</td>
                 <td>{e.discount}</td>
-                <td>{e.total}</td>
+                <td >{e.total}</td>
                 <td>{e.category}</td>
                 <td>
                   <Delete data={e} setData={setData} />
                 </td>
-              </tr>
-            );
+                
+              </>
+              
+            </tr>;
           })}
         </tbody>
       </table>

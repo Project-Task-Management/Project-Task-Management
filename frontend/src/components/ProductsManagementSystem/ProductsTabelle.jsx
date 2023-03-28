@@ -71,7 +71,7 @@ export default function ProductsTabelle() {
             name="discount"
             value={value.discount}
           />
-          <p className="total">Total:{total}€</p>
+          <p className={value.price>0?"totalmore":"total"}>Total:{total}€</p>
         </div>
         <input
           className="inputs"
@@ -89,7 +89,6 @@ export default function ProductsTabelle() {
           name="category"
           value={value.category}
         />
-      </div>
 
       <Create
         value={value}
@@ -97,7 +96,8 @@ export default function ProductsTabelle() {
         total={total}
         data={data}
         setData={setData}
-      />
+        />
+        </div>
     </>
   );
 }
