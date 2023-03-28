@@ -3,7 +3,7 @@ import TodoContext from "../../context/TodoContext";
 import axios from "axios";
 
 function TodoForm() {
-    const { todos, addTodos } = useContext(TodoContext);
+    const { todos, addTodos, setTodos } = useContext(TodoContext);
     const [task, setTask] = useState({
         title: "",
         tasks: "",
@@ -11,30 +11,44 @@ function TodoForm() {
     console.log("hello", task);
 
     useEffect(() => {
-        axios.get("http://localhost:7897/todo").then((res) => setTask(res.data));
-        console.log(task);
+        axios.get("http://localhost:7897/todo").then((res) => setTodos(res.data));
+        console.log(todos);
     }, []);
 
     const handelChange1 = (e) => {
         setTask({ ...task, [e.target.id]: e.target.value });
     };
 
+    const fetchTasks = async () => {
+        const response = await axios.get("http://localhost:7897/todo");
+        console.log("1", response.data);
+        setTodos(response.data);
+    };
+
     const onSubmitHandler = (e) => {
-        axios.post("http://localhost:7897/todo/", {
-            task,
-        });
+        
         e.preventDefault();
         addTodos(task);
         setTask({
             title: "",
             tasks: "",
         });
+        axios
+            .post("http://localhost:7897/todo", {
+                title:task.title,
+                tasks:task.tasks,
+            })
+
+            .then(fetchTasks);
         console.log("hello", task);
     };
 
     return (
         <div className="todo-home">
             <h1 className="todo-h1"> 😀 Todo Liste 😀</h1>
+            <h2 className="todo-h2" img > text left</h2>
+            {/* <img className="todo-img" src="https://imageio.forbes.com/specials-images/dam/imageserve/1092571024/0x0.jpg?format=jpg&width=1200" alt="" /> */}
+
             <form className="form" onSubmit={onSubmitHandler}>
                 <input className="input-title" type="text" id="title" value={task.title} onChange={handelChange1} placeholder="Pleas name your task here !" />
                 <textarea

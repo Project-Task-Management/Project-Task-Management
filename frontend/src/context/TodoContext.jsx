@@ -1,3 +1,4 @@
+import axios from "axios";
 import React, { createContext, useState } from "react";
 const TodoContext = createContext();
 export const TodoProvider = ({ children }) => {
@@ -9,14 +10,19 @@ export const TodoProvider = ({ children }) => {
     };
     const markTodoUsDone = (i) => {
         const newTodos = [...todos]
-        newTodos[i].isDone = !newTodos[i].isDone;  //changing color function 
+        newTodos[i].isDone = true
+        newTodos[i].isProgressing = false  //changing color function 
+
+        axios.put(`http://localhost:7897/todo/${newTodos[i]._id}`)
         setTodos(newTodos);
+
     };
     console.log(todos);
 
     const markTodoIsProg = (i) => {
         const newTodos = [...todos]
-        newTodos[i].isProgressing = !newTodos[i].isProgressing;  //changing color function 
+        newTodos[i].isProgressing = true;
+        newTodos[i].isDone = false  //changing color function 
         setTodos(newTodos);
     };
 

@@ -4,7 +4,7 @@ const schema = mongoose.Schema({
         type:String,
         required:true,
     },
-    task:{
+    tasks:{
         type:String,
         required:true,
     }

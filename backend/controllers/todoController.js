@@ -18,23 +18,33 @@ export const getOneTodo=async (req,res)=>{
     }
 }
 export const createTodo=async (req,res)=>{
+    
     const createdTodo=new Todo(req.body)
+    console.log(createdTodo);
     try{
         const todo = await createdTodo.save()
         res.status(201).json(todo)
         console.log("hallo maroco createTodo");
-    }catch{
-
+    }catch(error){
+        console.error(error);
+        res.status(400).send()
     }
 }
 export const updateTodo=async (req,res)=>{
-    console.log("hallo maroco updateTodo");
+   try{
+    const updateTodo =await Todo.findOneAndUpdate(req.params.id)
+        res.status(200).json(updateTodo)
+   }catch(error){
+    res.status(404).json(error)
+   }
 }
 export const deleteOneTodo=async (req,res)=>{
+    console.log("hi");
     try{
-        const deletTodo = await Todo.findByIdAndDelete(req.params.id)
+        console.log(req.params.id);
+        const deletTodo = await Todo.findOneAndDelete(req.params.title)
+        console.log(deleteTodo);
         res.send(deletTodo)
-        console.log("hallo maroco deleteOneTodo");
     }catch{
 
     }
