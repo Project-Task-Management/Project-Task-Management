@@ -6,7 +6,8 @@
 
 .notiz{
     width: 100%;
-    height: 100vh;
+    display: flex;
+    flex-direction: row-reverse;
     
  
     .notiz-countainer{
@@ -60,8 +61,15 @@
             }
         }
     }
-
-
-  
 }
 
+
+.notiz_item{
+    border: 2px solid#000;
+    width: 60%;
+
+}
+
+.notizitem{
+    border-top: 1px solid black ;
+}
