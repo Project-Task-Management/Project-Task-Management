@@ -2,13 +2,18 @@ import { useState, useEffect } from "react";
 import "./Notiz.scss";
 import axios from "axios";
 import { Button } from "react-bootstrap";
-
+import { GrAdd } from "react-icons/gr";
 import NozitItem from "./bearbeiten/NozitItem";
 
 export default function Notiz() {
   const [headline, setHeadline] = useState("");
   const [notiz, setNotiz] = useState([]);
   const [text, setText] = useState("");
+  const [show, setShow] = useState(true);
+
+  const showhandler = () => {
+    setShow(false);
+  };
 
   const clickHandler = (e) => {
     const newNotiz = [...notiz, { headline, text }];
@@ -21,6 +26,7 @@ export default function Notiz() {
       .then(fetchNotiz);
     setText("");
     setHeadline("");
+    setShow(true);
   };
 
   useEffect(() => {
@@ -53,29 +59,35 @@ export default function Notiz() {
     <>
       <h1 className="uberschrift">Schreiben sie ihr Notizen </h1>
       <div className="notiz">
-        <div className="form_notiz">
-          <form>
-            <input
-              className="notiz_input"
-              type="text"
-              value={headline}
-              onChange={headlineChangehandle}
-              placeholder=" Dein Überschrift "
-            />
-            <br />
-            <textarea
-              className="notiz_textarea"
-              type="text"
-              value={text}
-              onChange={textChangehandle}
-              placeholder="Dein Notitzen"
-            />
-            <br />
-            <Button className="notiz_button" onClick={clickHandler}>
-              Speichern
-            </Button>
-          </form>
-        </div>
+        <form className="notiz-countainer">
+          {show ? (
+            <div className="notiz-plus">
+              <GrAdd className="plus" onClick={showhandler} />
+            </div>
+          ) : (
+            <div className="notiz-form">
+              <input
+                className="notiz_input"
+                type="text"
+                value={headline}
+                onChange={headlineChangehandle}
+                placeholder=" Dein Überschrift "
+              />
+              <br />
+              <textarea
+                className="notiz_textarea"
+                type="text"
+                value={text}
+                onChange={textChangehandle}
+                placeholder="Dein Notitzen"
+              />
+              <br />
+              <Button className="notiz_button" onClick={clickHandler}>
+                Speichern
+              </Button>
+            </div>
+          )}
+        </form>
 
         <div className="notiz_item">
           {notiz.map((elem, i) => {

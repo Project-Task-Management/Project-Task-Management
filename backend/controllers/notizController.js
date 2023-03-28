@@ -22,17 +22,6 @@ export const create = async ( req, res, next) => {
 }
 
 
-// export const replace = async (req, res, next) => {
-//     try{
-//         const notiz = await Notiz.replace(req.params.NotizId, req.body);
-//         res.status(201).json(notiz)
-        
-//     }catch(error){
-//         next(error)
-//     }
-// };
-
-
 export const remove = async (req, res, next) => {
     try{
         const result= await Notiz.deleteOneNotiz(req.params.id)
@@ -44,13 +33,15 @@ export const remove = async (req, res, next) => {
     }
 };
 
-
-// export const update = (req, res, next) => {
-//     try{
-//         Notiz.update(req.params.NotizId, req.body);
-//         res.status(201).json(Notiz)
-
-//     }catch(error){
-//         next(error)
-//     }
-// }
+export const update = async (req, res, next) => {
+    try{
+        const notizupdate = await Notiz.replace(
+            {_id: req.params.id},
+            {$set: req.body}
+        );
+        console.log(notizupdate);
+        res.status(200).json(notizupdate)
+    }catch(error){
+        next(error)
+    }
+}

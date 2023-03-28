@@ -1,8 +1,10 @@
 import React from "react";
 import Edit from "../Edit";
 import axios from "axios";
+import { BsTrash3 } from "react-icons/bs";
+import { FiEdit3 } from "react-icons/fi";
+
 import { useState } from "react";
-import { Button } from "react-bootstrap";
 
 export default function NozitItem({ elem, i, onEdit, notiz, setNotiz }) {
   const [edit, setEdit] = useState(false);
@@ -11,8 +13,6 @@ export default function NozitItem({ elem, i, onEdit, notiz, setNotiz }) {
   };
 
   const deleteFunction = (id) => {
-    // const notizToDelete = notiz.find((event) => event._id === id);
-    // console.log(notizToDelete, "hallo");
     axios.delete(`http://localhost:7897/notiz/${elem._id}`).then(fetchNotiz);
     console.log(elem._id);
   };
@@ -35,8 +35,8 @@ export default function NozitItem({ elem, i, onEdit, notiz, setNotiz }) {
       <h1>{elem.headline}</h1>
       <p>{elem.text}</p>
 
-      <button onClick={(event) => deleteFunction(event._id)}>Delete</button>
-      <button onClick={() => editHandler(i)}>Edit</button>
+      <BsTrash3 onClick={(event) => deleteFunction(event._id)} />
+      <FiEdit3 onClick={() => editHandler(i)} />
     </div>
   );
 }

@@ -6,7 +6,7 @@ export default function Edit({ elem, onEdit, i }) {
 
   const updateHandler = (e) => {
     const newupdate = { ...update, [e.target.name]: e.target.value };
-
+    axios.patch(`http://localhost:7897/notiz/ ${elem._id}`);
     setUpdate(newupdate);
   };
 
