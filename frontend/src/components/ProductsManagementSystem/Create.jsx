@@ -2,8 +2,10 @@ import Delete from "./Delete.jsx";
 import { useState, useEffect } from "react";
 import axios from "axios";
 import DeleteAll from "./DeleteAll.jsx";
+
 export default function ({ value, total, setValue, setData, data }) {
   const [searchInput, setSearchInput] = useState("");
+  
   const filteredData = data.filter((el) => {
     if (searchInput === "") {
       return el;
@@ -90,19 +92,23 @@ export default function ({ value, total, setValue, setData, data }) {
         </thead>
         <tbody>
           {filteredData.map((e, i) => {
+
+          
             return (
               <tr key={i}>
-                <td>{i + 1}</td>
-                <td>{e.title}</td>
-                <td>{e.price}</td>
-                <td>{e.taxes}</td>
-                <td>{e.ads}</td>
-                <td>{e.discount}</td>
-                <td>{e.total}</td>
-                <td>{e.category}</td>
-                <td>
-                  <Delete data={e} setData={setData} />
-                </td>
+                <>
+                  <td>{i+1}</td>
+                  <td>{e.title}</td>
+                  <td>{e.price}</td>
+                  <td>{e.taxes}</td>
+                  <td>{e.ads}</td>
+                  <td>{e.discount}</td>
+                  <td>{e.total}</td>
+                  <td>{e.category}</td>
+                  <td>
+                    <Delete data={e} setData={setData} />
+                  </td>
+                </>
               </tr>
             );
           })}

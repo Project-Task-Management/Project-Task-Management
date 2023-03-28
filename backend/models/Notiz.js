@@ -33,11 +33,17 @@ const Notiz = mongoose.model("Notiz", schema)
 
 
  export const create = async (headline, text) => {
+    try{
      const newUsers = new Notiz({headline, text});
-
      const result = await newUsers.save();
-     return result;
+        console.log({newUsers,result})
+        return result;
+    }catch{
+        
+    }
+  
  }
+
 export const deleteOneNotiz = async(id)=>{
 try {
     const notiz = await Notiz.deleteOne({_id:id});

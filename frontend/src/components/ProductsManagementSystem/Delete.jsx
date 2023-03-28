@@ -21,5 +21,5 @@ export default function Delete({ data, setData }) {
     //  console.log("from delete", copy);
   };
 
-  return <button onClick={removeHandler}>delete</button>;
+  return <button className="pms_delete-btn" onClick={removeHandler}>Delete</button>;
 }
