@@ -30,14 +30,7 @@ export const createTodo=async (req,res)=>{
         res.status(400).send()
     }
 }
-export const updateTodo=async (req,res)=>{
-   try{
-    const updateTodo =await Todo.findOneAndUpdate(req.params.id)
-        res.status(200).json(updateTodo)
-   }catch(error){
-    res.status(404).json(error)
-   }
-}
+
 export const deleteOneTodo=async (req,res)=>{
     console.log("hi");
     try{

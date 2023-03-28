@@ -11,6 +11,7 @@ import Products from "./components/ProductsManagementSystem/Products";
 import Registierung from "./components/homepage/Registierung";
 import { TodoProvider } from "./context/TodoContext";
 import Anmeldung from "./components/homepage/Anmeldung";
+import Footer from "./components/homepage/Footer";
 
 function App() {
   return (
@@ -25,7 +26,8 @@ function App() {
             <Navigtion />
           </div>
           <div className="app_rout">
-            <Routes>
+         <div className="rout">
+         <Routes>
               <Route path="/" element={<Home />}></Route>
               <Route path="/kalender" element={<Kalender />}></Route>
               <Route path="/notiz" element={<Notiz />}></Route>
@@ -34,6 +36,8 @@ function App() {
               <Route path="/registierung" element={<Registierung />}></Route>
               <Route path="/anmeldung" element={<Anmeldung />}></Route>
             </Routes>
+         </div>
+          <Footer />
           </div>
       </div>
         </BrowserRouter>
