@@ -35,9 +35,10 @@ export const deleteOneTodo=async (req,res)=>{
     console.log("hi");
     try{
         console.log(req.params.id);
-        const deletTodo = await Todo.findOneAndDelete(req.params.title)
-        console.log(deleteTodo);
-        res.send(deletTodo)
+        const deletTodo = await Todo.findByIdAndDelete(req.params.id)
+        console.log(deletTodo);
+        
+        res.status(201).json(deletTodo)
     }catch{
 
     }
