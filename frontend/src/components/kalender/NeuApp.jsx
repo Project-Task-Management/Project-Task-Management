@@ -57,7 +57,7 @@ export default function NeuApp() {
     console.log(deleteKalander);
     axios
       .delete(`http://localhost:7897/kalander/${deleteKalander._id}`)
-      .then(fetchKalander());
+      .then(() => fetchKalander());
   }
 
   return (

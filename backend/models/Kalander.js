@@ -8,4 +8,9 @@ const schema = mongoose.Schema({
 
 const Kalander = mongoose.model("Kalander", schema);
 
+export const deleteKalander = async (id) => {
+  const result = await Kalander.findByIdAndDelete(id);
+  return result;
+};
+
 export default Kalander;

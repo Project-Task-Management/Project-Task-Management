@@ -1,4 +1,5 @@
-import Kalander from "../models/Kalander.js";
+import Kalander, { deleteKalander } from "../models/Kalander.js";
+
 export const getAll = async (req, res) => {
   try {
     const kalander = await Kalander.find();
@@ -7,9 +8,7 @@ export const getAll = async (req, res) => {
     res.status(200);
   }
 };
-export const getOne = async (req, res) => {
-  console.log("kaka");
-};
+
 export const create = async (req, res) => {
   const createKalander = new Kalander(req.body);
   try {
@@ -18,11 +17,11 @@ export const create = async (req, res) => {
   } catch (error) {}
 };
 
-export const deleteKalander = async (req, res) => {
+export const removeKalander = async (req, res) => {
   try {
-    const deletedKalander = await Kalander.findByIdAndDelete(req.params.id);
+    const deletedKalander = await deleteKalander(req.params.id);
     res.send(deletedKalander);
   } catch (error) {
-    // res.status(500).send({ error: error.message });
+    res.status(500);
   }
 };
