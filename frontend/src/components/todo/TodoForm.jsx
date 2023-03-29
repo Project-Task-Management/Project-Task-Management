@@ -1,6 +1,7 @@
 import React, { useContext, useState, useEffect } from "react";
 import TodoContext from "../../context/TodoContext";
 import axios from "axios";
+import { Button } from "react-bootstrap";
 
 function TodoForm() {
     const { todos, addTodos, setTodos } = useContext(TodoContext);
@@ -11,7 +12,9 @@ function TodoForm() {
     console.log("hello", task);
 
     useEffect(() => {
-        axios.get("http://localhost:7897/todo").then((res) => setTodos(res.data));
+        axios
+            .get("http://localhost:7897/todo")
+            .then((res) => setTodos(res.data));
         console.log(todos);
     }, []);
 
@@ -26,7 +29,6 @@ function TodoForm() {
     };
 
     const onSubmitHandler = (e) => {
-        
         e.preventDefault();
         addTodos(task);
         setTask({
@@ -35,8 +37,8 @@ function TodoForm() {
         });
         axios
             .post("http://localhost:7897/todo", {
-                title:task.title,
-                tasks:task.tasks,
+                title: task.title,
+                tasks: task.tasks,
             })
 
             .then(fetchTasks);
@@ -44,11 +46,18 @@ function TodoForm() {
     };
 
     return (
-        <div className="todo-home">
+        <div className="">
             <h1 className="todo-h1"> 😀 Todo Liste 😀</h1>
 
             <form className="form" onSubmit={onSubmitHandler}>
-                <input className="input-title" type="text" id="title" value={task.title} onChange={handelChange1} placeholder="Pleas name your task here !" />
+                <input
+                    className="input-title"
+                    type="text"
+                    id="title"
+                    value={task.title}
+                    onChange={handelChange1}
+                    placeholder="Pleas name your task here !"
+                />
                 <textarea
                     className="input-title"
                     type="text"
@@ -58,9 +67,9 @@ function TodoForm() {
                     placeholder="Please write your task here !"
                 />
 
-                <button className="add-btt" type="submit" value="add">
+                <Button className="add-btt" type="submit" value="add">
                     Add Task
-                </button>
+                </Button>
             </form>
         </div>
     );

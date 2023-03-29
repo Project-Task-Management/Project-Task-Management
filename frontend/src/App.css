@@ -2,6 +2,7 @@
     /* margin-top: 58px; */
     display: flex;
     text-align: center;
+   
 }
 
 
@@ -9,7 +10,8 @@
     overflow-y:scroll;
     width: 100vw;
     height: calc(100vh - 58px);
+ 
+
 }
-.rout{
-}
+
 

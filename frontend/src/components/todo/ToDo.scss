@@ -2,15 +2,9 @@
 
 // ToDo.jsx
 .todo-home {
-    //  background-image: url(https://mdbcdn.b-cdn.net/img/Photos/new-templates/search-box/img4.webp);
-    background-color: rgba(224, 219, 219, 0.665);
-    background-attachment: fixed;
-    border-radius: 15px;
-}
+    background-color: rgba(211, 194, 194, 0.624);
 
-.todo-img {
-    border-radius: 20px;
-    float: right;
+    height: 200vh;
 }
 
 .text-text {
@@ -34,13 +28,12 @@
     padding: 1rem;
     border-radius: 0.5rem;
     color: rgb(106, 81, 81);
-    background-color: rgba(255, 255, 255, 0.4);
     box-shadow: rgb(38, 57, 77) 0px 20px 30px -10px;
-    background: rgba(255, 255, 255, 0.406);
 
     border: unset;
     margin: 5px 0px;
 }
+// Todo.jsx
 
 // Task.jsx
 .zeig-task {
@@ -51,20 +44,18 @@
 
     border-radius: 10px;
 }
-.title-delet {
+.add-card {
     display: flex;
-
     justify-content: space-between;
 }
 
 .todo-info {
-    margin-bottom: 10px;
     display: flex;
     flex-direction: column;
+    margin-bottom: 10px;
     // justify-content: space-between;
     text-align: left;
     box-shadow: rgb(38, 57, 77) 0px 20px 30px -10px;
-    background: rgba(255, 255, 255, 0.406);
     transition: 0.5s;
     font-size: 14px;
     border-radius: 20px;
@@ -95,12 +86,12 @@
     margin-right: 0.5em;
     cursor: pointer;
     color: #309b30;
-    font-size: 35px;
+    font-size: 25px;
 }
 .edi-Icon {
     cursor: pointer;
     color: #79a679;
-    font-size: 35px;
+    font-size: 20px;
 }
 .del-Edi {
     margin-right: 0.5em;
@@ -113,21 +104,12 @@
     border-radius: 10px;
     text-align: center;
     font-size: 15px;
+    border: none;
+    background-color: rgba(29, 118, 191, 0.596);
 }
-.add-btt {
-    width: 20%;
-    padding: 20px;
-    border-radius: 20px;
-    color: rgb(80, 23, 23);
-    text-align: center;
-    font-size: 19px;
-    font-weight: bold;
-    box-shadow: rgb(38, 57, 77) 0px 20px 30px -10px;
-    background: rgba(255, 255, 255, 0.406);
-    background-color: rgba(73, 168, 246, 0.596);
-}
+
 .add-btt:hover {
-    background-color: rgba(172, 255, 47, 0.5);
+    background-color: rgb(4, 102, 19);
     color: white;
 }
 
@@ -136,7 +118,7 @@
     font-size: 50px;
     width: 50%;
     border-radius: 20px;
-    color: rgb(117, 245, 100);
+    color: rgb(33, 169, 12);
     text-transform: uppercase;
     background-image: linear-gradient(
         -225deg,
@@ -150,7 +132,7 @@
     background-size: 200% auto;
     color: #fff;
     background-clip: text;
-    text-fill-color: transparent;
+
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     animation: textclip 2s linear infinite;
@@ -167,17 +149,69 @@
     justify-content: space-between;
 }
 
-@media only screen and (max-width: 365px) {
+@media only screen and (min-width: 480px) and (max-width: 750px) {
+    .zeig-task {
+        grid-template-columns: 1fr 1fr;
+    }
+    .text-text {
+      font-size: 15px;
+      font-weight: bold;
+  }
+  .todo-h1 {
+    font-size: 30px;
+}
+
+    
+}
+@media only screen and (max-width: 480px) {
     .zeig-task {
         grid-template-columns: 1fr;
     }
     .bt-prog {
-        font-size: 10px;
         max-width: 80px;
     }
-}
+    .todo-home {
+        font-size: 10px;
+    }
+    .todo-h1 {
+        font-size: 20px;
+    }
+    .text-text {
+        font-size: 15px;
+        font-weight: bold;
+    }
 
-// .rout{
-//   max-width: 95vw;
-//   max-height: 100vh;
-// }
+    // TodoForm.jsx
+   
+    
+
+    .input-title {
+        padding: 6px;
+
+        margin: 5px 0px;
+    }
+
+    .add-card {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+    }
+
+    .todo-info {
+        flex-direction: column;
+        font-size: 10px;
+        padding: 5px;
+
+        span {
+            padding-right: 0px;
+        }
+    }
+    .icon-button {
+        flex-direction: column;
+        gap: 10px;
+        align-items: center;
+    }
+    .true-icon Button {
+        font-size: 10px;
+    }
+}
