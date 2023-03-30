@@ -6,102 +6,91 @@ import axios from "axios";
 import "./registierung.scss";
 
 const Registierung = () => {
-    const [userName, setUserName] = useState("");
-    const [email, setEmail] = useState("");
-    const [password, setPassword] = useState("");
-    const [rePassword, setRePassword] = useState("");
-    const [agree,setAgree]=useState(true)
- 
+  const [userName, setUserName] = useState("");
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+  const [agree, setAgree] = useState(true);
 
+  const handleAgree = () => {
+    setAgree(!agree);
+  };
+  const handleSubmit = async (e) => {
+    e.preventDefault();
 
-    const handleAgree = ()=>{
-      setAgree(!agree)
+    try {
+      const response = await fetch("http://localhost:7897/user/", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({ userName, email, password }),
+      });
+      const data = await response.json();
+      console.log(data);
+      setUserName("");
+      setEmail("");
+      setPassword("");
+    } catch (error) {
+      console.error(error);
     }
-    const handleSubmit = async (e) => {
-        e.preventDefault();
-        if (password !== rePassword) {
-            return alert(" check your password");
-        }
-        try {
-            const response = await fetch("http://localhost:7897/user/", {
-                method: "POST",
-                headers: {
-                    "Content-Type": "application/json",
-                },
-                body: JSON.stringify({ userName, email, password }),
-            });
-            const data = await response.json();
-            console.log(data);
-        } catch (error) {
-            console.error(error);
-        }
-        console.log(password);
-    };
+    console.log(password);
+  };
 
-    return (
-        <div className="regst">
-            <form onSubmit={handleSubmit}>
-                <h2>Registierung</h2>
+  return (
+    <div className="regst">
+      <h2>Registierung</h2>
+      <form className="formSyling" onSubmit={handleSubmit}>
+        <label>User Name</label>
+        <input
+          className="input-feld"
+          type="text"
+          id="Vorname"
+          name="User Name"
+          placeholder="Vorname"
+          value={userName}
+          onChange={(e) => setUserName(e.target.value)}
+        />
 
-                <label>User Name</label>
-                <input
-                    className="input-feld"
-                    type="text"
-                    id="Vorname"
-                    name="User Name"
-                    placeholder="Vorname"
-                    value={userName}
-                    onChange={(e) => setUserName(e.target.value)}
-                />
+        <label>E-mail"</label>
+        <input
+          onChange={(e) => setEmail(e.target.value)}
+          className="input-feld"
+          value={email}
+          type="email"
+          name=""
+          placeholder="Ihr E-mail"
+        />
 
-                <label>E-mail"</label>
-                <input
-                    onChange={(e) => setEmail(e.target.value)}
-                    className="input-feld"
-                    value={email}
-                    type="email"
-                    name=""
-                    placeholder="Ihr E-mail"
-                />
+        <label>Password"</label>
+        <input
+          onChange={(e) => setPassword(e.target.value)}
+          value={password}
+          className="input-feld"
+          type="password"
+          placeholder="Password"
+        />
 
-                <label>Password"</label>
-                <input
-                    onChange={(e) => setPassword(e.target.value)}
-                    value={password}
-                    className="input-feld"
-                    type="password"
-                    placeholder="password"
-                />
-
-                <label>Password-wiederholung </label>
-                <input
-                    onChange={(e) => setRePassword(e.target.value)}
-                    className="input-feld"
-                    type="password"
-                    value={rePassword}
-                    placeholder="password-wiederholung"
-                />
-                <div className="agree">
-                    <input onClick={handleAgree} id="check"  type="checkbox" />
-                    <label  htmlFor="check">
-                        I agree all statements in <span>Terms of service</span>
-                    </label>
-                </div>
-                <Button disabled ={agree}  type="submit" className="bt">
-                    Register
-                </Button>
-            </form>
-
-            <div>
-                <p>
-                    have already an account ?
-                    <span>
-                        <Link to="/anmeldung">Login here</Link>
-                    </span>
-                </p>
-            </div>
+        <div className="agree">
+          <input onClick={handleAgree} id="check" type="checkbox" />
+          <label htmlFor="check">
+            I agree all statements in <span>Terms of service</span>
+          </label>
         </div>
-    );
+        <button disabled={agree} type="submit" className="bt">
+          Register
+        </button>
+      </form>
+
+      <div>
+        <p>
+          have already an account ?
+          <span>
+            <Link to="/anmeldung">Login here</Link>
+          </span>
+        </p>
+      </div>
+    </div>
+  );
 };
 
 export default Registierung;
