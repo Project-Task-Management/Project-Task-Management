@@ -28,22 +28,25 @@
 }
 
 // // Home.jsx
-
+.hom{
+    text-align: center;
+}
 .start {
     color: coral;
-    margin-bottom: 100px;
+    font-size: 20px;
+    margin-top: 30px;
+
 }
 .beschreib {
-    display: flex;
-    justify-content: space-between;
     margin-bottom: 30px;
+    font-size: 20px;
 
     .beschreib_text {
         padding: 25px;
     }
     .beschreib_h2 {
         color: rgba(238, 142, 47, 0.791);
-        margin-top: 60px;
+        margin-top: 30px;
     }
 
     .beschreib_span {
@@ -51,10 +54,22 @@
         font-size: 20px;
     }
 
-    .beschreib_img {
-        width: 300px;
-        aspect-ratio: 1;
-        border-radius: 50% 50%;
+   
+}
+.beschreib_img {
+    width: 100%;
+    height: 400px;
+    aspect-ratio: 1;
+}
+.notiz-todo-kalender{
+    display: flex;
+    justify-content: space-around;
+    margin-bottom: 100px;
+
+    .beschreib_imges{
+        width: 250px;
+    aspect-ratio: 1;
+
     }
 }
 
@@ -68,7 +83,7 @@ background-color: rgba(231, 222, 222, 0.747);
 }
 
 
-@media only screen and (max-width: 400px) {
+@media only screen and (max-width: 450px) {
     .navigtion {
         font-size: 10px;
         min-width: 30px;
@@ -77,6 +92,12 @@ background-color: rgba(231, 222, 222, 0.747);
         flex-direction: column;
         justify-content: space-around;
         gap: 10px;
+    }
+    .start {
+        color: coral;
+        margin-top: 50px;
+        margin-bottom: 10px;
+        font-size: 20px;
     }
     .page-footer{
         display:grid ;
@@ -91,11 +112,50 @@ background-color: rgba(231, 222, 222, 0.747);
             font-size: 10px;
         }
     }
+    .notiz-todo-kalender{
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+        .beschreib_imges{
+            width: 180px;
+    
+        }
+    }
+    .beschreib {
+        font-size: 20px;
+    
+        .beschreib_text {
+            padding: 25px;
+        }
+        
+        .beschreib_span {
+            font-size: 10px;
+        }
+    
+       
+    }
+    .beschreib_img {
+        width: 100%;
+        height: 200px;
+        aspect-ratio: 1;
+    }
+
     
 }
-@media only screen and (min-width: 400px) and (max-width: 750px) {
+@media only screen and (min-width: 450px) and (max-width: 865px) {
     .navigtion {
         font-size: 10px;
         min-width: 50px;
     }
+    .notiz-todo-kalender{
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 30px;
+            .beschreib_imges{
+                width: 400px;
+        
+            }
+        }
 }
