@@ -1,65 +1,39 @@
 import React from "react";
 import { BsFacebook, BsTwitter, BsInstagram } from "react-icons/bs";
-import { Nav } from "react-bootstrap";
-
-import { NavLink } from "react-router-dom";
+import "./Footer.scss";
 
 const Footer = () => (
-    <footer className="page-footer">
-        <div>
-            <h5
-                className="text-uppercase"
-                style={{ color: "coral", fontSize: "25px" }}
-            >
-                하자
-            </h5>
-        </div>
-       <div> <div className="info">
-            
+  <footer className="footer-container">
+    <p className="footer-text">Copyright © 2023</p>
 
-            <a style={{ textDecoration: "none" }} href="#!">
-                Kontakt
-            </a>
+    <h5 className="logo">하자</h5>
 
-            <a style={{ textDecoration: "none" }} href="#!">
-                Über uns
-            </a>
+    <div>
+      <div className="info">
+        <p>Kontakt</p>
 
-            <a style={{ textDecoration: "none" }} href="#!">
-                Impressum
-            </a>
-        </div>
-        <div className="info">
-      
+        <p>Über uns</p>
 
-            <a
-                        style={{
-                            textDecoration: "none",
-                        }}
-                        href="https://www.facebook.com/"
-                    >
-                        <BsFacebook />
-                    </a>
+        <p>Impressum</p>
+      </div>
+      <div className="info">
+        <p>
+          {" "}
+          <BsFacebook />
+        </p>
 
-                    <a
-                        style={{
-                            textDecoration: "none",
-                        }}
-                        href="https://twitter.com/"
-                    >
-                        <BsTwitter />
-                    </a>
+        <p>
+          {" "}
+          <BsTwitter />
+        </p>
 
-                    <a
-                        style={{
-                            textDecoration: "none",
-                        }}
-                        href="https://www.instagram.com/"
-                    >
-                        <BsInstagram />
-                    </a>
-        </div></div>
-    </footer>
+        <p>
+          {" "}
+          <BsInstagram />
+        </p>
+      </div>
+    </div>
+  </footer>
 );
 
 export default Footer;
