@@ -31,11 +31,14 @@ export default function NozitItem({ elem, i, onEdit, notiz, setNotiz }) {
     <Edit elem={elem} onEdit={handlerOnEdit} i={i} />
   ) : (
     <div className="notizitem">
-      <h1>{elem.headline}</h1>
-      <p>{elem.text}</p>
+      <h3>{elem.headline}</h3>
+      <p className="p_element">{elem.text}</p>
 
-      <BsTrash3 onClick={(event) => deleteFunction(event._id)} />
-      <FiEdit3 onClick={() => editHandler(i)} />
+      <BsTrash3
+        className="dellete"
+        onClick={(event) => deleteFunction(event._id)}
+      />
+      <FiEdit3 className="edit" onClick={() => editHandler(i)} />
     </div>
   );
 }

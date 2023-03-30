@@ -14,12 +14,7 @@ const schema = mongoose.Schema(
       required: true,
     },
   },
-  // {
-  //   writeConcern: {
-  //     j: true,
-  //     wtimeout: 1000,
-  //   },
-  //}
+
 );
 const User = mongoose.model("User", schema);
 
