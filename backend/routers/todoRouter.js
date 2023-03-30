@@ -5,7 +5,7 @@ router
     .get("/", controller.getAllTodos)
     .get("/:id", controller.getOneTodo)
     .post("/", controller.createTodo)
-    .put("/:id", controller.updateTodo)
+    // .put("/:id", controller.updateTodo)
     .delete("/:id", controller.deleteOneTodo);
 
 export default router;
