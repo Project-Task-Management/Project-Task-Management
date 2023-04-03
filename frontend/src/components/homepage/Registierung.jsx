@@ -1,16 +1,15 @@
 import React from "react";
 import { useState } from "react";
-import { Button } from "react-bootstrap";
 import { Link } from "react-router-dom";
-import axios from "axios";
 import "./registierung.scss";
+
 
 const Registierung = () => {
   const [userName, setUserName] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [agree, setAgree] = useState(true);
-
+ 
   const handleAgree = () => {
     setAgree(!agree);
   };
@@ -34,6 +33,8 @@ const Registierung = () => {
       console.error(error);
     }
     console.log(password);
+  
+
   };
 
   return (

@@ -1,6 +1,5 @@
 import React from "react";
 import { useState } from "react";
-import { Button } from "react-bootstrap";
 import { Link } from "react-router-dom";
 import axios from "axios";
 const Anmeldung = () => {
@@ -16,8 +15,8 @@ const Anmeldung = () => {
 
   return (
     <div className="regst">
-      <form onSubmit={handleSubmit}>
         <h2>Login</h2>
+      <form onSubmit={handleSubmit}>
 
         <div>
           <label>E-mail</label>
@@ -42,9 +41,9 @@ const Anmeldung = () => {
         </div>
 
         <div>
-          <Button type="submit" className="bt">
+          <button type="submit" className="bt">
             Anmelden
-          </Button>
+          </button>
         </div>
       </form>
       <div>
