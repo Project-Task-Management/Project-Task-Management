@@ -10,7 +10,8 @@
     "jsonwebtoken": "^9.0.0",
     "mongodb": "^5.1.0",
     "mongoose": "^7.0.0",
-    "nodemon": "^2.0.21"
+    "nodemon": "^2.0.21",
+    "react-auth-kit": "^2.10.0"
   },
   "name": "backend",
   "version": "1.0.0",
