@@ -35,12 +35,34 @@
 
 // // Home.jsx
 .hom {
+    // .backgroundClass {
+    //     background: linear-gradient(34.87deg,#494a8683 0%,#3032afa8 100%);
+    // background-image: linear-gradient(34.87deg, rgb(35, 37, 114) 0%, rgba(30, 32, 123, 0.692) 100%);
+    // background-position-x: initial;
+    // background-position-y: initial;
+    // background-size: initial;
+    // background-repeat-x: initial;
+    // background-repeat-y: initial;
+    // background-attachment: initial;
+    // background-origin: initial;
+    // background-clip: initial;
+    // background-color: initial;
+    // }
   text-align: center;
+  .img1{
+    padding: 20px;
+    img{
+        width: 100%;
+        border-radius: 15px;
+        aspect-ratio: 1;
+    }
+  }
+
 }
 .start {
   color: coral;
-  font-size: 20px;
-  margin-top: 30px;
+  font-size: 30px;
+  padding-top: 30px;
 }
 
 .beschreib {
@@ -51,13 +73,18 @@
     padding: 25px;
   }
   .beschreib_h2 {
-    color: rgba(238, 142, 47, 0.791);
+    color: coral;
     margin-top: 30px;
   }
 
-  .beschreib_span {
-    font-family: "Times New Roman", Times, serif;
+  .beschreib_span1 {
     font-size: 20px;
+    color: rgb(43, 27, 27);
+
+  }
+  .beschreib_span {
+    font-size: 20px;
+
   }
 }
 .beschreib_img {
@@ -73,6 +100,23 @@
   .beschreib_imges {
     width: 250px;
     aspect-ratio: 1;
+    border-radius: 10px;
+    box-shadow: rgb(38, 57, 77) 0px 20px 30px -10px;
+
+
+    
+  }
+  .beschreib_imges:hover{
+    cursor: pointer;
+    box-shadow: rgb(38, 57, 77) 0px 5px 10px 0px;
+    background: rgba(255, 255, 255, 0.406);
+
+    & .project-name p {
+        transform: scale(1);
+    }
+    & .icon-wrapper i {
+        transform: scale(1);
+    }
   }
 }
 

@@ -4,34 +4,36 @@ import "./home.scss";
 export default function Home() {
   return (
     <div className="hom">
-      <h1 className="start">Willkommen in unsere Webseite</h1>
+<div className="backgroundClass">
+<h1 className="start">Erfolgreiche Projekte beginnen mit einer für alle transparenten Planung
+</h1>
 
-      <main className="beschreib">
+      <main className="beschreib ">
         <div className="beschreib_text">
-          <h2 className="beschreib_h2">Über uns</h2>
-          <span className="beschreib_span">
-            Lorem ipsum dolor, sit amet consectetur adipisicing elit. <br />{" "}
-            Placeat soluta explicabo dolor corporis illo voluptates qui iure et,
-            neque esse! <br /> Reprehenderit exercitationem magnam enim quasi
-            nam reiciendis perferendis voluptatibus mollitia!
+          <h2 className="beschreib_h2">Alle Funktionen der Projektplanung verbinden</h2>
+          <span className="beschreib_span1">
+          Planen und managen Sie Ihre Projekte an einem zentralen Ort. Definieren Sie wichtige Kontroll­punkte Ihrer Projekte und weisen Sie den Team­mitgliedern Arbeitspakete zu. Identifizieren Sie Risiken und Engpässe und beziehen Sie Team­mitglieder und Stakeholder in alle Schritte mit ein.
           </span>
         </div>
       </main>
-      <div>
+</div>
+   <div className="backimag">
+   <div className="img1">
         <img
           className="beschreib_img"
-          src="https://www.frevvo.com/blog/wp-content/uploads/2021/12/image5-3.png"
+          src="https://softwareauggest-blogimages.s3.ca-central-1.amazonaws.com/blog/wp-content/uploads/2022/02/11113825/team-management-software.jpg"
           alt=""
         />
       </div>
       <main className="beschreib">
         <div className="beschreib_text">
-          <h2 className="beschreib_h2">Was wir bieten</h2>
+          <h2 className="beschreib_h2">Zentralisierung und Zusammenarbeit
+
+</h2>
           <span className="beschreib_span">
-            Lorem ipsum dolor, sit amet consectetur adipisicing elit. <br />{" "}
-            Placeat soluta explicabo dolor corporis illo voluptates qui iure et,
-            neque esse! <br /> Reprehenderit exercitationem magnam enim quasi
-            nam reiciendis perferendis voluptatibus mollitia!
+          Fördern Sie die effiziente Zusammenarbeit über die Grenzen von Silos hinweg durch eine zentrale Infor­mationsquelle für Ihre Projekte. Halten Sie die gesamte Orga­nisation auf Kurs und liefern Sie Ergeb­nisse ab, auf die Sie und Ihr Team stolz sein können.
+
+
           </span>
         </div>
       </main>
@@ -39,21 +41,28 @@ export default function Home() {
         <div className="notiz-todo-kalender">
           <img
             className="beschreib_imges"
-            src="https://as2.ftcdn.net/v2/jpg/00/21/99/83/1000_F_21998361_jnNu0OQi46xnhdFw0pPPWpGAQo1Qg7iG.jpg"
+            src="https://www.klartext.media/wp-content/uploads/2021/04/notizen-am-besprechungstisch.jpg"
             alt=""
           />
           <img
             className="beschreib_imges"
-            src="https://static.vecteezy.com/ti/gratis-vektor/p1/4718992-komplette-to-do-liste-erledigen-projekt-planen-oder-fertigstellen-aufgaben-im-zeitplan-hilfe-das-geschaftsziel-und-ziel-erledigt-geschaftsfrau-aufsteigen-todo-liste-to-hakchen-beendetes-arbeiten-projekt-aufgaben-checkbox-vektor.jpg"
+            src="https://slack-imgs.com/?c=1&o1=ro&url=https%3A%2F%2Fcdn-aekfi.nitrocdn.com%2FBhHUnZmQXkWPzBaLMaTftVhEvszyNTtP%2Fassets%2Fimages%2Fsource%2Frev-b9d4954%2Fblog%2Fimages%2F2020%2F10%2Ftask-list-template-1170x658.jpg.webp"
+            alt=""
+          />
+            <img
+          className="beschreib_imges"
+            src="https://www.herzing.edu/sites/default/files/styles/fp_960_480/public/2020-09/project-management-skills.jpg.webp?itok=rN-QQPq6"
             alt=""
           />
           <img
-            className="beschreib_imges"
-            src="https://werner-zenk.de/archiv/img/event-kalender_sqlite.png"
+          className="beschreib_imges"
+            src="https://blog.hubspot.de/hubfs/%5BSPANISH%5D-Blog-photos/Offers/Editorial_Calendar/Blog_Post_Editorial_Calendar-222708-edited-638992-edited.jpg"
             alt=""
           />
+
         </div>
       </section>
+   </div>
     </div>
   );
 }
