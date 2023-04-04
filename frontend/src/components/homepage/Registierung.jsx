@@ -3,13 +3,12 @@ import { useState } from "react";
 import { Link } from "react-router-dom";
 import "./registierung.scss";
 
-
 const Registierung = () => {
   const [userName, setUserName] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [agree, setAgree] = useState(true);
- 
+
   const handleAgree = () => {
     setAgree(!agree);
   };
@@ -29,12 +28,12 @@ const Registierung = () => {
       setUserName("");
       setEmail("");
       setPassword("");
+
+      history.push("/");
     } catch (error) {
       console.error(error);
     }
     console.log(password);
-  
-
   };
 
   return (
@@ -72,12 +71,17 @@ const Registierung = () => {
         />
 
         <div className="agree">
-          <input onClick={handleAgree} id="check" type="checkbox" />
+          <input
+            onClick={handleAgree}
+            checked={agree ? "" : "true"}
+            id="check"
+            type="checkbox"
+          />
           <label htmlFor="check">
             I agree all statements in <span>Terms of service</span>
           </label>
         </div>
-        <button disabled={agree} type="submit" className="bt">
+        <button to="/" disabled={agree} type="submit" className="bt">
           Register
         </button>
       </form>

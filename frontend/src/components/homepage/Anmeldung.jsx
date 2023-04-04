@@ -15,9 +15,8 @@ const Anmeldung = () => {
 
   return (
     <div className="regst">
-        <h2>Login</h2>
+      <h2>Login</h2>
       <form onSubmit={handleSubmit}>
-
         <div>
           <label>E-mail</label>
           <input
