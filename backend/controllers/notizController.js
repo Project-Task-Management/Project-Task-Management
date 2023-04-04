@@ -33,15 +33,15 @@ export const remove = async (req, res, next) => {
     }
 };
 
-export const update = async (req, res, next) => {
+export const updateOne = async (req, res, next) => {
+    const {id}=req.params
+    const {headline,text}=req.body
+
     try{
-        const notizupdate = await Notiz.replace(
-            {_id: req.params.id},
-            {$set: req.body}
-        );
-        console.log(notizupdate);
-        res.status(200).json(notizupdate)
+        const result = await Notiz.update(id,headline,text)
+        res.status(201).json(result)
+        console.log(result)
     }catch(error){
-        next(error)
+      next(error)
     }
 }

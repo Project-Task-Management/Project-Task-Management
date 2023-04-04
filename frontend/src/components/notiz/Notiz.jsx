@@ -2,7 +2,7 @@ import { useState, useEffect } from "react";
 import "./Notiz.scss";
 import axios from "axios";
 import { Button } from "react-bootstrap";
-import { GrAdd } from "react-icons/gr";
+import { IoMdAdd } from "react-icons/io";
 import NozitItem from "./bearbeiten/NozitItem";
 
 export default function Notiz() {
@@ -56,39 +56,9 @@ export default function Notiz() {
   };
 
   return (
-    <>
+    <div className="body">
       <h1 className="uberschrift">Schreiben sie ihr Notizen </h1>
       <div className="notiz">
-        <form className="notiz-countainer">
-          {show ? (
-            <div className="notiz-plus">
-              <GrAdd className="plus" onClick={showhandler} />
-            </div>
-          ) : (
-            <div className="notiz-form">
-              <input
-                className="notiz_input"
-                type="text"
-                value={headline}
-                onChange={headlineChangehandle}
-                placeholder=" Dein Überschrift "
-              />
-              <br />
-              <textarea
-                className="notiz_textarea"
-                type="text"
-                value={text}
-                onChange={textChangehandle}
-                placeholder="Dein Notitzen"
-              />
-              <br />
-              <Button className="notiz_button" onClick={clickHandler}>
-                Speichern
-              </Button>
-            </div>
-          )}
-        </form>
-
         <div className="notiz_item">
           {notiz.map((elem, i) => {
             return (
@@ -105,8 +75,35 @@ export default function Notiz() {
               </div>
             );
           })}
+          <div className="notiz-countainer">
+            {show ? (
+              <IoMdAdd className="plus" onClick={showhandler} />
+            ) : (
+              <div className="notiz-form">
+                <input
+                  className="notiz_input"
+                  type="text"
+                  value={headline}
+                  onChange={headlineChangehandle}
+                  placeholder=" Dein Überschrift "
+                />
+
+                <textarea
+                  className="notiz_textarea"
+                  type="text"
+                  value={text}
+                  onChange={textChangehandle}
+                  placeholder="Dein Notitzen"
+                />
+
+                <Button className="notiz_button" onClick={clickHandler}>
+                  Speichern
+                </Button>
+              </div>
+            )}
+          </div>
         </div>
       </div>
-    </>
+    </div>
   );
 }
