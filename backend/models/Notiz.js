@@ -53,5 +53,19 @@ try {
     
 }
 }
+export const update = async (id,headline,text) => {
+    try{
+        const notizupdate = await Notiz.findById(id);
+      notizupdate.headline=headline
+      notizupdate.text=text
+
+      return notizupdate.save()
+       
+    }catch(error){
+        console.error(error)
+    }
+}
+
+
 
 export default Notiz
