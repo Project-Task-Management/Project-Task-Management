@@ -1,6 +1,6 @@
 import React, { useContext } from "react";
 import { ImBin } from "react-icons/im";
-import { GrEdit } from "react-icons/gr";
+
 import TodoContext from "../../context/TodoContext";
 import { Button } from "react-bootstrap";
 
@@ -33,44 +33,38 @@ function TaskItem({ i, item, handelDone1, istrue, todos, setTodos }) {
            
                 <div className="add-card">
                     <div className="text-text">
-                        <div className="text-spans">
-                            <p>
-                                {" "}
-                                <span>Title:</span>
+                        <div style={{padding:"20px",height:"407"}} className="text-spans">
+                            
+                            
+                                <p style={{color:"red"}}>Title:</p>
                                 {item.title}
-                            </p>
-                            <p>
-                                {" "}
-                                <span>Tasks:</span>
+                            
+                            <hr/>
+                                
+                                <p style={{color:"green"}}>Tasks:</p>
                                 {item.tasks}
-                            </p>
+                            
                         </div>
                     </div>
                     <div className="del-Edi">
-                        {""}
+                       
                         <ImBin className="delet-Icon" onClick={deletTask} />
-                        <GrEdit className="edi-Icon" />
                     </div>
                 </div>
                 <div className="icon-button">
-                    <div className="true-icon">
-                        {/* style={{ backgroundColor: item.isDone?"green":"rgb(52, 151, 235)" }} */}
                         <Button
                            
                             onClick={() => markTodoUsDone(i)}
                         >
                             Done
                         </Button>
-                    </div>
-                    <div className="true-icon">
-                        {/* style={{ backgroundColor: item.isProgressing?"#F76E11":"rgb(56, 151, 232)" }}  */}
                         <Button
                             
                             onClick={() => markTodoIsProg(i)}
                         >
                             Progressing
                         </Button>
-                    </div>
+                
                 </div>
             </div>
      
