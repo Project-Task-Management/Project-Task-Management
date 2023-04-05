@@ -19,7 +19,14 @@ padding: 80px;
 
     .notiz-countainer{
      
-        
+        .plus{
+            font-size: 200px;
+             color: rgba(255, 255, 255, 0.384);
+             cursor: pointer;
+            
+            
+             
+         }
         .notiz-plus{
          display: flex;
          align-content: center;
@@ -28,23 +35,15 @@ padding: 80px;
          padding: 10px;
         
 
-            .plus{
-               font-size: 200px;
-                color: rgba(252, 134, 134, 0.185);
-                cursor: pointer;
-             
-                
-            }
+            
        
         }
         .notiz-form{
          display: flex;
-         margin-right: 250px;
+        
          flex-direction:column;
-         align-items: center;
-         float:right;         
+         align-items: center;    
          padding: 10px;
-         background-color:#fec89a;
          border-radius: 10px;
 
 
@@ -65,11 +64,11 @@ padding: 80px;
             }
             .notiz_button{
                 width: 300px;
-                background-color: aliceblue;
-                color: black;
+                background-color: rgb(0, 0, 0);
+                color: rgb(255, 255, 255);
             }
             .notiz_button:hover{
-                background-color:#D4B2A7;
+                background-color:#007209;
                  box-shadow: rgba(14, 30, 37, 0.12) 0px 2px 4px 0px, rgba(14, 30, 37, 0.32) 0px 2px 16px 0px;;
             }
         }
@@ -85,12 +84,14 @@ padding: 80px;
     box-shadow: -2px 15px 71px 18px rgba(255, 255, 255, 0.3);
     border-radius: 10px;
 
+    
 }
 .notizitem{
     font-family: Georgia, serif;
     border-bottom: 0.5px solid rgba(255, 255, 255, 0.466) ;
     width: 70%;
     margin-bottom: 10px;
+   margin-left: 250px;
     
  
     .p_element{
