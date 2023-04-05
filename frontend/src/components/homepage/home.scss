@@ -1,39 +1,106 @@
+// Header.jsx
+.header {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  color: white;
+  background: #1a2a6c; /* fallback for old browsers */
+  background: -webkit-linear-gradient(
+    to right,
+    #fdbb2d,
+    #b21f1f,
+    #1a2a6c
+  ); /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(
+    to right,
+    #fdbb2d,
+    #b21f1f,
+    #1a2a6c
+  ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
 
-
-// Header
-.header{
+  // position: fixed;
+  padding: 10px;
+  width: 100%;
+  top: 0;
+  z-index: 1;
+  color: black;
+  .nav {
     display: flex;
-    flex-direction: row;
-    justify-content: space-around;
-    padding: 10px;
-    background-color:rgba(0, 0, 0, 0.734);
-    align-items: center;
-    color: white;
-}
-
-.navigtion{
-    display: flex;
-    flex-direction: column;
-    gap: 60px;
-    background-color: #EDE9E3;
-    text-align: center;
-    padding-bottom: 30px;
-    padding-top: 30px;
-    height: 100vh;
-
-}
-
-.link{
-    
-    text-decoration: none;
-}
-@media only screen and (max-width: 350px) {
-    .header{
-      color: red;
-      display: flex;
-      flex-direction: column;
-      justify-content: space-around;
-      text-align: center;
-      gap: 20px;
+    gap: 2rem;
+    .link {
+      color: white;
+      text-decoration: none;
     }
   }
+  .user {
+    display: flex;
+    gap: 2rem;
+    .login {
+      font-size: x-large;
+      color: aqua;
+    }
+    align-items: center;
+  }
+}
+
+// // Home.jsx
+.hom {
+  min-height: 100vh;
+  background-color: rgba(211, 194, 194, 0.624);
+  text-align: center;
+  .img1 {
+    padding: 20px;
+    img {
+      width: 100%;
+      border-radius: 15px;
+      aspect-ratio: 1;
+    }
+  }
+}
+.first {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 2rem;
+  border-bottom-right-radius:  200px;
+  border-bottom: solid;
+  box-shadow: rgb(38, 57, 77) 0px 20px 30px -10px;
+  background-color: rgba(255, 255, 255, 0.68);
+  img {
+    width: 900px;
+  }
+}
+.sec {
+  display: flex;
+  padding: 5rem;
+  margin-top: 1000px;
+  gap: 10rem;
+  justify-content: space-around;
+  align-items: center;
+  img {
+    border-radius: 2rem;
+    width: 500px;
+  }
+  h2 {
+  }
+}
+
+.logo {
+  height: 50px;
+  width: 50px;
+  border-radius: 50%;
+}
+.h-todo{
+    display: flex;
+    padding: 50px 30px 10px 50px;
+    align-items: center;
+    justify-content: space-around;
+    img{
+    }
+    p{
+        text-align: left;
+        font-size: xx-large;
+        color: #b21f1f;
+        width: 400px;
+    }
+}

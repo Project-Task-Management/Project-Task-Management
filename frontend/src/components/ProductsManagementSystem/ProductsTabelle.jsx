@@ -1,4 +1,5 @@
 import "./Products.scss";
+import axios from "axios";
 import Create from "./Create.jsx";
 import { useState, useEffect } from "react";
 export default function ProductsTabelle() {
@@ -19,23 +20,27 @@ export default function ProductsTabelle() {
     setValue({ ...value, [e.target.name]: e.target.value, total });
   };
 
-
-
-
+  useEffect(() => {
+    axios
+      .get("http://localhost:7897/product/")
+      .then((res) => setData(res.data));
+    console.log(data);
+  }, []);
 
   return (
     <>
       <div className="products-tabelle">
         <input
+          className="inputs"
           onChange={handelChange}
           placeholder="Title"
-          className="title"
           type="text"
           name="title"
           value={value.title}
         />
         <div className="product-angabe">
           <input
+            className="inputs"
             onChange={handelChange}
             placeholder="Price"
             type="number"
@@ -43,6 +48,7 @@ export default function ProductsTabelle() {
             value={value.price}
           />
           <input
+            className="inputs"
             onChange={handelChange}
             placeholder="Taxes"
             type="number"
@@ -50,6 +56,7 @@ export default function ProductsTabelle() {
             value={value.taxes}
           />
           <input
+            className="inputs"
             onChange={handelChange}
             type="number"
             name="ads"
@@ -57,15 +64,17 @@ export default function ProductsTabelle() {
             value={value.ads}
           />
           <input
+            className="inputs"
             onChange={handelChange}
             type="number"
             placeholder="Discount"
             name="discount"
             value={value.discount}
           />
-          <p className="total">Total:{total}€</p>
+          <p className={value.price>0?"totalmore":"total"}>Total:{total}€</p>
         </div>
         <input
+          className="inputs"
           onChange={handelChange}
           placeholder="Count"
           type="number"
@@ -73,13 +82,13 @@ export default function ProductsTabelle() {
           value={value.count}
         />
         <input
+          className="inputs"
           onChange={handelChange}
           type="text"
           placeholder="Category"
           name="category"
           value={value.category}
         />
-      </div>
 
       <Create
         value={value}
@@ -87,7 +96,8 @@ export default function ProductsTabelle() {
         total={total}
         data={data}
         setData={setData}
-      />
+        />
+        </div>
     </>
   );
 }

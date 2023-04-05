@@ -1,0 +1,156 @@
+.body{
+    background-image: url("https://media.istockphoto.com/id/1201544779/de/foto/leere-front-echte-schwarze-tafel-hintergrund-textur-im-college-konzept-f%C3%BCr-zur%C3%BCck-zur-schule.jpg?s=612x612&w=0&k=20&c=9_C-ABHcYiM16b1Yg-porIy4La0AES5sdOegbGpTiKU=");
+    background-attachment: fixed;
+}
+.uberschrift{
+    font-family: 'Bebas Neue', cursive;
+    padding-bottom: 30px;
+    text-align: center;
+    padding: 50px;
+    color: #ece4db;
+    
+}
+
+
+.notiz{
+   
+padding: 80px;
+
+
+    .notiz-countainer{
+     
+        .plus{
+            font-size: 200px;
+             color: rgba(255, 255, 255, 0.384);
+             cursor: pointer;
+            
+            
+             
+         }
+        .notiz-plus{
+         display: flex;
+         align-content: center;
+         justify-content: end;  
+         font-size: 100px;
+         padding: 10px;
+        
+
+            
+       
+        }
+        .notiz-form{
+         display: flex;
+        
+         flex-direction:column;
+         align-items: center;    
+         padding: 10px;
+         border-radius: 10px;
+
+
+            
+            .notiz_input{
+                width: 300px;
+                height: 60px;
+                border-radius: 10px;
+                text-align: center;
+               
+            }
+            .notiz_textarea{
+                width: 300px;
+                height: 200px;
+                border: 2px solid #000;
+                border-radius: 10px;
+                text-align: center;
+            }
+            .notiz_button{
+                width: 300px;
+                background-color: rgb(0, 0, 0);
+                color: rgb(255, 255, 255);
+            }
+            .notiz_button:hover{
+                background-color:#007209;
+                 box-shadow: rgba(14, 30, 37, 0.12) 0px 2px 4px 0px, rgba(14, 30, 37, 0.32) 0px 2px 16px 0px;;
+            }
+        }
+    }
+}
+
+
+.notiz_item{
+    height: 100vh;
+    color: #ece4db;
+    -webkit-box-shadow: -2px 15px 71px 18px rgba(255, 255, 255, 0.3);
+    -moz-box-shadow: -2px 15px 71px 18px rgba(255, 255, 255, 0.3);
+    box-shadow: -2px 15px 71px 18px rgba(255, 255, 255, 0.3);
+    border-radius: 10px;
+
+    
+}
+.notizitem{
+    font-family: Georgia, serif;
+    border-bottom: 0.5px solid rgba(255, 255, 255, 0.466) ;
+    width: 70%;
+    margin-bottom: 10px;
+   margin-left: 250px;
+    
+ 
+    .p_element{
+        display: flex;
+        align-items: flex-start;
+        margin-left: 10px;
+    }
+    .icon{
+        display: flex;
+        justify-content: space-between;
+        .dellete{
+            width: 50px;
+            cursor: pointer;
+            font-size: 15px;
+            margin-bottom: 5px;
+           
+        }
+        .dellete:hover{
+            color: red;
+        }
+        .edit{
+            cursor: pointer;
+            font-size: 18px;
+            margin-bottom: 5px; 
+        }
+    
+        .edit:hover{
+            color: green;
+        }
+    }
+ 
+}
+
+.edit_input{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+   
+    
+    .update-input{
+       text-align: center;
+       width: 70%;
+       height: 50px;
+       
+    }
+    
+    .update-text{
+        width: 70%;
+        height: 100px;
+    }
+    .update{
+        color: #ece4db;
+        background-color: #000;
+        width: 70%;
+    }
+    .update:hover{
+        color: green;
+       
+    }
+
+}

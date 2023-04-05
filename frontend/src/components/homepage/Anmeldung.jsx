@@ -1,16 +1,60 @@
-import React from 'react'
-import { Button } from 'react-bootstrap';
-import FloatingLabel from 'react-bootstrap/FloatingLabel';
-import Form from 'react-bootstrap/Form';
-
-  
-
+import React from "react";
+import { useState } from "react";
+import { Link } from "react-router-dom";
+import axios from "axios";
 const Anmeldung = () => {
-  return (
-   <>
-     
-   </>
-  )
-}
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+  const handleSubmit = async (e) => {
+    const loginData = { email, password };
+    e.preventDefault();
+    await axios.post("http://localhost:7897/login", {
+      loginData,
+    });
+  };
 
-export default Anmeldung
+  return (
+    <div className="regst">
+      <h2>Login</h2>
+      <form onSubmit={handleSubmit}>
+        <div>
+          <label>E-mail</label>
+          <input
+            onChange={(e) => setEmail(e.target.value)}
+            className="input-feld"
+            type="email"
+            name=""
+            value={email}
+            placeholder="Ihr E-mail"
+          />
+        </div>
+        <div>
+          <label>Password</label>
+          <input
+            onChange={(e) => setPassword(e.target.value)}
+            className="input-feld"
+            type="password"
+            value={password}
+            placeholder="password"
+          />
+        </div>
+
+        <div>
+          <button type="submit" className="bt">
+            Anmelden
+          </button>
+        </div>
+      </form>
+      <div>
+        <p>
+          haven't an account ?
+          <span>
+            <Link to="/registierung">Registeren here</Link>{" "}
+          </span>
+        </p>
+      </div>
+    </div>
+  );
+};
+
+export default Anmeldung;

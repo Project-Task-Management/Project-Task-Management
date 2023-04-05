@@ -10,11 +10,15 @@
   },
   "dependencies": {
     "@react-icons/all-files": "^4.1.0",
+    "aos": "^2.3.4",
+    "axios": "^1.3.4",
     "bootstrap": "^5.2.3",
     "date-fns": "^2.29.3",
+    "framer-motion": "^10.10.0",
     "mdb-react-ui-kit": "^5.1.0",
     "moment": "^2.29.4",
     "react": "^18.2.0",
+    "react-auth-kit": "^2.10.0",
     "react-big-calendar": "^1.6.8",
     "react-bootstrap": "^2.7.2",
     "react-datepicker": "^4.10.0",
@@ -22,12 +26,16 @@
     "react-hook-form": "^7.43.3",
     "react-icons": "^4.7.1",
     "react-router-dom": "^6.8.1",
+    "react-scroll-motion": "^0.3.2",
     "reactjs-localizer": "^1.1.0",
     "recoil": "^0.7.6",
     "sacc": "^0.0.1",
-    "sass": "^1.58.3"
+    "sass": "^1.58.3",
+    "shortid": "^2.2.16",
+    "uuid": "^9.0.0"
   },
   "devDependencies": {
+    "@klarr-agency/circum-icons-react": "^2.0.1",
     "@types/react": "^18.0.27",
     "@types/react-dom": "^18.0.10",
     "@vitejs/plugin-react": "^3.1.0",

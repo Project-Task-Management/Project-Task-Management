@@ -1,56 +1,28 @@
 import React, { useContext, useState } from "react";
 import TodoContext from "../../context/TodoContext";
-import { ImBin } from "react-icons/im";
-import { MdOutlineDoneOutline } from "react-icons/md";
+import axios from "axios";
+import TaskItem from "./TaskItem";
 
 function Tasks() {
     const { todos, setTodos } = useContext(TodoContext);
     const [istrue, setIstrue] = useState(false);
-    const done = true;
-    const handelDone1 = () => {
+
+    const handelDone1 = (i) => {
         setIstrue(true);
 
         console.log("hallo");
     };
-    const handelDone2 = () => {
+    const handelDone2 = (i) => {
         setIstrue(false);
 
         console.log("hallo");
     };
-    const deletTask = (i) => {
-        const newTodos = [...todos];
-        newTodos.splice(i, 1);
-        setTodos(newTodos);
-    };
+
     return (
         <div className="zeig-task">
             {todos.map((item, i) => {
-                return (
-                    <div className="todo-info" key={i}>
-                        <div>
-                            <p>
-                                {" "}
-                                <span>Title:</span>
-                                {item.title}
-                            </p>
-                            <p>
-                                {" "}
-                                <span>Tasks:</span>
-                                {item.tasks}
-                            </p>
-                        </div>
-                        <div>
-                            <ImBin className="delet-Icon" onClick={() => deletTask(item.id)} />
-                            <div className="true-icon">
-                                {istrue ? (
-                                    <MdOutlineDoneOutline onClick={() => handelDone2(item.id)} style={{ color: "green" }} />
-                                ) : (
-                                    <MdOutlineDoneOutline onClick={handelDone1} style={{ color: "black" }} />
-                                )}
-                            </div>
-                        </div>
-                    </div>
-                );
+                console.log(todos);
+                return <TaskItem key={i} item={item} todos={todos} setTodos={setTodos} i={i} handelDone1={handelDone1} istrue={istrue} />;
             })}
         </div>
     );

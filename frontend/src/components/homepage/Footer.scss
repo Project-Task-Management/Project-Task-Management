@@ -1,0 +1,39 @@
+.footer-container {
+  background-color: #333;
+  color: #fff;
+  bottom: 0;
+  width: 100%;
+
+}
+.info {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  p {
+    cursor: pointer;
+  }
+  p:hover {
+    color: aqua;
+  }
+}
+.logo {
+  text-transform: uppercase;
+  line-height: 1;
+  text-align: center;
+  background: linear-gradient(
+    90deg,
+    rgba(186, 148, 62, 1) 0%,
+    rgba(249, 244, 180, 1) 50%,
+    rgba(236, 172, 32, 1) 80%
+  );
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: shine 3s infinite;
+  background-size: 200%;
+  background-position: left;
+}
+@keyframes shine {
+  to {
+    background-position: right;
+  }
+}

@@ -1,96 +1,101 @@
 import React from "react";
-import {
-  MDBBtn,
-  MDBContainer,
-  MDBCard,
-  MDBCardBody,
-  MDBInput,
-  MDBCheckbox,
-} from "mdb-react-ui-kit";
-import { Button } from "react-bootstrap";
-const Registiereung = () => {
-  const registerUser = async (e) => {
-    e.preventDefault()
-    console.log(e.target);
-    const response = await fetch("http://localhost:1337/api/register", {
-      method:"POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify({
-        name,
-        email1:email1,
-        password,
-        repeatedPassword
-      }),
-    });
-    const data = await response.json();
-    console.log(data);
+import { useState } from "react";
+import { Link } from "react-router-dom";
+import "./registierung.scss";
+
+const Registierung = () => {
+  const [userName, setUserName] = useState("");
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+  const [agree, setAgree] = useState(true);
+
+  const handleAgree = () => {
+    setAgree(!agree);
+  };
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+
+    try {
+      const response = await fetch("http://localhost:7897/user/", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({ userName, email, password }),
+      });
+      const data = await response.json();
+      console.log(data);
+      setUserName("");
+      setEmail("");
+      setPassword("");
+
+      history.push("/");
+    } catch (error) {
+      console.error(error);
+    }
+    console.log(password);
   };
 
   return (
-    <form onSubmit={registerUser}>
-      <MDBContainer
-        className="d-flex align-items-center justify-content-center bg-image"
-        style={{
-          backgroundImage:
-            "url(https://mdbcdn.b-cdn.net/img/Photos/new-templates/search-box/img4.webp)",
-        }}>
-        <div className="mask gradient-custom-3"></div>
-        <MDBCard className="m-5" style={{ maxWidth: "600px" }}>
-          <MDBCardBody className="px-5 text-center">
-            <h2 className="text-uppercase text-center mb-5">
-              Create an account
-            </h2>
-            <MDBInput
-              wrapperClass="mb-4  "
-              className=" text-center"
-              placeholder="Your Name"
-              size="lg"
-              id="form1"
-              type="text"
-            />
-            <MDBInput
-              wrapperClass="mb-4"
-              className=" text-center"
-              placeholder="Your Email"
-              size="lg"
-              id="form2"
-              type="email"
-            />
-            <MDBInput
-              wrapperClass="mb-4"
-              className=" text-center"
-              placeholder="Password"
-              size="lg"
-              id="form3"
-              type="password"
-            />
-            <MDBInput
-              wrapperClass="mb-4"
-              placeholder="Repeat your password"
-              size="lg"
-              id="form4"
-              type="password"
-            />
-            <div className="d-flex flex-row justify-content-center mb-4">
-              <MDBCheckbox
-                name="flexCheck"
-                id="flexCheckDefault"
-                label=" I agree all statements in Terms of service"
-              />
-            </div>
-            <Button type="submit" className="mb-4 " size="lg">
-              Register
-            </Button>
-          </MDBCardBody>
-          <div style={{ marginBottom: "40px" }}>
-            Have already an account? <a href="#">Login here</a>
-          </div>
-        </MDBCard>
-      </MDBContainer>
-    </form>
+    <div className="regst">
+      <h2>Registierung</h2>
+      <form className="formSyling" onSubmit={handleSubmit}>
+        <label>User Name</label>
+        <input
+          className="input-feld"
+          type="text"
+          id="Vorname"
+          name="User Name"
+          placeholder="Vorname"
+          value={userName}
+          onChange={(e) => setUserName(e.target.value)}
+        />
+
+        <label>E-mail"</label>
+        <input
+          onChange={(e) => setEmail(e.target.value)}
+          className="input-feld"
+          value={email}
+          type="email"
+          name=""
+          placeholder="Ihr E-mail"
+        />
+
+        <label>Password"</label>
+        <input
+          onChange={(e) => setPassword(e.target.value)}
+          value={password}
+          className="input-feld"
+          type="password"
+          placeholder="Password"
+        />
+
+        <div className="agree">
+          <input
+            onClick={handleAgree}
+            checked={agree ? "" : "true"}
+            id="check"
+            type="checkbox"
+          />
+          <label htmlFor="check">
+            I agree all statements in <span>Terms of service</span>
+          </label>
+        </div>
+        <button to="/" disabled={agree} type="submit" className="bt">
+          Register
+        </button>
+      </form>
+
+      <div>
+        <p>
+          have already an account ?
+          <span>
+            <Link to="/anmeldung">Login here</Link>
+          </span>
+        </p>
+      </div>
+    </div>
   );
 };
 
-export default Registiereung;
+export default Registierung;

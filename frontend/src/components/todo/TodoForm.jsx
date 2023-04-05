@@ -1,25 +1,31 @@
-import React, { useContext, useState } from "react";
-import { Button } from "react-bootstrap";
-// import { useForm } from "react-hook-form";
+import React, { useContext, useState, useEffect } from "react";
 import TodoContext from "../../context/TodoContext";
+import axios from "axios";
+import { Button } from "react-bootstrap";
 
 function TodoForm() {
-    // const {
-    //     register,
-    //     handleSubmit,
-    //     watch,
-    //     reset,
-    //     formState: { errors },
-    // } = useForm();
-
-    const { todos, addTodos } = useContext(TodoContext);
+    const { todos, addTodos, setTodos } = useContext(TodoContext);
     const [task, setTask] = useState({
         title: "",
         tasks: "",
     });
+    console.log("hello", task);
+
+    useEffect(() => {
+        axios
+            .get("http://localhost:7897/todo")
+            .then((res) => setTodos(res.data));
+        console.log(todos);
+    }, []);
 
     const handelChange1 = (e) => {
         setTask({ ...task, [e.target.id]: e.target.value });
+    };
+
+    const fetchTasks = async () => {
+        const response = await axios.get("http://localhost:7897/todo");
+        console.log("1", response.data);
+        setTodos(response.data);
     };
 
     const onSubmitHandler = (e) => {
@@ -29,23 +35,28 @@ function TodoForm() {
             title: "",
             tasks: "",
         });
+        axios
+            .post("http://localhost:7897/todo", {
+                title: task.title,
+                tasks: task.tasks,
+            })
+
+            .then(fetchTasks);
         console.log("hello", task);
     };
 
     return (
-        <div className="todo-home">
-            <h1 className="todo-h1">Todo Liste</h1>
+        <div className="">
+            <h1 className="todo-h1"> 😀 Todo Liste 😀</h1>
+
             <form className="form" onSubmit={onSubmitHandler}>
-                <input 
+                <input
                     className="input-title"
                     type="text"
                     id="title"
                     value={task.title}
                     onChange={handelChange1}
-                    placeholder="title"
-                    // {...register("title", {
-                    //     required: true,
-                    // })}
+                    placeholder="Pleas name your task here !"
                 />
                 <textarea
                     className="input-title"
@@ -53,17 +64,14 @@ function TodoForm() {
                     id="tasks"
                     value={task.tasks}
                     onChange={handelChange1}
-                    placeholder="task"
-                    // {...register("task", {
-                    //     required: true,
-                    // })}
+                    placeholder="Please write your task here !"
                 />
-                <Button className="btn" variant="primary" type="submit" value="add">
-                    Addtask
+
+                <Button className="add-btt" type="submit" value="add">
+                    Add Task
                 </Button>
             </form>
         </div>
     );
 }
-
 export default TodoForm;

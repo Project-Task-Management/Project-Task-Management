@@ -1,13 +1,17 @@
-
-.all{
-    display: grid;
-    grid-template-columns: 1fr 4fr;
+.app_navo-rout{
+    /* margin-top: 58px; */
+    display: flex;
     text-align: center;
+   
 }
-.navo{
-    text-align: center;
+
+
+.app_rout{
+    overflow-y:scroll;
+    width: 100vw;
+    height: calc(100vh - 58px);
+ 
 
 }
-/* .rout{
-    padding-top: 30px;
-} */
+
+
