@@ -1,68 +1,86 @@
-import React from "react";
+import { useEffect } from "react";
 import "./home.scss";
-
+import Aos from "aos";
+import { motion } from "framer-motion";
 export default function Home() {
+  useEffect(() => {
+    Aos.init();
+  }, []);
   return (
     <div className="hom">
-<div className="backgroundClass">
-<h1 className="start">Erfolgreiche Projekte beginnen mit einer für alle transparenten Planung
-</h1>
-
-      <main className="beschreib ">
-        <div className="beschreib_text">
-          <h2 className="beschreib_h2">Alle Funktionen der Projektplanung verbinden</h2>
-          <span className="beschreib_span1">
-          Planen und managen Sie Ihre Projekte an einem zentralen Ort. Definieren Sie wichtige Kontroll­punkte Ihrer Projekte und weisen Sie den Team­mitgliedern Arbeitspakete zu. Identifizieren Sie Risiken und Engpässe und beziehen Sie Team­mitglieder und Stakeholder in alle Schritte mit ein.
-          </span>
-        </div>
-      </main>
-</div>
-   <div className="backimag">
-   <div className="img1">
-        <img
-          className="beschreib_img"
-          src="https://softwareauggest-blogimages.s3.ca-central-1.amazonaws.com/blog/wp-content/uploads/2022/02/11113825/team-management-software.jpg"
+      <motion.dev
+        className="first"
+        initial={{ opacity: 0.5, scale: 0.5 }}
+        whileInView={{ opacity: 1, scale: 1 }}
+        transition={{ duration: 0.6 }}>
+        <motion.h2 animate={{ x: 100 }} transition={{ duration: 2 }}>
+          LETSDO haya try to brings all your <br /> tasks, teammates, and tools
+          together
+        </motion.h2>
+        <motion.img
+          animate={{ x: -50 }}
+          transition={{ duration: 2 }}
+          src="../../image/bild.png"
           alt=""
         />
-      </div>
-      <main className="beschreib">
-        <div className="beschreib_text">
-          <h2 className="beschreib_h2">Zentralisierung und Zusammenarbeit
-
-</h2>
-          <span className="beschreib_span">
-          Fördern Sie die effiziente Zusammenarbeit über die Grenzen von Silos hinweg durch eine zentrale Infor­mationsquelle für Ihre Projekte. Halten Sie die gesamte Orga­nisation auf Kurs und liefern Sie Ergeb­nisse ab, auf die Sie und Ihr Team stolz sein können.
+      </motion.dev>
 
 
-          </span>
-        </div>
-      </main>
-      <section className="beschrei">
-        <div className="notiz-todo-kalender">
-          <img
-            className="beschreib_imges"
-            src="https://www.klartext.media/wp-content/uploads/2021/04/notizen-am-besprechungstisch.jpg"
-            alt=""
-          />
-          <img
-            className="beschreib_imges"
-            src="https://slack-imgs.com/?c=1&o1=ro&url=https%3A%2F%2Fcdn-aekfi.nitrocdn.com%2FBhHUnZmQXkWPzBaLMaTftVhEvszyNTtP%2Fassets%2Fimages%2Fsource%2Frev-b9d4954%2Fblog%2Fimages%2F2020%2F10%2Ftask-list-template-1170x658.jpg.webp"
-            alt=""
-          />
-            <img
-          className="beschreib_imges"
-            src="https://www.herzing.edu/sites/default/files/styles/fp_960_480/public/2020-09/project-management-skills.jpg.webp?itok=rN-QQPq6"
-            alt=""
-          />
-          <img
-          className="beschreib_imges"
-            src="https://blog.hubspot.de/hubfs/%5BSPANISH%5D-Blog-photos/Offers/Editorial_Calendar/Blog_Post_Editorial_Calendar-222708-edited-638992-edited.jpg"
-            alt=""
-          />
 
-        </div>
-      </section>
-   </div>
+
+
+
+
+
+
+
+
+
+
+
+      
+      <motion.dev className="h-todo">
+        <motion.p animate={{ y: 50 }} transition={{ duration: 2 }}>
+          Take control of your day and boost your productivity with our powerful
+          todo list. <br />
+          Say goodbye to the chaos of forgetting tasks and hello to a more
+          organized and efficient you.
+          <br /> Let our tool help you prioritize, plan and achieve your goals,
+          one task at a time.
+        </motion.p>
+        <motion.img
+          src="../../image/todo.png"
+          animate={{ y: 50 }}
+          transition={{ duration: 2 }}
+          initial={{ opacity: 0.5, scale: 0.5 }}
+          whileInView={{ opacity: 1, scale: 1, y: 0 }}
+        />
+      </motion.dev>
+
+
+
+
+
+
+
+
+      <motion.dev
+        className="sec"
+        initial={{ opacity: 1, scale: 1, x: 500 }}
+        whileInView={{ opacity: 1, scale: 1, x: 0 }}
+        transition={{ duration: 1 }}>
+        <motion.h2>
+          Vereinfachen Sie Ihr Projektmanagement mit unserer
+          benutzerfreundlichen Software.
+          <br /> Verfolgen Sie Aufgaben, Budgets und Fortschritte in Echtzeit.
+        </motion.h2>
+        <motion.img
+          animate={{ x: -50 }}
+          transition={{ duration: 2 }}
+          src="../../image/bild2.png"
+          alt=""
+        />
+      </motion.dev>
     </div>
   );
 }

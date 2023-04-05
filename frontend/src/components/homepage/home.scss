@@ -4,10 +4,20 @@
   justify-content: space-around;
   align-items: center;
   color: white;
-  background: #1a2a6c;  /* fallback for old browsers */
-  background: -webkit-linear-gradient(to right, #fdbb2d, #b21f1f, #1a2a6c);  /* Chrome 10-25, Safari 5.1-6 */
-  background: linear-gradient(to right, #fdbb2d, #b21f1f, #1a2a6c); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
-  
+  background: #1a2a6c; /* fallback for old browsers */
+  background: -webkit-linear-gradient(
+    to right,
+    #fdbb2d,
+    #b21f1f,
+    #1a2a6c
+  ); /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(
+    to right,
+    #fdbb2d,
+    #b21f1f,
+    #1a2a6c
+  ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
   // position: fixed;
   padding: 10px;
   width: 100%;
@@ -35,176 +45,62 @@
 
 // // Home.jsx
 .hom {
-    // .backgroundClass {
-    //     background: linear-gradient(34.87deg,#494a8683 0%,#3032afa8 100%);
-    // background-image: linear-gradient(34.87deg, rgb(35, 37, 114) 0%, rgba(30, 32, 123, 0.692) 100%);
-    // background-position-x: initial;
-    // background-position-y: initial;
-    // background-size: initial;
-    // background-repeat-x: initial;
-    // background-repeat-y: initial;
-    // background-attachment: initial;
-    // background-origin: initial;
-    // background-clip: initial;
-    // background-color: initial;
-    // }
+  min-height: 100vh;
+  background-color: rgba(211, 194, 194, 0.624);
   text-align: center;
-  .img1{
+  .img1 {
     padding: 20px;
-    img{
-        width: 100%;
-        border-radius: 15px;
-        aspect-ratio: 1;
+    img {
+      width: 100%;
+      border-radius: 15px;
+      aspect-ratio: 1;
     }
   }
-
 }
-.start {
-  color: coral;
-  font-size: 30px;
-  padding-top: 30px;
-}
-
-.beschreib {
-  margin-bottom: 30px;
-  font-size: 20px;
-
-  .beschreib_text {
-    padding: 25px;
-  }
-  .beschreib_h2 {
-    color: coral;
-    margin-top: 30px;
-  }
-
-  .beschreib_span1 {
-    font-size: 20px;
-    color: rgb(43, 27, 27);
-
-  }
-  .beschreib_span {
-    font-size: 20px;
-
-  }
-}
-.beschreib_img {
-  width: 100%;
-  height: 400px;
-  aspect-ratio: 1;
-}
-.notiz-todo-kalender {
+.first {
   display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 2rem;
+  border-bottom-right-radius:  200px;
+  border-bottom: solid;
+  box-shadow: rgb(38, 57, 77) 0px 20px 30px -10px;
+  background-color: rgba(255, 255, 255, 0.68);
+  img {
+    width: 900px;
+  }
+}
+.sec {
+  display: flex;
+  padding: 5rem;
+  margin-top: 1000px;
+  gap: 10rem;
   justify-content: space-around;
-  margin-bottom: 100px;
-
-  .beschreib_imges {
-    width: 250px;
-    aspect-ratio: 1;
-    border-radius: 10px;
-    box-shadow: rgb(38, 57, 77) 0px 20px 30px -10px;
-
-
-    
+  align-items: center;
+  img {
+    border-radius: 2rem;
+    width: 500px;
   }
-  .beschreib_imges:hover{
-    cursor: pointer;
-    box-shadow: rgb(38, 57, 77) 0px 5px 10px 0px;
-    background: rgba(255, 255, 255, 0.406);
-
-    & .project-name p {
-        transform: scale(1);
-    }
-    & .icon-wrapper i {
-        transform: scale(1);
-    }
+  h2 {
   }
 }
 
-.page-footer {
-  display: grid;
-  grid-template-columns: 1fr 5fr;
-  background-color: rgba(231, 222, 222, 0.747);
-}
-.media,
-.info {
-  a {
-    padding: 10px;
-  }
-}
-
-@media only screen and (max-width: 450px) {
-  .navigtion {
-    font-size: 10px;
-    min-width: 30px;
-  }
-  .header {
-    flex-direction: column;
-    justify-content: space-around;
-    gap: 10px;
-  }
-  .start {
-    color: coral;
-    margin-top: 50px;
-    margin-bottom: 10px;
-    font-size: 20px;
-  }
-  .page-footer {
-    display: grid;
-    grid-template-columns: 1fr;
-    h5 {
-      font-size: 10px;
-    }
-  }
-  .media,
-  .info {
-    font-size: 10px;
-    a {
-      font-size: 10px;
-    }
-  }
-  .notiz-todo-kalender {
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    gap: 20px;
-    .beschreib_imges {
-      width: 180px;
-    }
-  }
-  .beschreib {
-    font-size: 20px;
-
-    .beschreib_text {
-      padding: 25px;
-    }
-
-    .beschreib_span {
-      font-size: 10px;
-    }
-  }
-  .beschreib_img {
-    width: 100%;
-    height: 200px;
-    aspect-ratio: 1;
-  }
-}
-@media only screen and (min-width: 450px) and (max-width: 865px) {
-  .navigtion {
-    font-size: 10px;
-    min-width: 50px;
-  }
-  .notiz-todo-kalender {
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    gap: 30px;
-    .beschreib_imges {
-      width: 400px;
-    }
-  }
-}
 .logo {
   height: 50px;
   width: 50px;
   border-radius: 50%;
+}
+.h-todo{
+    display: flex;
+    padding: 50px 30px 10px 50px;
+    align-items: center;
+    justify-content: space-around;
+    img{
+    }
+    p{
+        text-align: left;
+        font-size: xx-large;
+        color: #b21f1f;
+        width: 400px;
+    }
 }
