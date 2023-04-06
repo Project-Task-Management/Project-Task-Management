@@ -24,7 +24,7 @@ const Header = () => {
           PMS
         </Link>
         <Link className="link" to="/notiz">
-          Notiz
+          Note
         </Link>
         <Link className="link" to="/kalender">
           Calendar

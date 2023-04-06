@@ -10,16 +10,16 @@ input[type="number"] {
   width: 100%;
   padding: 6px;
   border-radius: 0.5rem;
-  background-color: #b38d7cb1;
   border: unset;
   margin: 5px 0px;
+  background-color: #6bffb8;
 }
 .inputs:focus {
   outline: unset;
 }
 .productsManagement {
+  color: #000;
   height: 100%;
-  background-color:#C8B6A6;
   display: flex;
   min-height: 100vh;
   flex-direction: column;
@@ -71,15 +71,15 @@ input[type="number"] {
 }
 .pms_delete-btn {
   border: none;
-  background-color: rgba(234, 46, 46, 0.539);
   color: beige;
   transition: 0.5s;
   border-radius: 5px;
+  background-color: rgb(245, 84, 84);
 }
 .pms_delete-btn:hover {
+  background-color: red;
   border-radius: 20px;
-  color: rgba(234, 46, 46, 0.539);
-  background-color: beige;
+  color: white;
 }
 table {
   margin-top: 10px;
@@ -101,28 +101,34 @@ tr {
   td {
     align-items: center;
     width: 100%;
+    background-color: #6bffb8;
+    padding: 5px;
   }
   th {
+    border-radius: 5px;
     width: 100%;
     align-items: center;
     border-bottom: black solid;
   }
 }
 .create_btn {
-  background-color:#a86464c3;
+  background-color: rgba(107, 105, 105, 0.358);
   width: 100%;
   border: none;
   transition: 0.5s;
   padding: 1rem;
   border-radius: 10px;
+  color: #000;
 }
 .create_btn:hover {
   width: 95%;
-  color: rgb(248, 248, 194);
+  background-color: green;
   border-radius: 30px;
+  color: #fff;
 }
 .deleteAll_btn {
-  background-color: #867070;
+  background-color: rgb(245, 84, 84);
+
   width: 100%;
   border: none;
   transition: 0.5s;
@@ -130,10 +136,11 @@ tr {
   border-radius: 10px;
 }
 .deleteAll_btn:hover {
-  background-color: rgba(255, 0, 0, 0.607);
+  background-color: red;
+
   width: 95%;
   transition: 0.5s;
   padding: 1rem;
-  color: darkred;
+  color: #fff;
   border-radius: 30px;
 }

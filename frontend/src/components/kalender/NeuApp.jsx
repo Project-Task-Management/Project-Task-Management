@@ -98,7 +98,7 @@ export default function NeuApp() {
         events={allEvents}
         startAccessor="startDate"
         endAccessor="endDate"
-        style={{ height: "630px" }}
+        style={{ height: "630px", color: "darkred" }}
         onSelectEvent={(event) => removeHandle(event)}
       />
     </div>

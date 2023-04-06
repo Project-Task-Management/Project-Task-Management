@@ -6,7 +6,7 @@ const Footer = () => (
   <footer className="footer-container">
     <p className="footer-text">Copyright © 2023</p>
 
-    <h5 className="logo">하자</h5>
+    <h5 className="f-logo">هيا</h5>
 
     <div>
       <div className="info">

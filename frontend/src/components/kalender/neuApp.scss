@@ -1,10 +1,10 @@
 .neuApp {
-  background-color: #cdc6c3;
+  background-color: #fff;
 
   .kalanderH1 {
     color: black;
     font-family: "Overpass", sans-serif;
-    letter-spacing: 70px;
+    letter-spacing: 40px;
   }
   .kalanderH2 {
     color: black;
@@ -38,11 +38,13 @@
       border-radius: 20px;
       font-size: 20px;
       font-family: "Space Mono", monospace;
+      background-color: rgb(128, 88, 88);
+      color: #fff;
     }
 
     button:hover {
-      background-color: #a38f85;
-      color: #ede9e3;
+      background-color: darkred;
+      color: #fff;
     }
   }
 }

@@ -57,7 +57,7 @@ export default function Notiz() {
 
   return (
     <div className="body">
-      <h1 className="uberschrift">Schreiben sie ihr Notizen </h1>
+      <h1 className="uberschrift">Write your Notes </h1>
       <div className="notiz">
         <div className="notiz_item">
           {notiz.map((elem, i) => {
