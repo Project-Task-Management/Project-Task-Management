@@ -23,11 +23,10 @@
 
 .input-title {
   width: 100%;
-  padding: 1rem;
+  padding: 2rem;
   border-radius: 0.5rem;
-  color: rgb(106, 81, 81);
-  box-shadow: rgb(38, 57, 77) 0px 20px 30px -10px;
-
+  box-shadow: rgba(38, 57, 77, 0.527) 0px 20px 30px -10px;
+  background-color: #64309b5f;
   border: unset;
   margin: 5px 0px;
 }
@@ -53,7 +52,7 @@
   margin-bottom: 10px;
   // justify-content: space-between;
   text-align: left;
-  box-shadow: rgb(38, 57, 77) 0px 20px 30px -10px;
+  box-shadow: rgb(223, 99, 9) 0px 20px 50px -10px;
   transition: 0.5s;
   font-size: 14px;
   border-radius: 20px;
